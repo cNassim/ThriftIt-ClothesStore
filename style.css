@@ -1,8 +1,4 @@
 .home-page-NO-LOGIN {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 100%;
   }
   
@@ -1197,5 +1193,4 @@
     letter-spacing: 2.4px;
     line-height: normal;
     white-space: nowrap;
-  }
-  
+  }  
