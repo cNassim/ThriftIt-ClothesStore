@@ -177,7 +177,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.salamandre.org%2Farticle%2Fceci-nest-pas-un-pic-epeiche-mar%2F&psig=AOvVaw1VUtHemtrp6aEMXt9p_iMQ&ust=1703066669613000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMCawfKfm4MDFQAAAAAdAAAAABAD);
+  background-image: url(slider.png);
   background-size: cover;
 }
 .home .contenu{
@@ -343,4 +343,59 @@ section{
 
 .bd-mode-toggle .dropdown-menu .active .bi {
   display: block !important;
+}
+
+.caption {
+  position: absolute;
+  width: 490px;
+  height: 373px;
+  top: 280px;
+  left: 272px;
+  background-color: #000000;
+}
+.street-wears {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 117px;
+  letter-spacing: -11.7px;
+  line-height: 117px;
+}
+
+.high-quality-cool {
+  position: absolute;
+  top: 290px;
+  left: 50px;
+  font-family: "Jost", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.button {
+  position: absolute;
+  width: 277px;
+  height: 54px;
+  top: 400px; /* Ajuster la position verticale selon vos besoins */
+  left: 153px;
+  all: unset;
+  box-sizing: border-box;
+}
+.start-shopping {
+  position: absolute;
+  top: 95%; /* Ajuster la position verticale selon vos besoins */
+  left: 50%; /* Ajuster la position horizontale selon vos besoins */
+  transform: translate(-50%, -50%); /* Centrer le texte horizontalement et verticalement */
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px; /* Ajuster la taille de la police selon vos besoins */
+  letter-spacing: 1px; /* Ajuster l'espacement entre les lettres selon vos besoins */
+  line-height: 1.2; /* Ajuster la hauteur de ligne selon vos besoins */
+  white-space: nowrap;
 }
