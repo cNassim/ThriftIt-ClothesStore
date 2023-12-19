@@ -84,11 +84,83 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
     </style>
 
     
   </head>
   <body>
+    <header>
+      <a href="#" class="logo">ThriftlT</a>
+      <div class="menuToggle" onclick="toggleMenu();"></div>
+      <ul class="barriere">
+          <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+          <li><a href="#shop" onclick="toggleMenu();">Shop</a></li>
+          <li><a href="#outfit" onclick="toggleMenu();">Outfit Finder</a></li>
+      </ul>
+  </header>
+  <section class="home" id="home">
+      <div class="contenu">
+          <h1>Street Wears</h1>
+          <p>HIGH QUALITY COOL TSHIRTS FOR STREET FASHION</p>
+      </div>
+  </section>
+  <style>
+    .logo{
+    color: rgb(7, 7, 7);
+    font-weight: bolder;
+    font-size: 2em;
+    text-decoration: none;
+}
+  header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px 10px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s;
+  }
+  .barriere{
+    display: flex;
+    position: relative;
+}
+.barriere li{
+    list-style: none;
+}
+.barriere a{
+    color: #070707;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+}
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.salamandre.org%2Farticle%2Fceci-nest-pas-un-pic-epeiche-mar%2F&psig=AOvVaw1VUtHemtrp6aEMXt9p_iMQ&ust=1703066669613000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMCawfKfm4MDFQAAAAAdAAAAABAD);
+    background-size: cover;
+}
+.home .contenu{
+    max-width: 70%;
+    text-align: center;
+}
+.home .contenu h1 p{
+    color: #000000;
+    font-size: 3em;
+    text-transform: capitalize;   
+}
+section{
+    padding: 100px;
+}
+
+  </style>
    <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
@@ -325,47 +397,48 @@
           <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
           </a>
-          <p class="text-body-secondary">&copy; 2023</p>
+          <p class="text-body-secondary"></p>
         </div>
+  
     
         <div class="col mb-3">
     
         </div>
     
         <div class="col mb-3">
-          <h5>Section</h5>
+          <h5>QUICK LINKS</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About Us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Offers</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Services</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
           </ul>
         </div>
     
         <div class="col mb-3">
-          <h5>Section</h5>
+          <h5>ABOUT</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">How It Work</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Our Packages</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promotions</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Refer A Friend</a></li>
           </ul>
         </div>
     
         <div class="col mb-3">
-          <h5>Section</h5>
+          <h5>HELP CENTRE</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Payments</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Shipping</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Product Returns</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Checkout</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Other Issues</a></li>
           </ul>
         </div>
       </footer>
-      <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
+      <p class="text-center text-body-secondary">&copy; 2022 ThriftlT. All rights reserved.</p>
     
     </div>
     
