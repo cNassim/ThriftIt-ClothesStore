@@ -11,6 +11,11 @@
     font-size: 3.5rem;
   }
 }
+.panel-footer.panel-custom {
+  background: rgb(46, 45, 45);
+  background-color :#000000;
+  color: rgb(255, 254, 254);
+}
 .navbar-brand {
   position: absolute;
   color: rgb(7, 7, 7);
@@ -126,7 +131,7 @@ body {
 .logo{
   color: rgb(7, 7, 7);
   font-weight: bolder;
-  font-size: 2.3em;
+  font-size: 2.8em;
   text-decoration: none;
 }
 .logo-header{
@@ -147,7 +152,7 @@ body {
 .Headeractuelle{
   position: fixed;
   top: 3%;
-  right: 0.8cm;
+  right: 5.5cm;
   padding: 20px 10px;
   width: 100%;
   z-index: 1;
@@ -168,17 +173,18 @@ body {
   color: #070707;
   text-decoration: none;
   margin-left: 30px;
-  font-weight: 700;
+  font-weight: 800;
 }
 .home{
   position: relative;
   width: 100%;
   min-height: 100vh;
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: center;
   background-image: url(slider.png);
   background-size: cover;
+  background-position: 0%;
 }
 .home .contenu{
   max-width: 70%;
