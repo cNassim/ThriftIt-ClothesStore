@@ -353,10 +353,10 @@ section{
 
 .caption {
   position: absolute;
-  width: 490px;
-  height: 373px;
+  width: 400px;
+  height: 300px;
   top: 280px;
-  left: 272px;
+  left: 350px;
   background-color: #000000;
 }
 .street-wears {
@@ -366,19 +366,19 @@ section{
   font-family: "Josefin Sans", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 117px;
-  letter-spacing: -11.7px;
-  line-height: 117px;
+  font-size: 80px;
+  letter-spacing: -7px;
+  line-height: 80px;
 }
 
 .high-quality-cool {
   position: absolute;
-  top: 290px;
-  left: 50px;
-  font-family: "Jost", Helvetica;
+  top: 200px;
+  left: 30px;
+  font-family: "Jost", Hlvetica;
   font-weight: 400;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
@@ -394,7 +394,7 @@ section{
 }
 .start-shopping {
   position: absolute;
-  top: 95%; /* Ajuster la position verticale selon vos besoins */
+  top: 80%; /* Ajuster la position verticale selon vos besoins */
   left: 50%; /* Ajuster la position horizontale selon vos besoins */
   transform: translate(-50%, -50%); /* Centrer le texte horizontalement et verticalement */
   font-family: "Josefin Sans", Helvetica;
