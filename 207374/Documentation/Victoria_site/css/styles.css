@@ -2674,6 +2674,8 @@ a:hover {
 }
 #about-us .main-content #about-main-3 .about-us-team .team-block {
   overflow: hidden;
+  margin-left: 282px;
+  width: fit-content;
 }
 #about-us .main-content #about-main-3 .about-us-team .team-block .team-image {
   position: relative;
