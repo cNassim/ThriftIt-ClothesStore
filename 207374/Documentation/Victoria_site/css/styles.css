@@ -6868,7 +6868,7 @@ body {
   letter-spacing: 1px;
   text-transform: capitalize;
   cursor: pointer;
-  color: #ffffff;
+  color: #000000;
 }
 @media (max-width: 1600px) {
   .slider-wrapper .slider .owl-item .slider-content-wrap .slider-subtitle {
