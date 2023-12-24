@@ -586,24 +586,19 @@
   </div>
   <div class="modal-body mx-3">
 	<div class="md-form mb-4">
-	  <input type="text" id="RegisterForm-name" class="form-control validate" placeholder="Your name">
+	  <input type="text" id="registerForm-name" class="form-control validate" placeholder="Your name" require/>
 	</div>
 	<div class="md-form mb-4">
-	  <input type="email" id="RegisterForm-email" class="form-control validate" placeholder="Your email">
+	  <input type="email" id="register-email" class="form-control validate" placeholder="Your email" require/>
 	</div>
 	<div class="md-form mb-4">
-	  <input type="password" id="RegisterForm-pass" class="form-control validate" placeholder="Your password">
+	  <input type="password" id="register-password" class="form-control validate" placeholder="Your password" require/>
 	</div>
 	<div class="checkbox-link d-flex justify-content-between">
-	<div class="left-col">
-		<input id="remember-me" type="checkbox"><label for="remember_me">Remember Me</label>
-	</div>
-	<div class="right-col"><a href="#">Forget Password?</a></div>
 </div>
   </div>
-  
   <div class="modal-footer d-flex justify-content-center">
-	<button class="btn btn-primary">Sign up</button>
+	<button class="btn btn-primary" id="register-btn" value="Register">Sign up</button>
   </div>
 </div>
 </div>
