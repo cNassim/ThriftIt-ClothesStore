@@ -33,7 +33,7 @@
 		<div class="container">
 			<div class="header-middle float-lg-left float-md-left float-sm-left float-xs-none">
 					<div class="logo">
-									<a href="index.html"><img src="img/logos/logo.png" alt="logo" width="200" height="50" ></a>		</div>
+									<a href="index.php"><img src="img/logos/logo.png" alt="logo" width="200" height="50" ></a>		</div>
 			</div> 
 			<div class="header-right d-flex d-xs-flex d-sm-flex justify-content-end float-right">
 			<div class="user-info">
@@ -41,7 +41,7 @@
 			<i class="material-icons">perm_identity</i>		</button>
 			<div id="user-dropdown" class="user-menu">
 			<ul>
-				<li><a href="my-account.html" class="text-capitalize">my account</a></li>
+				<li><a href="my-account.php" class="text-capitalize">my account</a></li>
 				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
 				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
 			</ul>
@@ -78,10 +78,10 @@
 						</table>
 					  </li>
 					  <li class="buttons w-100 float-left">
-						<form action="cart_page.html">
+						<form action="cart_page.php">
 						  <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
 						</form>
-						<form action="checkout_page.html">
+						<form action="checkout_page.php">
 						  <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
 						</form>
 					  </li>
@@ -111,29 +111,29 @@
 				<!-- Links -->
 				<ul class="navbar-nav m-auto justify-content-center">
 				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase" href="index.html">
+				<a class="nav-link text-uppercase" href="index.php">
 					Home
 				  <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item dropdown mega-dropdown">
-				<a class="nav-link text-uppercase" href="shop.html">Shop</a>
+				<a class="nav-link text-uppercase" href="shop.php">Shop</a>
 				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase dropdown-toggle" href="shop.html">
+				<a class="nav-link text-uppercase dropdown-toggle" href="shop.php">
 					Outfit Finder
 				  <span class="sr-only">(current)</span></a>
 				  <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
 					  <div class="sub-menu mb-xl-0 mb-4">
 						  <ul class="list-unstyled">
 							  <li>
-								  <a class="menu-item pl-0" href="index.html">
+								  <a class="menu-item pl-0" href="index.php">
 								Preparation de valises</a> </li>
 							  <li>
-								  <a class="menu-item pl-0" href="advices.html">
+								  <a class="menu-item pl-0" href="advices.php">
 								Style Tips
 								</a>
 							</li>
 							<li>
-								<a class="menu-item pl-0" href="suggest.html">
+								<a class="menu-item pl-0" href="suggest.php">
 								DailyOutfitSuggestions
 							  </a>
 						  </li>
@@ -142,7 +142,7 @@
 				  </div>
 				</li>
 				<li class="nav-item">   
-				<a class="nav-link text-uppercase" href="about-us.html">About us </a>
+				<a class="nav-link text-uppercase" href="about-us.php">About us </a>
 				</li>
 				<!-- Links -->
 				</div>
@@ -214,7 +214,7 @@
 				</div>
 				<div class="right-columm col-lg-7 col-md-7">
 					<div class="product-information">
-					<h4 class="product-title text-capitalize float-left w-100"><a href="product-details.html" class="float-left w-100">Knitted Lounge Set</a></h4>
+					<h4 class="product-title text-capitalize float-left w-100"><a href="product-details.php" class="float-left w-100">Knitted Lounge Set</a></h4>
 					<div class="description">
 						Elevate your moments of relaxation with our Knitted Lounge Set, a perfect fusion of comfort and style. Immerse yourself in the luxury of premium knit fabric, designed to embrace your body with a soft and gentle touch. This ensemble features a coordinated top and bottoms, effortlessly blending fashion and comfort. The chic details, including a tasteful neckline and well-fitted cuffs, add a touch of sophistication to your laid-back moments. Whether you're unwinding at home, heading to a casual gathering, or embarking on a stylish travel adventure, our Knitted Lounge Set ensures you look effortlessly chic while embracing the bliss of comfort.</div>
 					<div class="rating">
@@ -265,7 +265,7 @@
 						<button type="button" class="btn btn-primary btn-cart m-0" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i> Add To Cart</button>
 					</div>
 					<div class="tt-links d-flex align-items-center float-left w-100 mb-15">
-					<a href="wishlist.html" class="link btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+					<a href="wishlist.php" class="link btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 					</div>
 					
 					</div>
@@ -354,7 +354,7 @@
 									</div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">Knitted Lounge Set</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">Knitted Lounge Set</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -370,7 +370,7 @@
 										<div class="button-wrapper">	
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-toggle="modal" data-target="#product_view"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 										  </div>									
 									  </div>
 									</div>
@@ -384,7 +384,7 @@
 											<img src="img/products/p5.jpg" alt="03" class="second_image img-responsive" height="501" width="385"/></a></div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">Crochet Detail Top</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">Crochet Detail Top</a></h4>
 										</div>
 										<div class="rating">
 									<div class="product-ratings d-inline-block align-middle">
@@ -400,7 +400,7 @@
 										<div class="button-wrapper">	
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 											 </div>			
 									  </div>
 									</div>
@@ -414,7 +414,7 @@
 												<img src="img/products/p7.jpg" alt="04" class="second_image img-responsive" height="501" width="385"/></a></div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">Cropped Blazer</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">Cropped Blazer</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -431,7 +431,7 @@
 										<div class="button-wrapper">	
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 											</div>									
 										</div>
 									</div>
@@ -445,7 +445,7 @@
 											<img src="img/products/p8.jpg" alt="05" class="second_image img-responsive" height="501" width="385"/></a></div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">Blazer + Bottom (Formal fit)</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">Blazer + Bottom (Formal fit)</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -460,7 +460,7 @@
 										<div class="button-wrapper">										
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												</div>
 										</div>
 									</div>
@@ -474,7 +474,7 @@
 											<img src="img/products/p11.jpg" alt="06" class="second_image img-responsive" height="501" width="385"/>										</a>									</div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">Blazer + Skirt (Formal fit)</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">Blazer + Skirt (Formal fit)</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -491,7 +491,7 @@
 										<div class="button-wrapper">										
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 											</div>
 										</div>
 									</div>
@@ -505,7 +505,7 @@
 											<img src="img/products/p13.jpg" alt="07" class="second_image img-responsive" height="501" width="385"/></a></div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">Woolen Coat</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">Woolen Coat</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -521,7 +521,7 @@
 										<div class="button-wrapper">								
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												</div>
 									  </div>
 									</div>
@@ -556,13 +556,13 @@
 								<a href="#company" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">QUICK LINKS</a> </div>
 							<ul id="company" class="list-unstyled collapse">
 								<li>
-									<a href="index.html">Home</a> </li>
+									<a href="index.php">Home</a> </li>
 								<li>
-									<a href="about-us.html">About Us</a> </li>
+									<a href="about-us.php">About Us</a> </li>
 								<li>
-									<a href="shop.html">Offers</a> </li>
+									<a href="shop.php">Offers</a> </li>
 								<li>
-									<a href="about-us.html">Contact Us</a> </li>
+									<a href="about-us.php">Contact Us</a> </li>
 							</ul>
 						</div>
 						<div class="col-md-2 footer-column">
@@ -570,11 +570,11 @@
 								<a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">ABOUT</a> </div>
 							<ul id="products" class="list-unstyled collapse">
 								<li>
-									<a href="about-us.html">Who are we?</a> </li>
+									<a href="about-us.php">Who are we?</a> </li>
 								<li>
-									<a href="about-us.html">Our story</a> </li>
+									<a href="about-us.php">Our story</a> </li>
 								<li>
-									<a href="about-us.html">Our mission</a> </li>
+									<a href="about-us.php">Our mission</a> </li>
 							</ul>
 		
 						</div>
@@ -583,13 +583,13 @@
 								<a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
 							<ul id="account" class="list-unstyled collapse">
 								<li>
-									<a href="blog-details.html">personal info</a> </li>
+									<a href="blog-details.php">personal info</a> </li>
 								<li>
-									<a href="cart_page.html">Orders</a> </li>
+									<a href="cart_page.php">Orders</a> </li>
 								<li>
-									<a href="wishlist.html">my wishlists</a> </li>
+									<a href="wishlist.php">my wishlists</a> </li>
 								<li>
-									<a href="my-account.html">Sign In / Sign Up</a> </li>
+									<a href="my-account.php">Sign In / Sign Up</a> </li>
 							</ul>
 		
 						</div>
@@ -849,7 +849,7 @@
 						<form action="#">
 						  <input class="btn pull-right mt_10 btn-primary" value="Continue shopping" type="submit">
 						</form>
-						<form action="checkout_page.html">
+						<form action="checkout_page.php">
 						  <input class="btn pull-right mt_10 btn-secondary" value="Proceed to checkout" type="submit">
 						</form>
 						</div>

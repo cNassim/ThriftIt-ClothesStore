@@ -68,7 +68,7 @@
 			</div>
 		<div class="header-middle float-left">
 				<div class="logo">
-								<a href="index.html"><img src="img/logos/logo.png" alt="NatureCircle"></a>		</div>
+								<a href="index.php"><img src="img/logos/logo.png" alt="NatureCircle"></a>		</div>
 		</div> 
 		<div class="header-right d-flex d-xs-block d-sm-flex justify-content-end float-right">
 		<div class="search-wrapper"> 
@@ -89,7 +89,7 @@
 		</button>
 		<div id="user-dropdown" class="user-menu">
 		<ul>
-			<li><a href="my-account.html" class="text-capitalize">my account</a></li>
+			<li><a href="my-account.php" class="text-capitalize">my account</a></li>
 			<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
 			<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
 		</ul>
@@ -130,10 +130,10 @@
                     </table>
                   </li>
                   <li class="buttons w-100 float-left">
-                    <form action="cart_page.html">
+                    <form action="cart_page.php">
                       <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
                     </form>
-                    <form action="checkout_page.html">
+                    <form action="checkout_page.php">
                       <input class="btn pull-right mt_10 btn-secondary btn-rounded w-100" value="Checkout" type="submit">
                     </form>
                   </li>
@@ -161,33 +161,33 @@
 		<!-- Links -->
 		<ul class="navbar-nav m-auto justify-content-center">
 		<li class="nav-item dropdown active">
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.html">
+		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">
 			Home
 		  <span class="sr-only">(current)</span>        </a>
 		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
 			<div class="sub-menu mb-xl-0 mb-4">
 			  <ul class="list-unstyled">
 				<li>
-				  <a class="menu-item pl-0" href="index.html">
+				  <a class="menu-item pl-0" href="index.php">
 					Home 1                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="index2.html">
+				  <a class="menu-item pl-0" href="index2.php">
 				   Home 2                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="index3.html">
+				  <a class="menu-item pl-0" href="index3.php">
 					Home 3                 </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="index4.html">
+				  <a class="menu-item pl-0" href="index4.php">
 					Home 4                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="index5.html">
+				  <a class="menu-item pl-0" href="index5.php">
 					Home 5                  </a>                </li>
 			  </ul>
 			</div>
 		</div>
 		</li>
 		<li class="nav-item dropdown mega-dropdown">
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.html">Category</a>
+		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">Category</a>
 		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
 		  <div class="row">
 			<div class="col-md-12 col-xl-4 sub-menu mb-xl-0 mb-4">
@@ -196,13 +196,13 @@
 			  <ul class="list-unstyled">
 				
 				 <li>
-				  <a class="menu-item pl-0" href="filter-toggle.html">
+				  <a class="menu-item pl-0" href="filter-toggle.php">
 					filter toggle                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="off-canvas-left.html">
+				  <a class="menu-item pl-0" href="off-canvas-left.php">
 					off canvas left                </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="off-canvas-right.html">
+				  <a class="menu-item pl-0" href="off-canvas-right.php">
 					off canvas right                </a>                </li>
 			  </ul>
 			</div>
@@ -210,16 +210,16 @@
 			  <h6 class="sub-title text-uppercase font-weight-bold white-text">Variation 2</h6>
 				<ul class="list-unstyled">
 				<li>
-				  <a class="menu-item pl-0" href="category-5-col.html">
+				  <a class="menu-item pl-0" href="category-5-col.php">
 					5 columns mode                 </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="category-6-col.html">
+				  <a class="menu-item pl-0" href="category-6-col.php">
 				   6 columns mode                     </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="category-7-col.html">
+				  <a class="menu-item pl-0" href="category-7-col.php">
 				   7 columns mode                     </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="category-8-col.html">
+				  <a class="menu-item pl-0" href="category-8-col.php">
 				   8 columns mode                 </a>                </li>
 			  </ul>
 			</div>
@@ -234,76 +234,76 @@
 		</div>
 		</li>
 		<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.html">
+		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">
 			Shop
 		  <span class="sr-only">(current)</span>        </a>
 		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
 			<div class="sub-menu mb-xl-0 mb-4">
 			  <ul class="list-unstyled">
 				<li>
-				  <a class="menu-item pl-0" href="product-grid.html">
+				  <a class="menu-item pl-0" href="product-grid.php">
 					product grid                </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="product-sticky-right.html">
+				  <a class="menu-item pl-0" href="product-sticky-right.php">
 				   sticky right                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="product-extended-layout.html">
+				  <a class="menu-item pl-0" href="product-extended-layout.php">
 					Extended layout                 </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="product-details.html">
+				  <a class="menu-item pl-0" href="product-details.php">
 					Default layout                </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="product-compact.html">
+				  <a class="menu-item pl-0" href="product-compact.php">
 					compact layout           </a>                </li>
 			  </ul>
 			</div>
 		</div>
 		</li>
 		<li class="nav-item dropdown">   
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.html">Blog</a>
+		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">Blog</a>
 		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
 			<div class="sub-menu">
 			  <h6 class="sub-title text-uppercase font-weight-bold white-text d-none">Featured</h6>
 			<ul class="list-unstyled">
 				  <li>
-				  <a class="menu-item pl-0" href="blog-2-column.html">
+				  <a class="menu-item pl-0" href="blog-2-column.php">
 					blog 2 column                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="blog-3-column.html">
+				  <a class="menu-item pl-0" href="blog-3-column.php">
 				   blog 3 column                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="blog-2-column-masonary.html">
+				  <a class="menu-item pl-0" href="blog-2-column-masonary.php">
 				   blog masonary                 </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="blog-list.html">
+				  <a class="menu-item pl-0" href="blog-list.php">
 					blog list                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="blog-details.html">
+				  <a class="menu-item pl-0" href="blog-details.php">
 				   blog details                  </a>                </li>
 			  </ul>
 			</div>
 		</div>
 		</li>
 		<li class="nav-item dropdown">   
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.html">Pages</a>
+		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">Pages</a>
 		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
 			<div class="sub-menu">
 			<ul class="list-unstyled">
 				 <li>
-				  <a class="menu-item pl-0" href="about-us.html">
+				  <a class="menu-item pl-0" href="about-us.php">
 					About us                 </a>				 </li>
 					<li>
-				  <a class="menu-item pl-0" href="accordions.html">
+				  <a class="menu-item pl-0" href="accordions.php">
 					Accordions                  </a>                </li>
 	              <li>
-				  <a class="menu-item pl-0" href="buttons.html">
+				  <a class="menu-item pl-0" href="buttons.php">
 				   Buttons              </a>                </li>
 			  </ul>
 			</div>
 		</div>
 		</li>
 		<li class="nav-item dropdown">
-		<a class="nav-link text-uppercase" href="contact-us.html">contact us</a>      </li>
+		<a class="nav-link text-uppercase" href="contact-us.php">contact us</a>      </li>
 		</ul>
 		<!-- Links -->
 		</div>
@@ -337,19 +337,19 @@
 			<div class="sub-menu mb-xl-0 mb-4">
 			  <ul class="list-unstyled">
 				<li>
-				  <a class="menu-item pl-0" href="index.html">
+				  <a class="menu-item pl-0" href="index.php">
 					Home 1                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="index2.html">
+				  <a class="menu-item pl-0" href="index2.php">
 				   Home 2                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="index3.html">
+				  <a class="menu-item pl-0" href="index3.php">
 					Home 3                 </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="index4.html">
+				  <a class="menu-item pl-0" href="index4.php">
 					Home 4                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="index5.html">
+				  <a class="menu-item pl-0" href="index5.php">
 					Home 5                  </a>                </li>
 			  </ul>
 			</div>
@@ -365,13 +365,13 @@
 			  <!--Featured image-->
 			  <ul class="list-unstyled">
 				 <li>
-				  <a class="menu-item pl-0" href="filter-toggle.html">
+				  <a class="menu-item pl-0" href="filter-toggle.php">
 					filter toggle                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="off-canvas-left.html">
+				  <a class="menu-item pl-0" href="off-canvas-left.php">
 					off canvas left                </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="off-canvas-right.html">
+				  <a class="menu-item pl-0" href="off-canvas-right.php">
 					off canvas right                </a>                </li>
 			  </ul>
 			</div>
@@ -379,16 +379,16 @@
 			  <h6 class="sub-title text-uppercase font-weight-bold white-text">Variation 2</h6>
 				<ul class="list-unstyled">
 				<li>
-				  <a class="menu-item pl-0" href="category-5-col.html">
+				  <a class="menu-item pl-0" href="category-5-col.php">
 					grid 5 column                 </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="category-6-col.html">
+				  <a class="menu-item pl-0" href="category-6-col.php">
 				   grid 6 column                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="category-7-col.html">
+				  <a class="menu-item pl-0" href="category-7-col.php">
 					grid 7 column                   </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="category-8-col.html">
+				  <a class="menu-item pl-0" href="category-8-col.php">
 					grid 8 column                </a>                </li>
 			  </ul>
 			</div>
@@ -413,19 +413,19 @@
 			  <h6 class="sub-title text-uppercase font-weight-bold white-text">Featured</h6>
 			  <ul class="list-unstyled">
 				<li>
-				  <a class="menu-item pl-0" href="product-grid.html">
+				  <a class="menu-item pl-0" href="product-grid.php">
 					product grid                </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="product-sticky-right.html">
+				  <a class="menu-item pl-0" href="product-sticky-right.php">
 				   sticky right                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="product-extended-layout.html">
+				  <a class="menu-item pl-0" href="product-extended-layout.php">
 					Extended layout                 </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="product-details.html">
+				  <a class="menu-item pl-0" href="product-details.php">
 					Default layout                </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="product-compact.html">
+				  <a class="menu-item pl-0" href="product-compact.php">
 					compact layout           </a>                </li>
 			  </ul>
 			</div>
@@ -443,19 +443,19 @@
 			  <h6 class="sub-title text-uppercase font-weight-bold white-text d-none">Featured</h6>
 			<ul class="list-unstyled">
 				  <li>
-				  <a class="menu-item pl-0" href="blog-2-column.html">
+				  <a class="menu-item pl-0" href="blog-2-column.php">
 					blog 2 column                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="blog-3-column.html">
+				  <a class="menu-item pl-0" href="blog-3-column.php">
 				   blog 3 column                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="blog-2-column-masonary.html">
+				  <a class="menu-item pl-0" href="blog-2-column-masonary.php">
 				   blog masonary                 </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="blog-list.html">
+				  <a class="menu-item pl-0" href="blog-list.php">
 					blog list                  </a>                </li>
 				<li>
-				  <a class="menu-item pl-0" href="blog-details.html">
+				  <a class="menu-item pl-0" href="blog-details.php">
 				   blog details                  </a>                </li>
 			  </ul>
 			</div>
@@ -463,7 +463,7 @@
 		</li>
 		
 		<li class="nav-item dropdown">
-		<a class="nav-link text-uppercase" href="contact-us.html">contact us</a>      </li>
+		<a class="nav-link text-uppercase" href="contact-us.php">contact us</a>      </li>
 		
 		<li class="nav-item dropdown">   
 		<a class="nav-link dropdown-toggle text-uppercase"  data-toggle="collapse" data-target="#menu5"
@@ -473,13 +473,13 @@
 			  <h6 class="sub-title text-uppercase font-weight-bold white-text d-none">Featured</h6>
 			<ul class="list-unstyled">
 				  <li>
-				  <a class="menu-item pl-0" href="about-us.html">
+				  <a class="menu-item pl-0" href="about-us.php">
 					About us                 </a>				 </li>
 					<li>
-				  <a class="menu-item pl-0" href="accordions.html">
+				  <a class="menu-item pl-0" href="accordions.php">
 					Accordions                  </a>                </li>
 	              <li>
-				  <a class="menu-item pl-0" href="buttons.html">
+				  <a class="menu-item pl-0" href="buttons.php">
 				   Buttons              </a>                </li>
 			  </ul>
 			</div>
@@ -544,7 +544,7 @@
 				</div>
 				<div class="right-columm col-lg-6 col-md-6">
 					<div class="product-information">
-					<h4 class="product-title text-capitalize float-left w-100"><a href="product-details.html" class="float-left w-100">aliquam quaerat voluptatem</a></h4>
+					<h4 class="product-title text-capitalize float-left w-100"><a href="product-details.php" class="float-left w-100">aliquam quaerat voluptatem</a></h4>
 					<div class="description">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis viverra purus, non viverra nulla. Sed vehicula libero eu lectus eleifend volutpat. Sed et placerat arcu. Proin mi leo, interdum eu tortor at, euismod gravida velit. Fusce non enim lectus. Duis euismod, lorem vitae pharetra rhoncus, ligula risus elementum nunc, at interdum eros nunc eget augue. Donec dapibus nec diam ut tempor. Duis malesuada neque turpis, ut congue ipsum euismod eget. Sed egestas ipsum enim, sed semper magna auctor non. 
 					</div>
@@ -602,8 +602,8 @@
 						<button type="button" class="btn btn-primary btn-cart m-0" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i> Add To Cart</button>
 					</div>
 					<div class="tt-links d-flex align-items-center float-left w-100 mb-15">
-										<a href="compare.html" class="link btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></a>
-					<a href="wishlist.html" class="link btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+										<a href="compare.php" class="link btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></a>
+					<a href="wishlist.php" class="link btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 					</div>
 					<div class="social-sharing float-left w-100">
 						<ul class="d-flex">
@@ -737,12 +737,12 @@
 							<div class="product-layouts">
 								<div class="product-thumb">
 									<div class="image zoom">
-										<a href="product-details.html">
+										<a href="product-details.php">
 											<img src="img/products/01.jpg" alt="01"/>
 											<img src="img/products/02.jpg" alt="02" class="second_image img-responsive"/>										</a>									</div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">aliquam quaerat voluptatem</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quaerat voluptatem</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -760,7 +760,7 @@
 										<div class="button-wrapper">	
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>									
@@ -771,12 +771,12 @@
 							<div class="product-layouts">
 								<div class="product-thumb">
 									<div class="image zoom">
-										<a href="product-details.html">
+										<a href="product-details.php">
 											<img src="img/products/02.jpg" alt="02"/>	
 											<img src="img/products/03.jpg" alt="03" class="second_image img-responsive"/>									</a>									</div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">aspetur autodit autfugit</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">aspetur autodit autfugit</a></h4>
 										</div>
 										<div class="rating">
 									<div class="product-ratings d-inline-block align-middle">
@@ -794,7 +794,7 @@
 										<div class="button-wrapper">	
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>			
@@ -805,14 +805,14 @@
 							<div class="product-layouts">
 								<div class="product-thumb">
 									<div class="image zoom">
-										<a href="product-details.html">
+										<a href="product-details.php">
 											<img src="img/products/03.jpg" alt="03"/>
 											<img src="img/products/04.jpg" alt="04" class="second_image img-responsive"/>
 																				</a>						
 																							</div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">magni dolores eosquies</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">magni dolores eosquies</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -830,7 +830,7 @@
 										<div class="button-wrapper">	
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>									
@@ -841,12 +841,12 @@
 							<div class="product-layouts">
 								<div class="product-thumb">
 									<div class="image zoom">
-										<a href="product-details.html">
+										<a href="product-details.php">
 											<img src="img/products/04.jpg" alt="04"/>
 											<img src="img/products/05.jpg" alt="05" class="second_image img-responsive"/>										</a>									</div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">voluptas nulla pariatur</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">voluptas nulla pariatur</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -863,7 +863,7 @@
 										<div class="button-wrapper">										
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -874,12 +874,12 @@
 							<div class="product-layouts">
 								<div class="product-thumb">
 									<div class="image zoom">
-										<a href="product-details.html">
+										<a href="product-details.php">
 											<img src="img/products/05.jpg" alt="05"/>
 											<img src="img/products/06.jpg" alt="06" class="second_image img-responsive"/>										</a>									</div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">aliquam quat voluptatem</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quat voluptatem</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -897,7 +897,7 @@
 										<div class="button-wrapper">										
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -908,12 +908,12 @@
 							<div class="product-layouts">
 								<div class="product-thumb">
 									<div class="image zoom">
-										<a href="product-details.html">
+										<a href="product-details.php">
 											<img src="img/products/06.jpg" alt="06"/>
 												<img src="img/products/07.jpg" alt="07" class="second_image img-responsive"/>												</a>									</div>
 									<div class="thumb-description">
 										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.html">voluptas sit aspernatur</a></h4>
+											<h4 class="product-title text-capitalize"><a href="product-details.php">voluptas sit aspernatur</a></h4>
 										</div>
 										<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -931,7 +931,7 @@
 										<div class="button-wrapper">								
 										<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -953,7 +953,7 @@
 							<h2 class="text-uppercase">Subscribe to our Newsletter</h2>
 					</div>
 					<div class="block-content col-sm-5">
-					<form method="post" action="contact-us.html">
+					<form method="post" action="contact-us.php">
 						<div class="input-group">
 							<input type="email" name="email" value="" placeholder="Email address.." required="" class="form-control">
 							<span class="input-group-btn">
@@ -983,9 +983,9 @@
             <li>
               <a href="#">New Products</a>            </li>
             <li>
-              <a href="category.html">Best Collection</a>            </li>
+              <a href="category.php">Best Collection</a>            </li>
             <li>
-              <a href="wishlist.html">wishlist</a>            </li>
+              <a href="wishlist.php">wishlist</a>            </li>
           </ul>
         </div>
         <div class="col-md-2 footer-column">
@@ -993,13 +993,13 @@
           <a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">products</a>		  </div>
           <ul id="products" class="list-unstyled collapse">
             <li>
-              <a href="blog-details.html">blog</a>            </li>
+              <a href="blog-details.php">blog</a>            </li>
             <li>
-              <a href="about-us.html">about us</a>            </li>
+              <a href="about-us.php">about us</a>            </li>
             <li>
-              <a href="contact-us.html">contact us</a>            </li>
+              <a href="contact-us.php">contact us</a>            </li>
             <li>
-              <a href="my-account.html">my account</a>            </li>
+              <a href="my-account.php">my account</a>            </li>
           </ul>
 
         </div>
@@ -1008,13 +1008,13 @@
           <a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">your account</a>		  </div>
   <ul id="account" class="list-unstyled collapse">
 	<li>
-	  <a href="blog-details.html">personal info</a>            </li>
+	  <a href="blog-details.php">personal info</a>            </li>
 	<li>
 	  <a href="#">orders</a>            </li>
 	<li>
-	  <a href="contact-us.html">addresses</a>            </li>
+	  <a href="contact-us.php">addresses</a>            </li>
 	<li>
-	  <a href="my-account.html">my wishlists</a>            </li>
+	  <a href="my-account.php">my wishlists</a>            </li>
   </ul>
 
 </div>
@@ -1279,7 +1279,7 @@
 					<form action="#">
                       <input class="btn pull-right mt_10 btn-primary" value="Continue shopping" type="submit">
                     </form>
-					<form action="checkout_page.html">
+					<form action="checkout_page.php">
                       <input class="btn pull-right mt_10 btn-secondary" value="Proceed to checkout" type="submit">
                     </form>
 					</div>

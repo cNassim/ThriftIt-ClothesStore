@@ -81,10 +81,37 @@ if (isset($_POST['submit'])) {
                     <input type="submit" class="btn1" name="submit" value="Register" required>
                 </div>
                 <div class="links">
-                    Already a member? <a href="index.php">Sign In</a>
+                    Already a member? <a href="login.php">Sign In</a>
                 </div>
             </form>
         </div>
       </div>
+      <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('img/banner/about.png'); 
+            height: 50px;
+            height: 50px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+      </style>
 </body>
 </html>

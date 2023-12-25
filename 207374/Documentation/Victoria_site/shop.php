@@ -36,7 +36,7 @@
 		<div class="container">
 			<div class="header-middle float-lg-left float-md-left float-sm-left float-xs-none">
 					<div class="logo">
-									<a href="index.html"><img src="img/logos/logo.png" alt="logo" width="200" height="50" ></a>		</div>
+									<a href="index.php"><img src="img/logos/logo.png" alt="logo" width="200" height="50" ></a>		</div>
 			</div> 
 			<div class="header-right d-flex d-xs-flex d-sm-flex justify-content-end float-right">
 			<div class="user-info">
@@ -44,7 +44,7 @@
 			<i class="material-icons">perm_identity</i>		</button>
 			<div id="user-dropdown" class="user-menu">
 			<ul>
-				<li><a href="my-account.html" class="text-capitalize">my account</a></li>
+				<li><a href="my-account.php" class="text-capitalize">my account</a></li>
 				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
 				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
 			</ul>
@@ -81,10 +81,10 @@
 						</table>
 					  </li>
 					  <li class="buttons w-100 float-left">
-						<form action="cart_page.html">
+						<form action="cart_page.php">
 						  <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
 						</form>
-						<form action="checkout_page.html">
+						<form action="checkout_page.php">
 						  <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
 						</form>
 					  </li>
@@ -119,24 +119,24 @@
 				  <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item dropdown mega-dropdown">
-				<a class="nav-link text-uppercase" href="shop.html">Shop</a>
+				<a class="nav-link text-uppercase" href="shop.php">Shop</a>
 				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase dropdown-toggle" href="shop.html">
+				<a class="nav-link text-uppercase dropdown-toggle" href="shop.php">
 					Outfit Finder
 				  <span class="sr-only">(current)</span></a>
 				  <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
 					  <div class="sub-menu mb-xl-0 mb-4">
 						  <ul class="list-unstyled">
 							  <li>
-								  <a class="menu-item pl-0" href="index.html">
+								  <a class="menu-item pl-0" href="index.php">
 								Preparation de valises</a> </li>
 							  <li>
-								  <a class="menu-item pl-0" href="advices.html">
+								  <a class="menu-item pl-0" href="advices.php">
 								Style Tips
 								</a>
 							</li>
 							<li>
-								<a class="menu-item pl-0" href="index2.html">
+								<a class="menu-item pl-0" href="index2.php">
 								habada law
 							  </a>
 						  </li>
@@ -145,7 +145,7 @@
 				  </div>
 				</li>
 				<li class="nav-item">   
-				<a class="nav-link text-uppercase" href="about-us.html">About us </a>
+				<a class="nav-link text-uppercase" href="about-us.php">About us </a>
 				</li>
 				<!-- Links -->
 				</div>
@@ -213,7 +213,7 @@
 								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
 					<div class="product-thumb">
 						<div class="image zoom">
-							<a href="product-details.html">
+							<a href="product-details.php">
 								<img src="img/products/01.jpg" alt="01"/>
 								<img src="img/products/02.jpg" alt="02" class="second_image img-responsive"/>							</a>
 							<ul class="countdown countdown1">
@@ -225,7 +225,7 @@
 						</div>
 						<div class="thumb-description">
 							<div class="caption">
-								<h4 class="product-title text-capitalize"><a href="product-details.html">aliquam quaerat voluptatem</a></h4>
+								<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quaerat voluptatem</a></h4>
 							</div>
 							<div class="rating">
 							<div class="product-ratings d-inline-block align-middle">
@@ -243,7 +243,7 @@
 							<div class="button-wrapper">
 							<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal" disabled><i class="material-icons">shopping_cart</i><span>Out of stock</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -254,7 +254,7 @@
 								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6"> 
 									<div class="product-thumb">
 										<div class="image zoom">
-											<a href="product-details.html">
+											<a href="product-details.php">
 												<img src="img/products/02.jpg" alt="02"/>
 												<img src="img/products/03.jpg" alt="03" class="second_image img-responsive"/>											</a>
 											<ul class="countdown countdown2">
@@ -270,7 +270,7 @@
 										</div>
 										<div class="thumb-description">
 											<div class="caption">
-												<h4 class="product-title text-capitalize w-100 float-left"><a href="product-details.html">aspetur autodit autfugit</a></h4>
+												<h4 class="product-title text-capitalize w-100 float-left"><a href="product-details.php">aspetur autodit autfugit</a></h4>
 											</div>
 											<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
@@ -287,7 +287,7 @@
 											<div class="button-wrapper">
 											<div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -298,12 +298,12 @@
 								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
 									<div class="product-thumb">
 										<div class="image zoom">
-											<a href="product-details.html">
+											<a href="product-details.php">
 												<img src="img/products/03.jpg" alt="03"/>
 												<img src="img/products/04.jpg" alt="04" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">magni dolores eosquies</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">magni dolores eosquies</a></h4>
 											</div>
 											<div class="rating">
 												<div class="product-ratings d-inline-block align-middle">
@@ -320,7 +320,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>										</div>
@@ -330,12 +330,12 @@
 								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
 									<div class="product-thumb">
 										<div class="image zoom">
-											<a href="product-details.html">
+											<a href="product-details.php">
 												<img src="img/products/04.jpg" alt="04"/>
 												<img src="img/products/05.jpg" alt="05" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description">
 											<div class="caption">
-												<h4 class="product-title text-capitalize w-100 float-left"><a href="product-details.html">voluptas nulla pariatur</a></h4>
+												<h4 class="product-title text-capitalize w-100 float-left"><a href="product-details.php">voluptas nulla pariatur</a></h4>
 											</div>
 											<div class="rating">
 												<div class="product-ratings d-inline-block align-middle">
@@ -352,7 +352,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -363,12 +363,12 @@
 								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
 									<div class="product-thumb">
 										<div class="image zoom">
-											<a href="product-details.html">
+											<a href="product-details.php">
 												<img src="img/products/05.jpg" alt="05"/>
 												<img src="img/products/06.jpg" alt="06" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">aliquam quat voluptatem</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quat voluptatem</a></h4>
 											</div>
 											<div class="rating">
 												<div class="product-ratings d-inline-block align-middle">
@@ -385,7 +385,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -396,12 +396,12 @@
 								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
 									<div class="product-thumb">
 										<div class="image zoom">
-											<a href="product-details.html">
+											<a href="product-details.php">
 												<img src="img/products/06.jpg" alt="06"/>
 												<img src="img/products/07.jpg" alt="07" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">voluptas sit aspernatur</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">voluptas sit aspernatur</a></h4>
 											</div>
 											<div class="rating">
 												<div class="product-ratings d-inline-block align-middle">
@@ -418,7 +418,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -429,12 +429,12 @@
 								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
 									<div class="product-thumb">
 										<div class="image zoom">
-											<a href="product-details.html">
+											<a href="product-details.php">
 												<img src="img/products/07.jpg" alt="03"/>
 												<img src="img/products/08.jpg" alt="08" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">similique suntin culpaqui</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">similique suntin culpaqui</a></h4>
 											</div>
 											<div class="rating">
 												<div class="product-ratings d-inline-block align-middle">
@@ -451,7 +451,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal" disabled="disabled"><i class="material-icons">shopping_cart</i><span>out of stock</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -462,12 +462,12 @@
 								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
 									<div class="product-thumb">
 										<div class="image zoom">
-											<a href="product-details.html">
+											<a href="product-details.php">
 												<img src="img/products/08.jpg" alt="08"/>
 												<img src="img/products/09.jpg" alt="09" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">suscipit laboriosam nisi</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">suscipit laboriosam nisi</a></h4>
 											</div>
 											<div class="rating">
 												<div class="product-ratings d-inline-block align-middle">
@@ -484,7 +484,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -499,7 +499,7 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-5 col-md-4">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/01.jpg" alt="01"/>
 												<img src="img/products/02.jpg" alt="02" class="second_image img-responsive"/>											
 											</a>
@@ -512,7 +512,7 @@
 																						</div>
 										<div class="thumb-description col-xs-12 col-sm-7 col-md-8 position-static text-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">aliquam quaerat voluptatem</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quaerat voluptatem</a></h4>
 											</div>
 											<div class="rating mb-10">
 											<div class="product-ratings d-inline-block align-middle">
@@ -543,7 +543,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal" disabled="disabled"><i class="material-icons">shopping_cart</i><span>out of stock</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -554,7 +554,7 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-5 col-md-4">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/02.jpg" alt="02"/>
 												<img src="img/products/03.jpg" alt="03" class="second_image img-responsive"/></a>	
 												<ul class="countdown countdown5 text-center">
@@ -566,7 +566,7 @@
 																					</div>
 										<div class="thumb-description col-xs-12  col-sm-7 col-md-8 position-static text-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">aspetur autodit autfugit</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">aspetur autodit autfugit</a></h4>
 											</div>
 											<div class="rating mb-10">
 											<div class="product-ratings d-inline-block align-middle">
@@ -586,7 +586,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -597,12 +597,12 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-5 col-md-4">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/03.jpg" alt="03"/>
 												<img src="img/products/04.jpg" alt="04" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12  col-sm-7 col-md-8 position-static text-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">magni dolores eosquies</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">magni dolores eosquies</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -622,7 +622,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -633,12 +633,12 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-5 col-md-4">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/04.jpg" alt="04"/>
 												<img src="img/products/05.jpg" alt="05" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12  col-sm-7 col-md-8 position-static text-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">voluptas nulla pariatur</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">voluptas nulla pariatur</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -658,7 +658,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -669,12 +669,12 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-5 col-md-4">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/05.jpg" alt="05"/>
 												<img src="img/products/06.jpg" alt="06" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12  col-sm-7 col-md-8 position-static text-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">aliquam quat voluptatem</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quat voluptatem</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -694,7 +694,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -705,12 +705,12 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-5 col-md-4">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/06.jpg" alt="06"/>
 												<img src="img/products/07.jpg" alt="07" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12  col-sm-7 col-md-8 position-static text-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">voluptas sit aspernatur</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">voluptas sit aspernatur</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -730,7 +730,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -741,12 +741,12 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-5 col-md-4">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/07.jpg" alt="07"/>
 												<img src="img/products/08.jpg" alt="08" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12  col-sm-7 col-md-8 position-static text-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">similique suntin culpaqui</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">similique suntin culpaqui</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -766,7 +766,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal" disabled="disabled"><i class="material-icons">shopping_cart</i><span>out of stock</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -777,12 +777,12 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-5 col-md-4">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/08.jpg" alt="08"/>
 												<img src="img/products/09.jpg" alt="09" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12  col-sm-7 col-md-8 position-static text-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">suscipit laboriosam nisi</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">suscipit laboriosam nisi</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -802,7 +802,7 @@
 											<div class="button-wrapper">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -816,13 +816,13 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-3 col-md-2">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/01.jpg" alt="01"/>
 												<img src="img/products/02.jpg" alt="02" class="second_image img-responsive"/>											</a>																						</div>
 										<div class="thumb-description col-xs-12 col-sm-9 col-md-10 position-static text-left">
 										<div class="sort-title col-md-5 col-sm-7 float-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">aliquam quaerat voluptatem</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quaerat voluptatem</a></h4>
 											</div>
 											
 											<div class="rating mb-10">
@@ -855,7 +855,7 @@
 											<div class="button-wrapper col-md-4 col-sm-5 float-left text-center text-md-center text-sm-center text-xs-left">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal" disabled="disabled"><i class="material-icons">shopping_cart</i><span>out of stock</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -866,13 +866,13 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-3 col-md-2">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/02.jpg" alt="02"/>
 												<img src="img/products/03.jpg" alt="03" class="second_image img-responsive"/></a>																					</div>
 										<div class="thumb-description col-xs-12 col-sm-9 col-md-10 position-static text-left">
 										<div class="sort-title col-md-5 col-sm-7 float-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">aspetur autodit autfugit</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">aspetur autodit autfugit</a></h4>
 											</div>
 											<div class="rating mb-10">
 											<div class="product-ratings d-inline-block align-middle">
@@ -894,7 +894,7 @@
 											<div class="button-wrapper col-md-4 col-sm-5 float-left text-center text-md-center text-sm-center text-xs-left">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -905,13 +905,13 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-3 col-md-2">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/03.jpg" alt="03"/>
 												<img src="img/products/04.jpg" alt="04" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12 col-sm-9 col-md-10 position-static text-left">
 										<div class="sort-title col-md-5 col-sm-7 float-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">magni dolores eosquies</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">magni dolores eosquies</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -933,7 +933,7 @@
 											<div class="button-wrapper col-md-4 col-sm-5 float-left text-center text-md-center text-sm-center text-xs-left">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -944,13 +944,13 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-3 col-md-2">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/04.jpg" alt="04"/>
 												<img src="img/products/05.jpg" alt="05" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12 col-sm-9 col-md-10 position-static text-left">
 										<div class="sort-title col-md-5 col-sm-7 float-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">voluptas nulla pariatur</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">voluptas nulla pariatur</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -972,7 +972,7 @@
 											<div class="button-wrapper col-md-4 col-sm-5 float-left text-center text-md-center text-sm-center text-xs-left">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -983,13 +983,13 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-3 col-md-2">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/05.jpg" alt="05"/>
 												<img src="img/products/06.jpg" alt="06" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12 col-sm-9 col-md-10 position-static text-left">
 										<div class="sort-title col-md-5 col-sm-7 float-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">aliquam quat voluptatem</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quat voluptatem</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -1011,7 +1011,7 @@
 											<div class="button-wrapper col-md-4 col-sm-5 float-left text-center text-md-center text-sm-center text-xs-left">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -1022,13 +1022,13 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-3 col-md-2">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/06.jpg" alt="06"/>
 												<img src="img/products/07.jpg" alt="07" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12 col-sm-9 col-md-10 position-static text-left">
 													<div class="sort-title col-md-5 col-sm-7 float-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">voluptas sit aspernatur</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">voluptas sit aspernatur</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -1051,7 +1051,7 @@
 											<div class="button-wrapper col-md-4 col-sm-5 float-left text-center text-md-center text-sm-center text-xs-left">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -1062,13 +1062,13 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-3 col-md-2">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/07.jpg" alt="07"/>
 												<img src="img/products/08.jpg" alt="08" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12 col-sm-9 col-md-10 position-static text-left">
 											<div class="sort-title col-md-5 col-sm-7 float-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">similique suntin culpaqui</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">similique suntin culpaqui</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -1090,7 +1090,7 @@
 											<div class="button-wrapper col-md-4 col-sm-5 float-left text-center text-md-center text-sm-center text-xs-left">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal" disabled="disabled"><i class="material-icons">shopping_cart</i><span>out of stock</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -1101,13 +1101,13 @@
 								<div class="product-layouts">
 									<div class="product-thumb row">
 										<div class="image zoom col-xs-12 col-sm-3 col-md-2">
-											<a href="product-details.html" class="d-block position-relative">
+											<a href="product-details.php" class="d-block position-relative">
 												<img src="img/products/08.jpg" alt="08"/>
 												<img src="img/products/09.jpg" alt="09" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description col-xs-12 col-sm-9 col-md-10 position-static text-left">
 										<div class="sort-title col-md-5 col-sm-7 float-left">
 											<div class="caption">
-												<h4 class="product-title text-capitalize"><a href="product-details.html">suscipit laboriosam nisi</a></h4>
+												<h4 class="product-title text-capitalize"><a href="product-details.php">suscipit laboriosam nisi</a></h4>
 											</div>
 											<div class="rating mb-10">
 												<div class="product-ratings d-inline-block align-middle">
@@ -1129,7 +1129,7 @@
 											<div class="button-wrapper col-md-4 col-sm-5 float-left text-center text-md-center text-sm-center text-xs-left">
 <div class="button-group text-center">
 												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 											</div>
@@ -1265,13 +1265,13 @@
 						<a href="#company" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">QUICK LINKS</a> </div>
 					<ul id="company" class="list-unstyled collapse">
 						<li>
-							<a href="index.html">Home</a> </li>
+							<a href="index.php">Home</a> </li>
 						<li>
-							<a href="about-us.html">About Us</a> </li>
+							<a href="about-us.php">About Us</a> </li>
 						<li>
-							<a href="shop.html">Offers</a> </li>
+							<a href="shop.php">Offers</a> </li>
 						<li>
-							<a href="about-us.html">Contact Us</a> </li>
+							<a href="about-us.php">Contact Us</a> </li>
 					</ul>
 				</div>
 				<div class="col-md-2 footer-column">
@@ -1279,11 +1279,11 @@
 						<a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">ABOUT</a> </div>
 					<ul id="products" class="list-unstyled collapse">
 						<li>
-							<a href="about-us.html">Who are we?</a> </li>
+							<a href="about-us.php">Who are we?</a> </li>
 						<li>
-							<a href="about-us.html">Our story</a> </li>
+							<a href="about-us.php">Our story</a> </li>
 						<li>
-							<a href="about-us.html">Our mission</a> </li>
+							<a href="about-us.php">Our mission</a> </li>
 					</ul>
 
 				</div>
@@ -1292,13 +1292,13 @@
 						<a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
 					<ul id="account" class="list-unstyled collapse">
 						<li>
-							<a href="blog-details.html">personal info</a> </li>
+							<a href="blog-details.php">personal info</a> </li>
 						<li>
-							<a href="cart_page.html">Orders</a> </li>
+							<a href="cart_page.php">Orders</a> </li>
 						<li>
-							<a href="wishlist.html">my wishlists</a> </li>
+							<a href="wishlist.php">my wishlists</a> </li>
 						<li>
-							<a href="my-account.html">Sign In / Sign Up</a> </li>
+							<a href="my-account.php">Sign In / Sign Up</a> </li>
 					</ul>
 
 				</div>
@@ -1564,7 +1564,7 @@
 					<form action="#">
                       <input class="btn pull-right mt_10 btn-primary" value="Continue shopping" type="submit">
                     </form>
-					<form action="checkout_page.html">
+					<form action="checkout_page.php">
                       <input class="btn pull-right mt_10 btn-secondary" value="Proceed to checkout" type="submit">
                     </form>
 					</div>
@@ -1604,7 +1604,7 @@
 			</div>
 			<div class="buttons col-sm-5 col-lg-2">
 				<div class="clear-btn btn btn-primary float-left w-100 mb-15">clear</div>
-				<a href="compare.html" class="compare-btn btn btn-primary float-left w-100">compare</a>
+				<a href="compare.php" class="compare-btn btn btn-primary float-left w-100">compare</a>
 			</div>
 		</div>
 	</div>

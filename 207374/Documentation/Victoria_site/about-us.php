@@ -36,7 +36,7 @@
                     <div class="container">
                         <div class="header-middle float-left">
                             <div class="logo">
-                                <a href="index.html"><img src="img/logos/logo.png" alt="NatureCircle"></a>
+                                <a href="index.php"><img src="img/logos/logo.png" alt="NatureCircle"></a>
                             </div>
                         </div>
                         <div class="header-right d-flex d-xs-block d-sm-flex justify-content-end float-right">
@@ -46,7 +46,7 @@
                                 </button>
                                 <div id="user-dropdown" class="user-menu">
                                     <ul>
-                                        <li><a href="my-account.html" class="text-capitalize">my account</a></li>
+                                        <li><a href="my-account.php" class="text-capitalize">my account</a></li>
                                         <li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
                                         <li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
                                     </ul>
@@ -89,10 +89,10 @@
                                             </table>
                                         </li>
                                         <li class="buttons w-100 float-left">
-                                            <form action="cart_page.html">
+                                            <form action="cart_page.php">
                                                 <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
                                             </form>
-                                            <form action="checkout_page.html">
+                                            <form action="checkout_page.php">
                                                 <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
                                             </form>
                                         </li>
@@ -123,29 +123,29 @@
             <!-- Links -->
             <ul class="navbar-nav m-auto justify-content-center">
             <li class="nav-item dropdown active">
-            <a class="nav-link text-uppercase" href="index.html">
+            <a class="nav-link text-uppercase" href="index.php">
                 Home
               <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown mega-dropdown">
-            <a class="nav-link text-uppercase" href="shop.html">Shop</a>
+            <a class="nav-link text-uppercase" href="shop.php">Shop</a>
             <li class="nav-item dropdown active">
-            <a class="nav-link text-uppercase dropdown-toggle" href="shop.html">
+            <a class="nav-link text-uppercase dropdown-toggle" href="shop.php">
                 Outfit Finder
               <span class="sr-only">(current)</span></a>
               <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
                   <div class="sub-menu mb-xl-0 mb-4">
                       <ul class="list-unstyled">
                           <li>
-                              <a class="menu-item pl-0" href="index.html">
+                              <a class="menu-item pl-0" href="index.php">
                             Preparation de valises</a> </li>
                           <li>
-                              <a class="menu-item pl-0" href="advices.html">
+                              <a class="menu-item pl-0" href="advices.php">
                             Style Tips
                             </a>
                         </li>
                         <li>
-                            <a class="menu-item pl-0" href="suggest.html">
+                            <a class="menu-item pl-0" href="suggest.php">
                             DailyOutfitSuggestions
                           </a>
                       </li>
@@ -154,7 +154,7 @@
               </div>
             </li>
             <li class="nav-item">   
-            <a class="nav-link text-uppercase" href="about-us.html">About us </a>
+            <a class="nav-link text-uppercase" href="about-us.php">About us </a>
             </li>
             <!-- Links -->
             </div>
@@ -266,13 +266,13 @@
                         <a href="#company" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">QUICK LINKS</a> </div>
                     <ul id="company" class="list-unstyled collapse">
                         <li>
-                            <a href="index.html">Home</a> </li>
+                            <a href="index.php">Home</a> </li>
                         <li>
-                            <a href="about-us.html">About Us</a> </li>
+                            <a href="about-us.php">About Us</a> </li>
                         <li>
-                            <a href="shop.html">Offers</a> </li>
+                            <a href="shop.php">Offers</a> </li>
                         <li>
-                            <a href="about-us.html">Contact Us</a> </li>
+                            <a href="about-us.php">Contact Us</a> </li>
                     </ul>
                 </div>
                 <div class="col-md-2 footer-column">
@@ -280,11 +280,11 @@
                         <a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">ABOUT</a> </div>
                     <ul id="products" class="list-unstyled collapse">
                         <li>
-                            <a href="about-us.html">Who are we?</a> </li>
+                            <a href="about-us.php">Who are we?</a> </li>
                         <li>
-                            <a href="about-us.html">Our story</a> </li>
+                            <a href="about-us.php">Our story</a> </li>
                         <li>
-                            <a href="about-us.html">Our mission</a> </li>
+                            <a href="about-us.php">Our mission</a> </li>
                     </ul>
 
                 </div>
@@ -293,13 +293,13 @@
                         <a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
                     <ul id="account" class="list-unstyled collapse">
                         <li>
-                            <a href="blog-details.html">personal info</a> </li>
+                            <a href="blog-details.php">personal info</a> </li>
                         <li>
-                            <a href="cart_page.html">Orders</a> </li>
+                            <a href="cart_page.php">Orders</a> </li>
                         <li>
-                            <a href="wishlist.html">my wishlists</a> </li>
+                            <a href="wishlist.php">my wishlists</a> </li>
                         <li>
-                            <a href="my-account.html">Sign In / Sign Up</a> </li>
+                            <a href="my-account.php">Sign In / Sign Up</a> </li>
                     </ul>
 
                 </div>

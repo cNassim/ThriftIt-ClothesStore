@@ -4,7 +4,7 @@ let classy = [
         secondImageSrc: "img/products/p9.jpg",
         altText: "01",
         secondAltText: "02",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Blazer + Bottom",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -20,7 +20,7 @@ let classy = [
         secondImageSrc: "img/products/p7.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Formal fit (Blazer + bottom)",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -34,7 +34,7 @@ let classy = [
         secondImageSrc: "img/products/p11.jpg",
         altText: "04",
         secondAltText: "05",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Formal fit (Blazer + Skirt)",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -48,7 +48,7 @@ let classy = [
         secondImageSrc: "img/products/p13.jpg",
         altText: "06",
         secondAltText: "07",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Woolen Coat",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -65,7 +65,7 @@ let StreetWear= [
         secondImageSrc: "img/products/s2.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Crochet Detail Top",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -79,7 +79,7 @@ let StreetWear= [
         secondImageSrc: "img/products/s4.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Crochet Detail Top",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -93,7 +93,7 @@ let StreetWear= [
         secondImageSrc: "img/products/s6.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Crochet Detail Top",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -110,7 +110,7 @@ let StreetWear= [
         secondImageSrc: "img/products/c2.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Knitted Lounge Set",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -124,7 +124,7 @@ let StreetWear= [
         secondImageSrc: "img/products/c4.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Crochet Detail Top",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -138,7 +138,7 @@ let StreetWear= [
         secondImageSrc: "img/products/c6.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Crochet Detail Top",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -155,7 +155,7 @@ let sporty = [
         secondImageSrc: "img/products/sp2.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Crochet Detail Top",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -169,7 +169,7 @@ let sporty = [
     secondImageSrc: "img/products/sp4.jpg",
     altText: "03",
     secondAltText: "04",
-    productLink: "product-details.html",
+    productLink: "product-details.php",
     productTitle: "Crochet Detail Top",
     ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
              '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
@@ -183,7 +183,7 @@ let sporty = [
         secondImageSrc: "img/products/s4.jpg",
         altText: "03",
         secondAltText: "04",
-        productLink: "product-details.html",
+        productLink: "product-details.php",
         productTitle: "Crochet Detail Top",
         ratings: '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +
                  '<span class="fa fa-stack"><i class="material-icons">star</i></span>' +

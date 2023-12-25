@@ -35,7 +35,7 @@
                     <div class="container">
                         <div class="header-middle float-left">
                             <div class="logo">
-                                <a href="index.html"><img src="img/logos/logo.png" alt="NatureCircle"></a>
+                                <a href="index.php"><img src="img/logos/logo.png" alt="NatureCircle"></a>
                             </div>
                         </div>
                         <div class="header-right d-flex d-xs-block d-sm-flex justify-content-end float-right">
@@ -45,7 +45,7 @@
                                 </button>
                                 <div id="user-dropdown" class="user-menu">
                                     <ul>
-                                        <li><a href="my-account.html" class="text-capitalize">my account</a></li>
+                                        <li><a href="my-account.php" class="text-capitalize">my account</a></li>
                                         <li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
                                         <li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
                                     </ul>
@@ -88,10 +88,10 @@
                                             </table>
                                         </li>
                                         <li class="buttons w-100 float-left">
-                                            <form action="cart_page.html">
+                                            <form action="cart_page.php">
                                                 <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
                                             </form>
-                                            <form action="checkout_page.html">
+                                            <form action="checkout_page.php">
                                                 <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
                                             </form>
                                         </li>
@@ -122,29 +122,29 @@
             <!-- Links -->
             <ul class="navbar-nav m-auto justify-content-center">
             <li class="nav-item dropdown active">
-            <a class="nav-link text-uppercase" href="index.html">
+            <a class="nav-link text-uppercase" href="index.php">
                 Home
               <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown mega-dropdown">
-            <a class="nav-link text-uppercase" href="shop.html">Shop</a>
+            <a class="nav-link text-uppercase" href="shop.php">Shop</a>
             <li class="nav-item dropdown active">
-            <a class="nav-link text-uppercase dropdown-toggle" href="shop.html">
+            <a class="nav-link text-uppercase dropdown-toggle" href="shop.php">
                 Outfit Finder
               <span class="sr-only">(current)</span></a>
               <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
                   <div class="sub-menu mb-xl-0 mb-4">
                       <ul class="list-unstyled">
                           <li>
-                              <a class="menu-item pl-0" href="index.html">
+                              <a class="menu-item pl-0" href="index.php">
                             Preparation de valises</a> </li>
                           <li>
-                              <a class="menu-item pl-0" href="index2.html">
+                              <a class="menu-item pl-0" href="index2.php">
                             Cas n2 (Zineb abdi3i rah nsit smiya) 
                             </a>
                         </li>
 						<li>
-							<a class="menu-item pl-0" href="accordions.html">
+							<a class="menu-item pl-0" href="accordions.php">
 							habada law
 						  </a>
 					  </li>
@@ -153,7 +153,7 @@
               </div>
             </li>
             <li class="nav-item">   
-            <a class="nav-link text-uppercase" href="about-us.html">About us </a>
+            <a class="nav-link text-uppercase" href="about-us.php">About us </a>
             </li>
             <!-- Links -->
             </div>
@@ -383,7 +383,7 @@
 							<h2 class="text-uppercase">Subscribe to our Newsletter</h2>
 					</div>
 					<div class="block-content col-sm-5">
-					<form method="post" action="contact-us.html">
+					<form method="post" action="contact-us.php">
 						<div class="input-group">
 							<input type="email" name="email" value="" placeholder="Email address.." required="" class="form-control">
 							<span class="input-group-btn">
@@ -413,9 +413,9 @@
             <li>
               <a href="#">New Products</a>            </li>
             <li>
-              <a href="category.html">Best Collection</a>            </li>
+              <a href="category.php">Best Collection</a>            </li>
             <li>
-              <a href="wishlist.html">wishlist</a>            </li>
+              <a href="wishlist.php">wishlist</a>            </li>
           </ul>
         </div>
         <div class="col-md-2 footer-column">
@@ -423,13 +423,13 @@
           <a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">products</a>		  </div>
           <ul id="products" class="list-unstyled collapse">
             <li>
-              <a href="blog-details.html">blog</a>            </li>
+              <a href="blog-details.php">blog</a>            </li>
             <li>
-              <a href="about-us.html">about us</a>            </li>
+              <a href="about-us.php">about us</a>            </li>
             <li>
-              <a href="contact-us.html">contact us</a>            </li>
+              <a href="contact-us.php">contact us</a>            </li>
             <li>
-              <a href="my-account.html">my account</a>            </li>
+              <a href="my-account.php">my account</a>            </li>
           </ul>
 
         </div>
@@ -438,13 +438,13 @@
           <a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">your account</a>		  </div>
   <ul id="account" class="list-unstyled collapse">
 	<li>
-	  <a href="blog-details.html">personal info</a>            </li>
+	  <a href="blog-details.php">personal info</a>            </li>
 	<li>
 	  <a href="#">orders</a>            </li>
 	<li>
-	  <a href="contact-us.html">addresses</a>            </li>
+	  <a href="contact-us.php">addresses</a>            </li>
 	<li>
-	  <a href="my-account.html">my wishlists</a>            </li>
+	  <a href="my-account.php">my wishlists</a>            </li>
   </ul>
 
 </div>
@@ -707,7 +707,7 @@
 					<form action="#">
                       <input class="btn pull-right mt_10 btn-primary" value="Continue shopping" type="submit">
                     </form>
-					<form action="checkout_page.html">
+					<form action="checkout_page.php">
                       <input class="btn pull-right mt_10 btn-primary" value="Proceed to checkout" type="submit">
                     </form>
 					</div>
