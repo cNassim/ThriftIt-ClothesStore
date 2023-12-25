@@ -16,6 +16,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/styles.css" rel="stylesheet">
+	<link href="css/styles-register.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/owl-carousel.css" rel="stylesheet">
 	 <link href="css/lightbox.css" rel="stylesheet">
@@ -43,8 +44,8 @@
 		<div id="user-dropdown" class="user-menu">
 		<ul>
 			<li><a href="my-account.html" class="text-capitalize">my account</a></li>
-			<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
-			<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
+			<li><a href="register.php" class="modal-view button">Register</a></li>
+			<li><a href="#" class="modal-view button">login</a></li>
 		</ul>
 		</div>
 		</div>
