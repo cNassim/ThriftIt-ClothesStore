@@ -5,7 +5,7 @@ if(isset($_POST['login_btn'])){
 $email = $_POST['email'];
 $password = md5($_POST['password']);
 
-$stmt = $conn->prepare("SELECT user_id,user_name,user_email,password FROM users WHERE user_email = ? AND password =? LIMIT 1");
+$stmt = $conn->prepare("SELECT user_id,user_name,user_email,user_password FROM users WHERE user_email = ? AND user_password =? LIMIT 1");
 $stmt->bind_param('ss',$email,$password);
 if ($stmt->execute()){
     $stmt->bind_result($user_id,$user_name,$user_email,$user_password);
@@ -39,7 +39,7 @@ if ($stmt->execute()){
     <div class="container">
         <div class="box form-box">
             <header>Login</header>
-            <form action="index.php" method="post">
+            <form action="login.php" method="post">
                 <div class="field input">
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" autocomplete="off" required>
