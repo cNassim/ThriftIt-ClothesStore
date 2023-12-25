@@ -28,10 +28,8 @@ if (isset($_POST['submit'])) {
 
             // If account was created successfully
             if ($stmt->execute()) {
-                $_SESSION['email'] = $email;
-                $_SESSION['username'] = $username;
-                $_SESSION['logged_in'] = true;
                 echo "<script>alert('Created successfully');</script>";
+                header('location:login.php');
             } else {
                 echo "<script>alert('Could not create an account at the moment');</script>";
             }
