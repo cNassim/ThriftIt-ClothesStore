@@ -36,19 +36,39 @@
 		<div class="header-middle float-lg-left float-md-left float-sm-left float-xs-none">
 				<div class="logo">
 								<a href="index.php"><img src="img/logos/logo.png" alt="logo" width="200" height="50" ></a>		</div>
-		</div> 
+		</div>
 		<div class="header-right d-flex d-xs-flex d-sm-flex justify-content-end float-right">
 		<div class="user-info">
-		<button type="button" class="btn">
-		<i class="material-icons">perm_identity</i>		</button>
-		<div id="user-dropdown" class="user-menu">
+    <?php
+    // Check if the user is logged in (replace this condition with your actual login check)
+    $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] ? 'true' : 'false';
+    
+    if ($isLoggedIn) {
+        // Display 'My Account' only if the user is logged in
+        echo '<button type="button" class="btn">
+		<i class="material-icons">perm_identity</i>
+	</button>
+	<div id="user-dropdown" class="user-menu">
 		<ul>
 			<li><a href="my-account.php" class="text-capitalize">my account</a></li>
-			<li><a href="register.php" class="modal-view button">Register</a></li>
-			<li><a href="login.php" class="modal-view button">login</a></li>
 		</ul>
-		</div>
-		</div>
+	</div>';
+    } else {
+        // Display Register and Login options if the user is not logged in
+        echo '
+        <button type="button" class="btn">
+            <i class="material-icons">perm_identity</i>
+        </button>
+        <div id="user-dropdown" class="user-menu">
+            <ul>
+                <li><a href="register.php" class="modal-view button">Register</a></li>
+                <li><a href="login.php" class="modal-view button">login</a></li>
+            </ul>
+        </div>';
+    }
+    ?>
+</div>
+
 		<div class="cart-wrapper">
 			<button type="button" class="btn">
 				<i class="material-icons">shopping_cart</i>
