@@ -1,55 +1,45 @@
 <?php
-if(isset($_POST['login'])){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    
+session_start();
+include("php/config.php");
+if(isset($_POST['login_btn'])){
+$email = $_POST['email'];
+$password = md5($_POST['password']);
 
-  require_once "./server/cox.php";
-    
-    $db = cnx_pdo();
+$stmt = $conn->prepare("SELECT user_id,user_name,user_email,password FROM users WHERE user_email = ? AND password =? LIMIT 1");
+$stmt->bind_param('ss',$email,$password);
+if ($stmt->execute()){
+    $stmt->bind_result($user_id,$user_name,$user_email,$user_password);
+    $stmt->store_result();
 
-    try {
-        $stmt = $db->prepare("SELECT * FROM users WHERE user_email = ?");
-        $stmt->execute([$email]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user) {
-            if (password_verify($password, $user['user_password'])) {
-                // Mot de passe correct
-                session_start();
-                $_SESSION['email'] = $email;
-                $_SESSION['user_id'] = $user['user_id']; // Assurez-vous que 'user_id' est une colonne dans votre table
-                header("Location: loged_home.php");
-                exit();
-            } else {
-                // Mot de passe incorrect
-                echo "<div>Mot de passe incorrect</div>";
-            }
-        } 
-        else {
-            // Aucun utilisateur avec cet email
-            echo "<div>Email introuvable</div>";
-        }
-    } catch (PDOException $e) {
-        echo 'Erreur : ' . $e->getMessage();
+    if($stmt->num_rows()==1){
+        $row = $stmt->fetch();
+        $_SESSION['user_id'] = $user_id;
+        $_SESSION['user_name']=$user_name;
+        $_SESSION['user_email']=$user_email;
+        $_SESSION['logged_in'] = true;
+        header('location:index.php');
+    }else{
+        echo"<script>alert('Could not verify your account');</script>";
     }
+}else{
+    echo"<script>alert('Something is wrong try again later');</script>";
+}
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style-login.css">
+    <link rel="stylesheet" href="css/style-register.css">
     <title>Login</title>
 </head>
 <body>
     <div class="container">
         <div class="box form-box">
-            <header>Sign In</header>
-            <form action="" method="post">
+            <header>Login</header>
+            <form action="index.php" method="post">
                 <div class="field input">
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" autocomplete="off" required>
@@ -61,17 +51,40 @@ if(isset($_POST['login'])){
                 </div>
 
                 <div class="field">
-                    <input type="submit" class="btn1" name="login" value="Sign In" required>
+                    <input type="submit" class="btn1" name="login_btn" value="Login" required>
                 </div>
                 <div class="links">
-                    Not a member? <a href="register.php">Sign Up</a>
+                    Don't have account? <a href="register.php">Sign Up Now</a>
                 </div>
             </form>
         </div>
-    </div>
+      </div>
+      <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('img/banner/about.png'); 
+            height: 50px;
+            height: 50px;
+            background-size: cover;
+            background-position: center;
+        }
 
-    <style>
-        /* Ajoutez vos styles de page de connexion ici */
-    </style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+      </style>
 </body>
 </html>
