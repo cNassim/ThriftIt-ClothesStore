@@ -2,10 +2,17 @@
 
 include('php/config.php');
 
-$stmt = $conn->prepare("SELECT * FROM products LIMIT 0, 9;");
-$stmt->execute();
-$products = $stmt->get_result();
-
+if (isset($_GET['product_category'])){
+	$product_category = $_GET['product_category'];
+	$stmt = $conn->prepare("SELECT * FROM products WHERE product_category = ?  LIMIT 0, 9;");
+	$stmt ->bind_param("s",$product_category);
+	$stmt->execute();
+	$products = $stmt->get_result();
+}else{
+	$stmt = $conn->prepare("SELECT * FROM products LIMIT 0, 9;");
+	$stmt->execute();
+	$products = $stmt->get_result();
+}
 
 $stmt1 = $conn->prepare("SELECT product_category, COUNT(*) AS count_per_category FROM products GROUP BY product_category;");
 $stmt1->execute();
@@ -159,7 +166,7 @@ $nbr = $stmt1->get_result();
 					  </div>
 				  </div>
 				</li>
-				<li class="nav-item">   
+				<li class="nav-item">
 				<a class="nav-link text-uppercase" href="about-us.php">About us </a>
 				</li>
 				<!-- Links -->
@@ -269,7 +276,7 @@ $nbr = $stmt1->get_result();
 						<div id="categoriesMenu" class="expand-lg collapse show">
 							<div class="nav nav-pills flex-column mt-4">
 								<?php while ($row1 = $nbr->fetch_assoc()){ ?>
-								<a href="#" class="nav-link d-flex justify-content-between mb-2 "><span><?php echo $row1['product_category']; ?></span><span class="sidebar-badge"><?php echo $row1['count_per_category']; ?></span></a>
+								<a href="<?php echo "shop-main.php?product_category=".$row1['product_category'];?>" class="nav-link d-flex justify-content-between mb-2 "><span><?php echo $row1['product_category']; ?></span><span class="sidebar-badge"><?php echo $row1['count_per_category']; ?></span></a>
 								<?php }?>
 							</div>
 						</div>
