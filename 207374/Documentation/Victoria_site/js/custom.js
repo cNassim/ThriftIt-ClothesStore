@@ -216,9 +216,9 @@ $(document).ready(function() {
 		if ($class.hasClass('category') || $class.hasClass('off-canvas-left') || $class.hasClass('off-canvas-right')) {
 			$( "#slider-range" ).slider({
 				range: true,
-				min: 55,
+				min: 1,
 				max: 1000,
-				values: [ 55, 1000 ],
+				values: [ 1, 1000 ],
 				slide: function( event, ui ) {
 					$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
 				}

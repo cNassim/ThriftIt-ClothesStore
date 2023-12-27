@@ -173,7 +173,6 @@
                     <div id="suggestionTenue" class="text-center"></div>
                 </div>
             </div>
-    
             <div id="ttspecial" class="ttspecial my-40 bottom-to-top hb-animate-element">
                 <div class="container">
                     <div class="row">

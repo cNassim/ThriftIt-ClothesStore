@@ -251,18 +251,18 @@
 						</div>
 					</div>
 				</div>
-								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6"> 
-									<div class="product-thumb">
-										<div class="image zoom">
-											<a href="product-details.php">
-												<img src="img/products/02.jpg" alt="02"/>
-												<img src="img/products/03.jpg" alt="03" class="second_image img-responsive"/>											</a>
-											<ul class="countdown countdown2">
+							<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
+								<div class="product-thumb">
+									<div class="image zoom">
+										<a href="product-details.php">
+										<img src="img/products/02.jpg" alt="02"/>
+										<img src="img/products/03.jpg" alt="03" class="second_image img-responsive"/>											</a>
+										<ul class="countdown countdown2">
 										  <li><span class="days">00</span><p class="days_text">Days</p></li>
 										  <li><span class="hours">00</span><p class="hours_text">Hours</p></li>
 										  <li><span class="minutes">00</span><p class="minutes_text">Minutes</p></li>
 										  <li><span class="seconds">00</span><p class="seconds_text">Seconds</p></li>
-										</ul>	
+										</ul>
 											<div class="flags">
 											<div class="sale">sale</div>
 											<div class="new">new</div>
@@ -323,16 +323,17 @@
 												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 												<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
 												<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
-											</div>										</div>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
-									<div class="product-thumb">
-										<div class="image zoom">
-											<a href="product-details.php">
-												<img src="img/products/04.jpg" alt="04"/>
-												<img src="img/products/05.jpg" alt="05" class="second_image img-responsive"/>											</a>										</div>
+							</div>
+							<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
+								<div class="product-thumb">
+									<div class="image zoom">
+										<a href="product-details.php">
+											<img src="img/products/04.jpg" alt="04"/>
+											<img src="img/products/05.jpg" alt="05" class="second_image img-responsive"/>											</a>										</div>
 										<div class="thumb-description">
 											<div class="caption">
 												<h4 class="product-title text-capitalize w-100 float-left"><a href="product-details.php">voluptas nulla pariatur</a></h4>
@@ -1643,7 +1644,3 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 		</body>
 </html>
-
-
-
-
