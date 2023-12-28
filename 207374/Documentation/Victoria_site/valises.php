@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -156,36 +158,83 @@
 	</div>
 	</header>
     
-    <main class="main-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center">
-                    <strong><h1>Choose a Style :</h1></strong>
-                    <h1 class="display-4"></h1>
-                    <select id="styleChoice" class="form-control">
-                        <option value="Classy">Classy</option>
-                        <option value="streetwear">Street Wear</option>
-                        <option value="Sporty">Sporty</option>
-                        <option value="Casual">Casual</option>
-                        <!-- Ajoutez d'autres choix selon vos besoins -->
-                    </select>
-                    <button onclick="afficherArticles()" class="btn btn-primary mt-3">Submit</button>
-                    <div id="suggestionTenue" class="text-center"></div>
-                </div>
-            </div>
-            <div id="ttspecial" class="ttspecial my-40 bottom-to-top hb-animate-element">
-                <div class="container">
-                    <div class="row">
-                        <div class="row d-flex flex-wrap" id="articlesContainer">
-                            <!-- Les articles seront ajoutés ici par JavaScript -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    
+   
+    <div class="container">
+        <h1>Travel Planner</h1>
+        <!-- ... (your existing code) ... -->
+
+        <form>
+            <label for="destination">Destination:</label>
+            <select name="destination" required>
+                <option value="Morocco">Morocco</option>
+                <option value="France">France</option>
+                <option value="Australia">Australia</option>
+            </select>
+
+            <label for="duration">Duration of the trip (days):</label>
+            <input type="number" name="duration" required min="1" max="5">
+
+            <label for="weather">Expected Weather:</label>
+            <select name="weather" required>
+                <option value="Sunny">Sunny</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Snowy">Snowy</option>
+            </select>
+
+            <input type="submit" value="Generate Outfits">
+        </form>
+
+        <!-- ... (your existing code) ... -->
+
+    </div>
+    <style>
+
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input, select, textarea {
+            margin-bottom: 16px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Styles for the destination selector */
+        select {
+            width: 100%;
+            padding: 10px;
+        }
+
+        /* Styles for the activities text area */
+        textarea {
+            resize: vertical;
+        }
+    </style>
     
 <br><br><br><br><br><br><br><br>
     <!-- Footer reste inchangé -->
@@ -529,3 +578,14 @@
 		<script src="js/jquery.lazy.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

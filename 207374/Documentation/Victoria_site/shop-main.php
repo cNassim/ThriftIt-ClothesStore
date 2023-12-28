@@ -142,25 +142,25 @@ $nbr = $stmt1->get_result();
 				  <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item dropdown mega-dropdown">
-				<a class="nav-link text-uppercase" href="shop.php">Shop</a>
+				<a class="nav-link text-uppercase" href="shop-main.php">Shop</a>
 				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase dropdown-toggle" href="shop.php">
+				<a class="nav-link text-uppercase dropdown-toggle" href="shop-main.php">
 					Outfit Finder
 				  <span class="sr-only">(current)</span></a>
 				  <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
 					  <div class="sub-menu mb-xl-0 mb-4">
 						  <ul class="list-unstyled">
 							  <li>
-								  <a class="menu-item pl-0" href="index.php">
-								Preparation de valises</a> </li>
+								  <a class="menu-item pl-0" href="valises.php">
+								Trip Planner</a> </li>
 							  <li>
 								  <a class="menu-item pl-0" href="advices.php">
 								Style Tips
 								</a>
 							</li>
 							<li>
-								<a class="menu-item pl-0" href="index2.php">
-								habada law
+								<a class="menu-item pl-0" href="suggest.php">
+								DailyOutfitSuggestions
 							  </a>
 						  </li>
 						  </ul>
@@ -229,8 +229,6 @@ $nbr = $stmt1->get_result();
 								<div class="button-group text-center">
 									<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
 									<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
-									<button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
-									<button type="button" class="btn btn-primary btn-quickview"  data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
 								</div>
 							</div>
 						</div>

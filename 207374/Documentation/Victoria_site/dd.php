@@ -119,25 +119,25 @@
 				  <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item dropdown mega-dropdown">
-				<a class="nav-link text-uppercase" href="shop.php">Shop</a>
+				<a class="nav-link text-uppercase" href="shop-main.php">Shop</a>
 				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase dropdown-toggle" href="shop.php">
+				<a class="nav-link text-uppercase dropdown-toggle" href="shop-main.php">
 					Outfit Finder
 				  <span class="sr-only">(current)</span></a>
 				  <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
 					  <div class="sub-menu mb-xl-0 mb-4">
 						  <ul class="list-unstyled">
 							  <li>
-								  <a class="menu-item pl-0" href="index.php">
-								Preparation de valises</a> </li>
+								  <a class="menu-item pl-0" href="valises.php">
+								Trip Planner</a> </li>
 							  <li>
 								  <a class="menu-item pl-0" href="advices.php">
 								Style Tips
 								</a>
 							</li>
 							<li>
-								<a class="menu-item pl-0" href="index2.php">
-								habada law
+								<a class="menu-item pl-0" href="suggest.php">
+								DailyOutfitSuggestions
 							  </a>
 						  </li>
 						  </ul>
