@@ -41,6 +41,7 @@ $nbr = $stmt1->get_result();
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/owl-carousel.css" rel="stylesheet">
 	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap2.css" rel="stylesheet">
 	 <link href="css/lightbox.css" rel="stylesheet">
     <link href="css/jquery-ui.css" rel="stylesheet">
 
@@ -281,19 +282,6 @@ $nbr = $stmt1->get_result();
 							</div>
 						</div>
 					</div>
-					<div class="sidebar-block price">
-						<h3 class="widget-title"><a data-toggle="collapse" href="#price" role="button" aria-expanded="true" aria-controls="price">Price</a></h3>
-						<div id="price" class="collapse show">
-							<div class="price-inner">
-								<label >Price range:</label>
-								<input type="range" class="form-range" name="price" value="100" id="amount" min="1" max="1000">
-							<div>
-								<span style="float : left;">$1</span>
-								<span style="float : right;">$1000</span>
-							</div>
-							</div>
-					</div>
-				</div>
 					<div class="sidebar-block color">
 						<h3 class="widget-title"><a data-toggle="collapse" href="#color" role="button" aria-expanded="true" aria-controls="color">Color</a></h3>
 						<div id="color" class="sidebar-widget-option-wrapper collapse show">
@@ -318,32 +306,30 @@ $nbr = $stmt1->get_result();
 						</div>
 					</div>
 					<div class="sidebar-block size">
-						<h3 class="widget-title"><a data-toggle="collapse" href="#size" role="button" aria-expanded="true" aria-controls="size">Size</a></h3>
+						<h3 class="widget-title"><a data-toggle="collapse" href="#size" role="button" aria-expanded="true" aria-controls="size">Price</a></h3>
 						<div id="size" class="sidebar-widget-option-wrapper collapse show">
 							<div class="size-inner">
-								<div class="sidebar-widget-option">
-									<input type="checkbox" id="size-1">
-									<label for="size-1">L <span>(4)</span></label>
-								</div>
-								<div class="sidebar-widget-option">
-									<input type="checkbox" id="size-2">
-									<label for="size-2">XS <span>(3)</span></label>
-								</div>
-								<div class="sidebar-widget-option">
-									<input type="checkbox" id="size-3">
-									<label for="size-3">S <span>(3)</span></label>
-								</div>
-								<div class="sidebar-widget-option">
-									<input type="checkbox" id="size-4">
-									<label for="size-4">Xl <span>(3)</span></label>
+								<div class="form-check">
+									<div class="sidebar-widget-option">
+										<input type="Radio" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" id="size-1">
+										<label for="size-1">&le; $30<span></span></label>
+									</div>
+									<div class="sidebar-widget-option">
+										<input type="Radio" id="size-2">
+										<label for="size-2"> $30 &le; X &le; $50<span>    (3)</span></label>
+									</div>
+									<div class="sidebar-widget-option">
+										<input type="Radio" id="size-3">
+										<label for="size-3"> $50 &le; X &le; $100<span>   (3)	</span></label>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				</div>
-			</form>
-		</div>
+			</div>
+		</form>
+	</div>
 </div>
 </div>
 </div>
