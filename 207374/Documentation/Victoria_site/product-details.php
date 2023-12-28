@@ -1,7 +1,30 @@
+<?php
+
+include("php/config.php");
+
+if(isset($_GET['product_id'])){
+	$product_id = $_GET['product_id'];
+	$stmt = $conn->prepare("SELECT * FROM products Where product_id = ? ");
+	$stmt->bind_param("i",$product_id);  // Bind the parameter to the query
+	$stmt->execute();
+	$product = $stmt->get_result(); //it's gonna return an array
+
+//no product was given
+}else{
+	header('location: shop-main.php');
+}
+
+?>
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
-  	    <title>DailyOutfitSuggestions</title>
+  	    <title>Product Details</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Demo powered by Templatetrip">
@@ -161,62 +184,49 @@
             <li class="breadcrumb-item active" aria-current="page">Product Detail</li>
         </ol>
     </nav>
+
+
+
 	<div class="product-deatils-section float-left w-100">
 		<div class="container">
 			<div class="row">
+<?php while($row = $product->fetch_assoc()) { ?>
+	
 				<div class="left-columm col-lg-5 col-md-5">
 					<div class="product-large-image tab-content">
-						<div class="tab-pane active" id="product-01" role="tabpanel" aria-labelledby="product-tab-01">
+					<div class="tab-pane active" id="product-01" role="tabpanel" aria-labelledby="product-tab-01">
 							<div class="single-img img-full">
-								<a href="img/products/p1.jpg"><img src="img/products/p1.jpg" class="img-fluid zoomImg" alt=""></a>
+							<img src="img/products/<?php echo $row['product_image']; ?>" class="img-fluid zoomImg" alt=""></a>
 							</div>
-						</div>
-						<div class="tab-pane" id="product-02" role="tabpanel" aria-labelledby="product-tab-02">
+							<div class="tab-pane" id="product-02" role="tabpanel" aria-labelledby="product-tab-02">
 							<div class="single-img">
-								<a href="img/products/p3.jpg"><img src="img/products/p4.jpg" class="img-fluid" alt=""></a>
+							<img src="img/products/<?php echo $row['product_image2']; ?>" class="img-fluid" alt=""></a>
 							</div>
-						</div>
-						<div class="tab-pane" id="product-03" role="tabpanel" aria-labelledby="product-tab-03">
+							</div>
+							<div class="tab-pane" id="product-03" role="tabpanel" aria-labelledby="product-tab-03">
 							<div class="single-img">
-								<a href="img/products/p5.jpg"><img src="img/products/p7.jpg" class="img-fluid" alt=""></a>
+							<img src="img/products/<?php echo $row['product_image3']; ?>" class="img-fluid" alt=""></a>
+							</div>
+							</div>
+							<div class="tab-pane" id="product-04" role="tabpanel" aria-labelledby="product-tab-04">
+						<div class="single-img">
+							<img src="img/products/<?php echo $row['product_image4']; ?>" class="img-fluid" alt=""></a>
+							</div>
 							</div>
 						</div>
-						<div class="tab-pane" id="product-04" role="tabpanel" aria-labelledby="product-tab-04">
-							<div class="single-img">
-								<a href="img/products/p7.jpg"><img src="img/products/p8.jpg" class="img-fluid" alt=""></a>
-							</div>
 						</div>
-						<div class="tab-pane" id="product-05" role="tabpanel" aria-labelledby="product-tab-05">
-							<div class="single-img">
-								<a href="img/products/p9.jpg"><img src="img/products/p10.jpg" class="img-fluid" alt=""></a>
-							</div>
-						</div>
-				</div><div class="default small-image-list float-left w-100"> 
-                                <div class="nav-add small-image-slider-single-product-tabstyle-3 owl-carousel" role="tablist">
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-01" href="#product-01" class="img active"><img src="img/products/p2.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-02" href="#product-02" class="img"><img src="img/products/p5.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-03" href="#product-03" class="img"><img src="img/products/p6.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-04" href="#product-04" class="img"><img src="img/products/p9.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-05" href="#product-05" class="img"><img src="img/products/p11.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-					
 				</div>
+
+
+	
+
+
+
 				<div class="right-columm col-lg-7 col-md-7">
 					<div class="product-information">
-					<h4 class="product-title text-capitalize float-left w-100"><a href="product-details.php" class="float-left w-100">Knitted Lounge Set</a></h4>
+					<h4 class="product-title text-capitalize float-left w-100"><a href="product-details.php" class="float-left w-100"><?php echo $row['product_name']; ?></a></h4>
 					<div class="description">
-						Elevate your moments of relaxation with our Knitted Lounge Set, a perfect fusion of comfort and style. Immerse yourself in the luxury of premium knit fabric, designed to embrace your body with a soft and gentle touch. This ensemble features a coordinated top and bottoms, effortlessly blending fashion and comfort. The chic details, including a tasteful neckline and well-fitted cuffs, add a touch of sophistication to your laid-back moments. Whether you're unwinding at home, heading to a casual gathering, or embarking on a stylish travel adventure, our Knitted Lounge Set ensures you look effortlessly chic while embracing the bliss of comfort.</div>
+					<?php echo $row['product_description']; ?></div>
 					<div class="rating">
 											<div class="product-ratings d-inline-block align-middle">
 												<span class="fa fa-stack"><i class="material-icons">star</i></span>
@@ -225,12 +235,9 @@
 											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>
 											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>
 											</div>
-											<a href="#" class="review-down">(customer reviews)</a>
-												
 											</div>
 																<div class="price float-left w-100 d-flex">
-												<div class="regular-price">$100.00</div>
-												<div class="old-price">$150.00</div>
+												<div class="regular-price">$<?php echo $row['product_price']; ?></div>
 											</div>
 											<div class="product-variants float-left w-100">
 						<div class="col-md-3 col-sm-6 col-xs-12 size-options d-flex align-items-center">
@@ -245,18 +252,7 @@
 								</select>
 						</div>
 						<div class="color-option d-flex align-items-center">
-                                        <h5>color :</h5>
-                                        <ul class="color-categories">
-                                            <li class="active">
-                                                <a class="tt-pink" href="#" title="black"></a>
-                                            </li>
-                                            <li>
-                                                <a class="tt-blue" href="#" title="beige"></a>
-                                            </li>
-                                            <li>
-                                                <a class="tt-yellow" href="#" title="Burgundy"></a>
-                                            </li>
-                                        </ul>
+                                        <h5>color : <?php echo $row['product_color']; ?></h5>
                                     </div>
 					</div>
 											<div class="btn-cart d-flex align-items-center float-left w-100"> 
@@ -274,70 +270,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="product-tab-area float-left w-100">
-	<div class="container">
-					<div class="tabs">
-					<ul class="nav nav-tabs justify-content-start">
-						<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#product-tab1" id="tab1"><div class="tab-title">Description</div></a></li>
-						<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#product-tab2" id="tab2"><div class="tab-title">Reviews (2)</div></a></li>
-					</ul>
-				</div>
-					<div class="tab-content float-left w-100">
-					  <div class="tab-pane active" id="product-tab1" role="tabpanel" aria-labelledby="tab1">
-						  <div class="description">
-							Indulge in the cozy charm of our Knitted Lounge Set, where every thread is woven to perfection for your ultimate comfort. This stylish ensemble invites you to unwind in luxurious warmth and style. The knitted fabric is not just a tactile delight but also a visual one, offering a contemporary and fashionable look. The set's meticulous design, featuring a well-crafted top and bottoms, provides a flattering silhouette without compromising on ease of movement. From lazy weekends to casual outings, our Knitted Lounge Set effortlessly combines fashion with comfort, making it a versatile addition to your wardrobe for those moments when you want to relax in style.</div>
-					  </div>
-					  <div class="tab-pane" id="product-tab2" role="tabpanel" aria-labelledby="tab2">
-					  	<div class="reviews-tab  float-left w-100">
-							  <form action="#" class="rating-form float-left w-100">
-                                    <h5>Add your rating</h5>
-                                   <div class="rating">
-													<div class='rating-stars text-left'>
-    <ul id='stars'>
-      <li class='star' title='Poor' data-value='1'>
-   <i class="material-icons">star</i>
-      </li>
-      <li class='star' title='Fair' data-value='2'>
-   <i class="material-icons">star</i>
-      </li>
-      <li class='star' title='Good' data-value='3'>
-   <i class="material-icons">star</i>
-      </li>
-      <li class='star' title='Excellent' data-value='4'>
-   <i class="material-icons">star</i>
-      </li>
-      <li class='star' title='WOW!!!' data-value='5'>
-   <i class="material-icons">star</i>
-      </li>
-    </ul>
-  </div>
-   <div class='success-box'>
-    <div class='clearfix'></div>
-    <div class='text-message text-success'></div>
-    <div class='clearfix'></div>
-  </div>
-													</div>
-													<div class="row d-block">
-													
-													<div class="col-sm-6 float-left form-group">
-									 <label>Name <span class="required">*</span></label>
-                                    <input type="text" placeholder="" required="">
-									</div>
-									<div class="col-sm-6 float-left form-group">
-									 <label>Email <span class="required">*</span></label>
-                                    <input type="email" placeholder="" id="r-email" required>
-									</div>
-									<div class="col-sm-12 float-left form-group">
-									 <label for="r-textarea">Your Review</label>
-                                    <textarea name="review" id="r-textarea" cols="30" rows="10" class="w-100"></textarea>
-									</div>
-									</div>
-                                   <input type="submit" class="btn btn-primary submit" value="Submit Review">
-                                </form>
-							</div>
-							
-					</div>
-	</div>
+	<?php } ?>
+	
 	</div>
 	</div>
 	<div id="product-accessories" class="product-accessories my-40 w-100 float-left">
