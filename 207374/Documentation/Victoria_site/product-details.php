@@ -194,34 +194,13 @@ if(isset($_GET['product_id'])){
 	
 				<div class="left-columm col-lg-5 col-md-5">
 					<div class="product-large-image tab-content">
-					<div class="tab-pane active" id="product-01" role="tabpanel" aria-labelledby="product-tab-01">
+						<div class="tab-pane active" id="product-01" role="tabpanel" aria-labelledby="product-tab-01">
 							<div class="single-img img-full">
-							<img src="img/products/<?php echo $row['product_image']; ?>" class="img-fluid zoomImg" alt=""></a>
-							</div>
-							<div class="tab-pane" id="product-02" role="tabpanel" aria-labelledby="product-tab-02">
-							<div class="single-img">
-							<img src="img/products/<?php echo $row['product_image2']; ?>" class="img-fluid" alt=""></a>
-							</div>
-							</div>
-							<div class="tab-pane" id="product-03" role="tabpanel" aria-labelledby="product-tab-03">
-							<div class="single-img">
-							<img src="img/products/<?php echo $row['product_image3']; ?>" class="img-fluid" alt=""></a>
-							</div>
-							</div>
-							<div class="tab-pane" id="product-04" role="tabpanel" aria-labelledby="product-tab-04">
-						<div class="single-img">
-							<img src="img/products/<?php echo $row['product_image4']; ?>" class="img-fluid" alt=""></a>
-							</div>
+								<img src="img/products/<?php echo $row['product_image']; ?>" class="img-fluid zoomImg" alt=""></a>
 							</div>
 						</div>
-						</div>
+					</div>
 				</div>
-
-
-	
-
-
-
 				<div class="right-columm col-lg-7 col-md-7">
 					<div class="product-information">
 					<h4 class="product-title text-capitalize float-left w-100"><a href="product-details.php" class="float-left w-100"><?php echo $row['product_name']; ?></a></h4>

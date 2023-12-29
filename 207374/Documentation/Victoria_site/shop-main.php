@@ -274,7 +274,7 @@ $nbr = $stmt1->get_result();
 						</div>
 						<div class="thumb-description">
 							<div class="caption">
-								<h4 class="product-title text-capitalize"><a href="product-details.php"><?php echo $row['product_name']; ?></a></h4>
+								<h4 class="product-title text-capitalize"><a href="<?php echo "product-details.php?product_id=".$row['product_id'];?>"><?php echo $row['product_name']; ?></a></h4>
 							</div>
 							<div class="rating">
 								<div class="product-ratings d-inline-block align-middle">
