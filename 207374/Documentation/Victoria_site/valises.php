@@ -157,12 +157,9 @@
 	</div>
 	</div>
 	</header>
-    
-   
-    <div class="container">
-        <h1>Travel Planner</h1>
+    <div class="container text-center" >
+        <h1><strong>Travel Planner</strong></h1>
         <!-- ... (your existing code) ... -->
-
         <form>
             <label for="destination">Destination:</label>
             <select name="destination" required>
@@ -183,9 +180,7 @@
 
             <input type="submit" value="Generate Outfits">
         </form>
-
         <!-- ... (your existing code) ... -->
-
     </div>
     <style>
 
@@ -198,6 +193,8 @@
         form {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         label {
@@ -213,7 +210,7 @@
         }
 
         input[type="submit"] {
-            background-color: #4caf50;
+            background-color: black;
             color: #fff;
             cursor: pointer;
             border: none;
@@ -221,18 +218,15 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #808080;
         }
 
         /* Styles for the destination selector */
         select {
-            width: 100%;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
             padding: 10px;
-        }
-
-        /* Styles for the activities text area */
-        textarea {
-            resize: vertical;
         }
     </style>
     
