@@ -230,7 +230,7 @@ $nbr = $stmt1->get_result();
 							<div class="button-wrapper">
 								<div class="button-group text-center">
 									<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-									<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+									<a href="wishlist.php?article_id=1" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 								</div>
 							</div>
 						</div>

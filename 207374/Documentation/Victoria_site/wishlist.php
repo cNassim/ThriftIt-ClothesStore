@@ -1,3 +1,16 @@
+<?php
+    session_start(); // Start the session if not started already
+    
+    // Logout logic
+    if (isset($_GET['logout'])) {
+        unset($_SESSION['logged_in']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_name']);
+        session_destroy(); // Optional: Destroy the session data completely
+        header('Location: index.php');
+        exit;
+    }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,16 +52,38 @@
 		</div> 
 		<div class="header-right d-flex d-xs-flex d-sm-flex justify-content-end float-right">
 		<div class="user-info">
-		<button type="button" class="btn">
-		<i class="material-icons">perm_identity</i>		</button>
-		<div id="user-dropdown" class="user-menu">
-		<ul>
-			<li><a href="my-account.php" class="text-capitalize">my account</a></li>
-			<li><a href="register.php" class="modal-view button">Register</a></li>
-			<li><a href="login.php" class="modal-view button">login</a></li>
-		</ul>
-		</div>
-		</div>
+		<?php
+
+    // Check if the user is logged in
+    $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+
+    if ($isLoggedIn) {
+        // Display 'My Account' and 'Logout' if the user is logged in
+        echo '
+        <button type="button" class="btn">
+            <i class="material-icons">perm_identity</i>
+        </button>
+        <div id="user-dropdown" class="user-menu">
+            <ul>
+                <li><a href="my-account.php" class="text-capitalize">my account</a></li>
+                <li><a href="index.php?logout=1" class="text-capitalize">Logout</a></li>
+            </ul>
+        </div>';
+    } else {
+        // Display Register and Login options if the user is not logged in
+        echo '
+        <button type="button" class="btn">
+            <i class="material-icons">perm_identity</i>
+        </button>
+        <div id="user-dropdown" class="user-menu">
+            <ul>
+                <li><a href="register.php" class="modal-view button">Register</a></li>
+                <li><a href="login.php" class="modal-view button">Login</a></li>
+            </ul>
+        </div>';
+    }
+?>
+</div>
 		<div class="cart-wrapper">
 			<button type="button" class="btn">
 				<i class="material-icons">shopping_cart</i>
@@ -118,9 +153,9 @@
               <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown mega-dropdown">
-            <a class="nav-link text-uppercase" href="shop.php">Shop</a>
+            <a class="nav-link text-uppercase" href="shop-main.php">Shop</a>
             <li class="nav-item dropdown active">
-            <a class="nav-link text-uppercase dropdown-toggle" href="shop.php">
+            <a class="nav-link text-uppercase dropdown-toggle" href="shop-main.php">
                 Outfit Finder
               <span class="sr-only">(current)</span></a>
               <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
@@ -173,7 +208,7 @@
                                 <th class="table-image text-uppercase">image</th>
                                 <th class="table-p-name text-uppercase">product</th>
                                 <th class="table-p-price text-uppercase">price</th>
-                                <th class="table-p-qty text-uppercase">Stock Status</th>
+                                <th class="table-color text-uppercase">Color</th>
                                 <th class="table-total text-uppercase">add to cart</th>
                             </tr>
                         </thead>
