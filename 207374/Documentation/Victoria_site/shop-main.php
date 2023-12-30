@@ -1,29 +1,71 @@
 <?php
-
+session_start(); // Start the session if not started already
 include('php/config.php');
-
+    // Logout logic
+    if (isset($_GET['logout'])) {
+        unset($_SESSION['logged_in']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_name']);
+        session_destroy(); // Optional: Destroy the session data completely
+        header('Location: index.php');
+        exit;
+    }
+$selectedRange = '';
 if (isset($_GET['product_category'])){
 	$product_category = $_GET['product_category'];
-	$stmt = $conn->prepare("SELECT * FROM products WHERE product_category = ?  LIMIT 0, 9;");
-	$stmt ->bind_param("s",$product_category);
+	$stmt = $conn->prepare("SELECT * FROM products WHERE product_category = ?");
+	$stmt->bind_param("s", $product_category);
 	$stmt->execute();
 	$products = $stmt->get_result();
-}else{
-	$stmt = $conn->prepare("SELECT * FROM products LIMIT 0, 9;");
+	}
+else{
+	$stmt = $conn->prepare("SELECT * FROM products");
 	$stmt->execute();
 	$products = $stmt->get_result();
+	if (isset($_GET['range'])) {
+		$selectedRange = $_GET['range'];
+		switch ($selectedRange) {
+			case 'All':
+				$stmt = $conn->prepare("SELECT * FROM products");
+				$stmt->execute();
+				$products = $stmt->get_result();
+				break;
+			case '30' :
+				$stmt = $conn->prepare("SELECT * FROM products WHERE product_price<=30");
+				$stmt->execute();
+				$products = $stmt->get_result();
+				break;
+			case '50' :
+				$stmt = $conn->prepare("SELECT * FROM products WHERE product_price>=30 AND product_price<=50");
+				$stmt->execute();
+				$products = $stmt->get_result();
+				break;
+			case '100' :
+				$stmt = $conn->prepare("SELECT * FROM products WHERE product_price>=50 AND product_price<=100");
+				$stmt->execute();
+				$products = $stmt->get_result();
+				break;
+			default :
+				break;
+		}
+	}
 }
-
+if (isset($_GET['product_color'])){
+	$product_color = $_GET['product_color'];
+	$stmt = $conn->prepare("SELECT * FROM products WHERE product_color = ?");
+	$stmt->bind_param("s", $product_color);
+	$stmt->execute();
+	$products = $stmt->get_result();
+	}
 $stmt1 = $conn->prepare("SELECT product_category, COUNT(*) AS count_per_category FROM products GROUP BY product_category;");
 $stmt1->execute();
 $nbr = $stmt1->get_result();
-
 ?>
 
 <!doctype html>
 <html lang="en">
-  <head>
-  	<title>ThriftIt</title>
+<head>
+	<title>ThriftIt</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -31,19 +73,19 @@ $nbr = $stmt1->get_result();
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet">
-	
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/owl-carousel.css" rel="stylesheet">
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap2.css" rel="stylesheet">
-	 <link href="css/lightbox.css" rel="stylesheet">
     <link href="css/jquery-ui.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/styles-register.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/owl-carousel.css" rel="stylesheet">
+	 <link href="css/lightbox.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
   </head>
@@ -63,15 +105,37 @@ $nbr = $stmt1->get_result();
 			</div> 
 			<div class="header-right d-flex d-xs-flex d-sm-flex justify-content-end float-right">
 			<div class="user-info">
-			<button type="button" class="btn">
-			<i class="material-icons">perm_identity</i>		</button>
-			<div id="user-dropdown" class="user-menu">
-			<ul>
-				<li><a href="my-account.php" class="text-capitalize">my account</a></li>
-				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
-				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
-			</ul>
-			</div>
+					<?php
+
+    // Check if the user is logged in
+    $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+
+    if ($isLoggedIn) {
+        // Display 'My Account' and 'Logout' if the user is logged in
+        echo '
+        <button type="button" class="btn">
+            <i class="material-icons">perm_identity</i>
+        </button>
+        <div id="user-dropdown" class="user-menu">
+            <ul>
+                <li><a href="my-account.php" class="text-capitalize">my account</a></li>
+                <li><a href="index.php?logout=1" class="text-capitalize">Logout</a></li>
+            </ul>
+        </div>';
+    } else {
+        // Display Register and Login options if the user is not logged in
+        echo '
+        <button type="button" class="btn">
+            <i class="material-icons">perm_identity</i>
+        </button>
+        <div id="user-dropdown" class="user-menu">
+            <ul>
+                <li><a href="register.php" class="modal-view button">Register</a></li>
+                <li><a href="login.php" class="modal-view button">Login</a></li>
+            </ul>
+        </div>';
+    }
+?>
 			</div>
 			<div class="cart-wrapper">
 				<button type="button" class="btn">
@@ -195,7 +259,7 @@ $nbr = $stmt1->get_result();
 						<img src="img/banner/category-banner.png" alt="category-banner"/>
 					</div>
 					<div class="title-category text-capitalize">women</div>
-					<div class="category-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis, magna et euismod auctor, mauris ipsum interdum risus, a varius augue lacus id diam. Mauris maximus, ipsum at gravida sodales, purus tellus tempor eros, a feugiat elit odio in nunc.</div>
+					<div class="category-description">Dive into a world of timeless elegance and sustainable fashion. Here, every piece tells a story—curated with care and handpicked for its unique style and quality. From chic dresses to vintage accessories, our collection celebrates individuality and conscious fashion choices. Rediscover the joy of fashion exploration with our ever-evolving selection, where each find is a treasure waiting to be cherished. Embrace the allure of eco-conscious shopping while embracing your distinct style at our Women's Thriftit Haven.</div>
 				</div>
 				<div class="tab-content text-center products w-100 float-left">
 				<div class="tab-pane grid fade active" id="grid" role="tabpanel">
@@ -210,9 +274,7 @@ $nbr = $stmt1->get_result();
 						</div>
 						<div class="thumb-description">
 							<div class="caption">
-
-								<h4 class="product-title text-capitalize"><a href="product-details.php?product_id=<?php echo $row['product_id'];?>"><?php echo $row['product_name']; ?></a></h4>
-							
+								<h4 class="product-title text-capitalize"><a href="<?php echo "product-details.php?product_id=".$row['product_id'];?>"><?php echo $row['product_name']; ?></a></h4>
 							</div>
 							<div class="rating">
 								<div class="product-ratings d-inline-block align-middle">
@@ -240,28 +302,6 @@ $nbr = $stmt1->get_result();
 			</div>
 		</div>
 	</div>
-				<div class="pagination-wrapper float-left w-100">
-				<p>Showing 1 to 9 of 34 (4 Pages)</p>
-				<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>
-    <li class="page-item active"><a class="page-link" href="shop-main.php">1</a></li>
-    <li class="page-item"><a class="page-link" href="shop-2">2</a></li>
-    <li class="page-item"><a class="page-link" href="shop-3">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="shop-4" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-</div>
 </div>
 
 <!--Category-->
@@ -276,6 +316,7 @@ $nbr = $stmt1->get_result();
 						<h3 class="widget-title"><a data-toggle="collapse" href="#categoriesMenu" role="button" aria-expanded="true" aria-controls="categoriesMenu">Categories</a></h3>
 						<div id="categoriesMenu" class="expand-lg collapse show">
 							<div class="nav nav-pills flex-column mt-4">
+								<a href="<?php echo "shop-main.php"; $_SESSION['product_category']=NULL;?>" class="nav-link d-flex justify-content-between mb-2 "><span>All</span><span class="sidebar-badge">34</span></a>
 								<?php while ($row1 = $nbr->fetch_assoc()){ ?>
 								<a href="<?php echo "shop-main.php?product_category=".$row1['product_category'];?>" class="nav-link d-flex justify-content-between mb-2 "><span><?php echo $row1['product_category']; ?></span><span class="sidebar-badge"><?php echo $row1['count_per_category']; ?></span></a>
 								<?php }?>
@@ -287,20 +328,40 @@ $nbr = $stmt1->get_result();
 						<div id="color" class="sidebar-widget-option-wrapper collapse show">
 							<div class="color-inner">
 								<div class="sidebar-widget-option">
-									<a href="#" style="background-color: #000000;"></a>
-									Black <span>(4)</span>
+									<a href="shop-main.php?product_color=Black" style="background-color: #000000;"></a>
+									Black
 								</div>
 								<div class="sidebar-widget-option">
-									<a href="#" style="background-color: #11426b;"></a>
-									Blue <span>(3)</span>
+									<a href="shop-main.php?product_color=Blue" style="background-color: #11426b;"></a>
+									Blue
 								</div>
 								<div class="sidebar-widget-option">
-									<a href="#" style="background-color: #7d5a3c;"></a>
-									Brown <span>(3)</span>
+									<a href="shop-main.php?product_color=Brown" style="background-color: #7d5a3c;"></a>
+									Brown
 								</div>
 								<div class="sidebar-widget-option">
-									<a href="#" style="background-color: #ffffff;"></a>
-									White <span>(3)</span>
+									<a href="shop-main.php?product_color=White" style="background-color: #ffffff;"></a>
+									White
+								</div>
+								<div class="sidebar-widget-option">
+									<a href="shop-main.php?product_color=Beige" style="background-color: ##C8AD7F;"></a>
+									Beige
+								</div>
+								<div class="sidebar-widget-option">
+									<a href="shop-main.php?product_color=Gray" style="background-color: #808080 ;"></a>
+									Gray
+								</div>
+								<div class="sidebar-widget-option">
+									<a href="shop-main.php?product_color=Green" style="background-color: #008000;"></a>
+									Green
+								</div>
+								<div class="sidebar-widget-option">
+									<a href="shop-main.php?product_color=Burgundy" style="background-color: #800020;"></a>
+									Burgundy
+								</div>
+								<div class="sidebar-widget-option">
+									<a href="shop-main.php?product_color=Light_blue" style="background-color: #ADD8E6"></a>
+									Light blue
 								</div>
 							</div>
 						</div>
@@ -309,20 +370,24 @@ $nbr = $stmt1->get_result();
 						<h3 class="widget-title"><a data-toggle="collapse" href="#size" role="button" aria-expanded="true" aria-controls="size">Price</a></h3>
 						<div id="size" class="sidebar-widget-option-wrapper collapse show">
 							<div class="size-inner">
-								<div class="form-check">
+								<form method="GET">
 									<div class="sidebar-widget-option">
-										<input type="Radio" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" id="size-1">
-										<label for="size-1">&le; $30<span></span></label>
-									</div>
-									<div class="sidebar-widget-option">
-										<input type="Radio" id="size-2">
-										<label for="size-2"> $30 &le; X &le; $50<span>    (3)</span></label>
-									</div>
-									<div class="sidebar-widget-option">
-										<input type="Radio" id="size-3">
-										<label for="size-3"> $50 &le; X &le; $100<span>   (3)	</span></label>
-									</div>
+									<input type="radio" name="range" id="All" value="All" <?php if ($selectedRange === 'All') echo 'checked'; ?> onchange="this.form.submit()">
+									<label for="size-1">All</label>
 								</div>
+								<div class="sidebar-widget-option">
+									<input type="radio" name="range" id="30" value="30" <?php if ($selectedRange === '30') echo 'checked'; ?> onchange="this.form.submit()">
+									<label for="size-2">&le; $30</label>
+								</div>
+								<div class="sidebar-widget-option">
+									<input type="radio" name="range" id="50" value="50" <?php if ($selectedRange === '50') echo 'checked'; ?> onchange="this.form.submit()">
+									<label for="size-3">$30 &le; X &le; $50<span></label>
+								</div>
+								<div class="sidebar-widget-option">
+									<input type="radio" name="range" id="100" value="100" <?php if ($selectedRange === '100' ) echo 'checked'; ?> onchange="this.form.submit()">
+									<label for="size-4">$50 &le; X &le; $100</label>
+								</div>
+							</form>
 							</div>
 						</div>
 					</div>
@@ -642,7 +707,6 @@ $nbr = $stmt1->get_result();
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="js/imagesloaded.pkgd.min.js"></script>
 	<script src="js/jquery.zoom.min.js"></script>
-	
 	<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
