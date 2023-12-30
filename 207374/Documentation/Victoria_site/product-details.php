@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include("php/config.php");
 
 if(isset($_GET['product_id'])){
@@ -13,174 +13,204 @@ if(isset($_GET['product_id'])){
 }else{
 	header('location: shop-main.php');
 }
-
+if (isset($_GET['logout'])) {
+	unset($_SESSION['logged_in']);
+	unset($_SESSION['user_email']);
+	unset($_SESSION['user_name']);
+	session_destroy(); // Optional: Destroy the session data completely
+	header('Location: index.php');
+	exit;
+}
 ?>
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
-  <head>
-  	    <title>Product Details</title>
+
+<head>
+    <title>ThriftIt</title>
+
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Demo powered by Templatetrip">
+    <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet"> 
-	
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
-	<!-- Bootstrap core CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/owl-carousel.css" rel="stylesheet">
-	 <link href="css/lightbox.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-  </head>
+    <link href="css/lightbox.css" rel="stylesheet">
 
-  <body class="index layout1">
-  	
-	<header class="header-area header-sticky text-center header-default">
-		<div class="header-main-sticky">
-		</div>
-		<div class="header-main-head">
+    <!-- Custom styles for this template -->
+</head>
+
+<body id="about-us">
+
+    <header class="header-area header-sticky text-center header-default">
+        <div class="header-main-sticky">
+            <div class="header-main-head">
+
+                <div class="header-main">
+                    <div class="container">
+                        <div class="header-middle float-left">
+                            <div class="logo">
+                                <a href="index.php"><img src="img/logos/logo.png" alt="NatureCircle"></a>
+                            </div>
+                        </div>
+                        <div class="header-right d-flex d-xs-block d-sm-flex justify-content-end float-right">
+                            <div class="user-info">
+                            <?php
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+
+if ($isLoggedIn) {
+    // Display 'My Account' and 'Logout' if the user is logged in
+    echo '
+    <button type="button" class="btn">
+        <i class="material-icons">perm_identity</i>
+    </button>
+    <div id="user-dropdown" class="user-menu">
+        <ul>
+            <li><a href="my-account.php" class="text-capitalize">my account</a></li>
+            <li><a href="index.php?logout=1" class="text-capitalize">Logout</a></li>
+        </ul>
+    </div>';
+} else {
+    // Display Register and Login options if the user is not logged in
+    echo '
+    <button type="button" class="btn">
+        <i class="material-icons">perm_identity</i>
+    </button>
+    <div id="user-dropdown" class="user-menu">
+        <ul>
+            <li><a href="register.php" class="modal-view button">Register</a></li>
+            <li><a href="login.php" class="modal-view button">Login</a></li>
+        </ul>
+    </div>';
+}
+?>
+                            </div>
+                            <div class="cart-wrapper">
+                                <button type="button" class="btn">
+                                    <i class="material-icons">shopping_cart</i>
+                                    <span class="ttcount">2</span>
+                                </button>
+                                <div id="cart-dropdown" class="cart-menu">
+                                    <ul class="w-100 float-left">
+                                        <li>
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="#"><img src="img/products/01.jpg" alt="01" title="01"></a>
+                                                        </td>
+                                                        <td class="text-left product-name"><a href="#">aliquam quaerat voluptatem</a>
+                                                            <div class="quantity float-left w-100">
+                                                                <span class="cart-qty">1 × </span>
+                                                                <span class="text-left price"> $20.00</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center close"><a class="close-cart"><i class="material-icons">close</i></a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <table class="table price mb-30">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left"><strong>Total</strong></td>
+                                                        <td class="text-right"><strong>$2,122.00</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li class="buttons w-100 float-left">
+                                            <form action="cart_page.php">
+                                                <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
+                                            </form>
+                                            <form action="checkout_page.php">
+                                                <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu">
+                    <div class="container">
+                      		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light d-sm-none d-xs-none d-lg-block navbar-full">
 		
-		<div class="header-main">
-		<div class="container">
-			<div class="header-middle float-lg-left float-md-left float-sm-left float-xs-none">
-					<div class="logo">
-									<a href="index.php"><img src="img/logos/logo.png" alt="logo" width="200" height="50" ></a>		</div>
-			</div> 
-			<div class="header-right d-flex d-xs-flex d-sm-flex justify-content-end float-right">
-			<div class="user-info">
-			<button type="button" class="btn">
-			<i class="material-icons">perm_identity</i>		</button>
-			<div id="user-dropdown" class="user-menu">
-			<ul>
-				<li><a href="my-account.php" class="text-capitalize">my account</a></li>
-				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
-				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
-			</ul>
-			</div>
-			</div>
-			<div class="cart-wrapper">
-				<button type="button" class="btn">
-					<i class="material-icons">shopping_cart</i>
-					<span class="ttcount">2</span>			</button>
-				<div id="cart-dropdown" class="cart-menu">
-					<ul class="w-100 float-left">
-					  <li>
-						<table class="table table-striped">
-						  <tbody>
-							<tr>
-							  <td class="text-center"><a href="#"><img src="img/products/01.jpg" alt="01" title="01" height="104" width="80"></a></td>
-							  <td class="text-left product-name"><a href="#">aliquam quaerat voluptatem</a>
-							  <div class="quantity float-left w-100">
-								 <span class="cart-qty">1 × </span>
-								<span class="text-left price"> $20.00</span>						    </div>                          </td>
-							  <td class="text-center close"><a class="close-cart"><i class="material-icons">close</i></a></td>
-							</tr>
-						  </tbody>
-						</table>
-					  </li>
-					  <li>
-						<table class="table price mb-30">
-						  <tbody>
-							<tr>
-							  <td class="text-left"><strong>Total</strong></td>
-							  <td class="text-right"><strong>$2,122.00</strong></td>
-							</tr>
-						  </tbody>
-						</table>
-					  </li>
-					  <li class="buttons w-100 float-left">
-						<form action="cart_page.php">
-						  <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
-						</form>
-						<form action="checkout_page.php">
-						  <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
-						</form>
-					  </li>
-					</ul>
-			  </div>
-			</div>
-			</div>
-		</div>
-		</div>
-		<div class="menu">
-		<div class="container">
-			<!-- Navbar -->
-			<nav class="navbar navbar-expand-lg navbar-light d-sm-none d-xs-none d-lg-block navbar-full">
-			
-				<!-- Navbar brand -->
-				<a class="navbar-brand text-uppercase d-none" href="#">Navbar</a>
-				
-				<!-- Collapse button -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
-				aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<!-- Collapsible content -->
-				<div class="collapse navbar-collapse">
-				
-				<!-- Links -->
-				<ul class="navbar-nav m-auto justify-content-center">
-				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase" href="index.php">
-					Home
-				  <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item dropdown mega-dropdown">
-				<a class="nav-link text-uppercase" href="shop-main.php">Shop</a>
-				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase dropdown-toggle" href="shop-main.php">
-					Outfit Finder
-				  <span class="sr-only">(current)</span></a>
-				  <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
-					  <div class="sub-menu mb-xl-0 mb-4">
-						  <ul class="list-unstyled">
-							  <li>
-								  <a class="menu-item pl-0" href="valises.php">
-								Trip Planner</a> </li>
-							  <li>
-								  <a class="menu-item pl-0" href="advices.php">
-								Style Tips
-								</a>
-							</li>
-							<li>
-								<a class="menu-item pl-0" href="suggest.php">
-								DailyOutfitSuggestions
-							  </a>
-						  </li>
-						  </ul>
-					  </div>
-				  </div>
-				</li>
-				<li class="nav-item">   
-				<a class="nav-link text-uppercase" href="about-us.php">About us </a>
-				</li>
-				<!-- Links -->
-				</div>
-				<!-- Collapsible content -->
-				
-				</nav>
-		</div>
-		</div>
-		</div>
-		</div>
-		</header>
+            <!-- Navbar brand -->
+            <a class="navbar-brand text-uppercase d-none" href="#">Navbar</a>
+            
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+            aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse">
+            
+            <!-- Links -->
+            <ul class="navbar-nav m-auto justify-content-center">
+            <li class="nav-item dropdown active">
+            <a class="nav-link text-uppercase" href="index.php">
+                Home
+              <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+            <a class="nav-link text-uppercase" href="shop-main.php">Shop</a>
+            <li class="nav-item dropdown active">
+            <a class="nav-link text-uppercase dropdown-toggle" href="shop-main.php">
+                Outfit Finder
+              <span class="sr-only">(current)</span></a>
+              <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
+                  <div class="sub-menu mb-xl-0 mb-4">
+                      <ul class="list-unstyled">
+                          <li>
+                              <a class="menu-item pl-0" href="valises.php">
+                            Trip Planner</a> </li>
+                          <li>
+                              <a class="menu-item pl-0" href="advices.php">
+                            Style Tips
+                            </a>
+                        </li>
+                        <li>
+                            <a class="menu-item pl-0" href="suggest.php">
+                            DailyOutfitSuggestions
+                          </a>
+                      </li>
+                      </ul>
+                  </div>
+              </div>
+            </li>
+            <li class="nav-item">   
+            <a class="nav-link text-uppercase" href="about-us.php">About us </a>
+            </li>
+            <!-- Links -->
+            </div>
+            <!-- Collapsible content -->
+            
+            </nav>
+    </header>
     
 	<nav aria-label="breadcrumb" class="w-100 float-left mb-150 mb-sm-30">
         <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/ABB.png" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Product Detail</li>
         </ol>
     </nav>
@@ -191,7 +221,6 @@ if(isset($_GET['product_id'])){
 		<div class="container">
 			<div class="row">
 <?php while($row = $product->fetch_assoc()) { ?>
-	
 				<div class="left-columm col-lg-5 col-md-5">
 					<div class="product-large-image tab-content">
 						<div class="tab-pane active" id="product-01" role="tabpanel" aria-labelledby="product-tab-01">
@@ -224,10 +253,16 @@ if(isset($_GET['product_id'])){
                                     </div>
 					</div>
 											<div class="btn-cart d-flex align-items-center float-left w-100"> 
-						<h5>qty:</h5>
-						<input value="1" type="number">
-						<button type="button" class="btn btn-primary btn-cart m-0" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i> Add To Cart</button>
-					</div>
+											<form method="POST" action="cart_page.php">
+											<input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>" />
+											<input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>"/>
+											<input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>"/>
+											<input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>"/>
+											<h5>qty:</h5>
+						<input value="1" name="product_quantity" type="number">
+						<button type="submit" name="add_to_cart" class="btn btn-primary btn-cart m-0"> Add To Cart</button>
+					</form>
+				</div>
 					<div class="tt-links d-flex align-items-center float-left w-100 mb-15">
 					<a href="wishlist.php" class="link btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 					</div>
@@ -238,205 +273,11 @@ if(isset($_GET['product_id'])){
 			</div>
 		</div>
 	</div>
+
 	<?php } ?>
 	
 	</div>
 	</div>
-	<div id="product-accessories" class="product-accessories my-40 w-100 float-left">
-			<div class="container">
-					<div class="row">
-							<div class="tt-title d-inline-block float-none w-100 text-center">You might also like</div>
-							<div class="ttspecial-content products grid owl-carousel">
-							<div class="product-layouts">
-								<div class="product-thumb">
-									<div class="image zoom">
-										<a href="#">
-											<img src="img/products/p1.jpg" alt="01" height="501" width="385"/>
-											<img src="img/products/p2.jpg" alt="02" class="second_image img-responsive" height="501" width="385"/>										</a>
-									</div>
-									<div class="thumb-description">
-										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.php">Knitted Lounge Set</a></h4>
-										</div>
-										<div class="rating">
-											<div class="product-ratings d-inline-block align-middle">
-												<span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>									      </div>
-									  </div>
-										<div class="price">
-											<div class="regular-price">$44.99</div>
-										</div>
-										<div class="button-wrapper">	
-										<div class="button-group text-center">
-												<button type="button" class="btn btn-primary btn-cart" data-toggle="modal" data-target="#product_view"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
-										  </div>									
-									  </div>
-									</div>
-								</div>
-							</div>
-							<div class="product-layouts">
-								<div class="product-thumb">
-									<div class="image zoom">
-										<a href="#">
-											<img src="img/products/p4.jpg" alt="02" height="501" width="385"/>	
-											<img src="img/products/p5.jpg" alt="03" class="second_image img-responsive" height="501" width="385"/></a></div>
-									<div class="thumb-description">
-										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.php">Crochet Detail Top</a></h4>
-										</div>
-										<div class="rating">
-									<div class="product-ratings d-inline-block align-middle">
-												<span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>									      </div>
-									  </div>
-										<div class="price">
-											<div class="regular-price">$50.00</div>
-										</div>
-										<div class="button-wrapper">	
-										<div class="button-group text-center">
-												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
-											 </div>			
-									  </div>
-									</div>
-								</div>
-							</div>
-							<div class="product-layouts">
-								<div class="product-thumb">
-									<div class="image zoom">
-										<a href="#">
-											<img src="img/products/p6.jpg" alt="03" height="501" width="385"/>	
-												<img src="img/products/p7.jpg" alt="04" class="second_image img-responsive" height="501" width="385"/></a></div>
-									<div class="thumb-description">
-										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.php">Cropped Blazer</a></h4>
-										</div>
-										<div class="rating">
-											<div class="product-ratings d-inline-block align-middle">
-												<span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>									      </div>
-									  </div>
-										<div class="price">
-											<div class="regular-price">$65.50</div>
-											<div class="old-price">$80.00</div>
-										</div>
-										<div class="button-wrapper">	
-										<div class="button-group text-center">
-												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
-											</div>									
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="product-layouts">
-								<div class="product-thumb">
-									<div class="image zoom">
-										<a href="#">
-											<img src="img/products/p9.jpg" alt="04" height="501" width="385"/>
-											<img src="img/products/p8.jpg" alt="05" class="second_image img-responsive" height="501" width="385"/></a></div>
-									<div class="thumb-description">
-										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.php">Blazer + Bottom (Formal fit)</a></h4>
-										</div>
-										<div class="rating">
-											<div class="product-ratings d-inline-block align-middle">
-												<span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-										  <span class="fa fa-stack"><i class="material-icons off">star</i></span>									      </div>								</div>
-										<div class="price">
-											<div class="regular-price">$75.00</div>
-										</div>
-										<div class="button-wrapper">										
-										<div class="button-group text-center">
-												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
-												</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="product-layouts">
-								<div class="product-thumb">
-									<div class="image zoom">
-										<a href="#">
-											<img src="img/products/p10.jpg" alt="05" height="501" width="385"/>
-											<img src="img/products/p11.jpg" alt="06" class="second_image img-responsive" height="501" width="385"/>										</a>									</div>
-									<div class="thumb-description">
-										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.php">Blazer + Skirt (Formal fit)</a></h4>
-										</div>
-										<div class="rating">
-											<div class="product-ratings d-inline-block align-middle">
-												<span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>									      </div>
-									  </div>
-										<div class="price">
-											<div class="regular-price">$99.90</div>
-											<div class="old-price">$150.00</div>
-										</div>
-										<div class="button-wrapper">										
-										<div class="button-group text-center">
-												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="product-layouts">
-								<div class="product-thumb">
-									<div class="image zoom">
-										<a href="#">
-											<img src="img/products/p12.jpg" alt="06" height="501" width="385"/>	
-											<img src="img/products/p13.jpg" alt="07" class="second_image img-responsive" height="501" width="385"/></a></div>
-									<div class="thumb-description">
-										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.php">Woolen Coat</a></h4>
-										</div>
-										<div class="rating">
-											<div class="product-ratings d-inline-block align-middle">
-												<span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-											   <span class="fa fa-stack"><i class="material-icons off">star</i></span>									      </div>
-									  </div>
-										<div class="price">
-											<div class="regular-price">$100.00</div>
-										</div>
-										<div class="button-wrapper">								
-										<div class="button-group text-center">
-												<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-												<a href="wishlist.php" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
-												</div>
-									  </div>
-									</div>
-								</div>
-							</div>
-							</div>
-					</div>
-			</div>
-			</div>
-
-
-
-			
 					
 			
 	
@@ -531,72 +372,6 @@ if(isset($_GET['product_id'])){
 				<a href="#" id="goToTop" title="Back to top" class="btn-primary"><i class="material-icons arrow-up">keyboard_arrow_up</i></a>
 		
 			</footer>
-  <!-- Register modal -->
-<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-  <div class="modal-header text-center">
-	<h4 class="modal-title w-100 font-weight-medium text-left">Sign up</h4>
-	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	  <span aria-hidden="true">&times;</span>
-	</button>
-  </div>
-  <div class="modal-body mx-3">
-	<div class="md-form mb-4">
-	  <input type="text" id="RegisterForm-name" class="form-control validate" placeholder="Your name">
-	</div>
-	<div class="md-form mb-4">
-	  <input type="email" id="RegisterForm-email" class="form-control validate" placeholder="Your email">
-	</div>
-	<div class="md-form mb-4">
-	  <input type="password" id="RegisterForm-pass" class="form-control validate" placeholder="Your password">
-	</div>
-	<div class="checkbox-link d-flex justify-content-between">
-	<div class="left-col">
-		<input id="remember-me" type="checkbox"><label for="remember_me">Remember Me</label>
-	</div>
-	<div class="right-col"><a href="#">Forget Password?</a></div>
-</div>
-  </div>
-  
-  <div class="modal-footer d-flex justify-content-center">
-	<button class="btn btn-primary">Sign up</button>
-  </div>
-</div>
-</div>
-</div>
-
-<!-- Login modal -->
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-	<div class="modal-content">
-	  <div class="modal-header text-center">
-		<h4 class="modal-title w-100 font-weight-medium text-left">Sign in</h4>
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		  <span aria-hidden="true">&times;</span>
-		</button>
-	  </div>
-	  <div class="modal-body mx-3">
-		<div class="md-form mb-4">
-		  <input type="text" id="LoginForm-name" class="form-control validate" placeholder="Your name">
-		</div>
-		<div class="md-form mb-4">
-		  <input type="password" id="LoginForm-pass" class="form-control validate" placeholder="Your password">
-		</div>
-		<div class="checkbox-link d-flex justify-content-between">
-		<div class="left-col">
-			<input type="checkbox" id="remember_me"><label for="remember_me">Remember Me</label>
-		</div>
-		<div class="right-col"><a href="#">Forget Password?</a></div>
-	</div>
-	  </div>
-	  
-	  <div class="modal-footer d-flex justify-content-center">
-		<button class="btn btn-primary">Sign in</button>
-	  </div>
-	</div>
-	</div>
-	</div>
 
 <!-- product_view modal -->
 <div class="modal fade product_view" id="product_view" tabindex="-1" role="dialog" aria-hidden="true">

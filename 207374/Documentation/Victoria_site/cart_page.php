@@ -1,6 +1,56 @@
 <?php
     session_start(); // Start the session if not started already
     
+    if(isset($_POST['add_to_cart'])){
+        if(isset($_session['cart'])){
+            $product_array_ids= array_column($_SESSION['cart'],"product_id");
+            if(!in_array($_POST['product_id'],$product_array_ids)){
+
+
+                    $product_array = array(
+                                    'product_id' =>$_POST['product_id'],
+                                    'product_name'=>$_POST['product_name'],
+                                    'product_price' =>$_POST['product_price'],
+                                    'product_image' =>$$_POST['product_image'],
+                                    'product_quantity' =>$_POST['product_quantity']
+                    );
+                    $_SESSION['cart'][$product_id] = $product_array;
+        
+            }else{
+                echo '<script>alert("Product was already to cart")</script>';
+            }
+        }else{
+            $product_id = $_POST['product_id'];
+            $product_name= $_POST['product_name'];
+            $product_price = $_POST['product_price'];
+            $product_image = $_POST['product_image'];
+            $product_quantity = $_POST['product_quantity'];
+
+            $product_array = array(
+                            'product_id' =>$product_id,
+                            'product_name'=>$product_name,
+                            'product_price' =>$product_price,
+                            'product_image' =>$product_image,
+                            'product_quantity' =>$product_quantity
+            );
+            $_SESSION['cart'][$product_id] = $product_array;
+
+        }
+        calculateTotalCart();
+    }else if(isset($_POST['remove_product'])){
+        $product_id=$_POST['product_id'];
+        unset($_SESSION['cart'][$product_id]);
+        calculateTotalCart();
+    }else if( isset($_POST['edit_quantity'])){
+        $product_id = $_POST['product_id'];
+        $product_quantity = $_POST['cart-qty'];
+        $product_array=$_SESSION['cart'][$product_id];
+        $product_array['product_quantity'] = $product_quantity;
+        $_SESSION['cart'][$product_id] = $product_array;
+        calculateTotalCart();
+    }else{
+        header('location: login.php');
+    }
     // Logout logic
     if (isset($_GET['logout'])) {
         unset($_SESSION['logged_in']);
@@ -10,6 +60,18 @@
         header('Location: index.php');
         exit;
     }
+
+    function calculateTotalCart(){
+        $total = 0;
+        foreach ($_SESSION['cart'] as $key => $value) {
+            $product = $_SESSION['cart'][$key];
+            $price = $product['product_price'];
+            $quantity = $product['product_quantity'];
+            $total = $total + $price * $quantity;
+        }
+        $_SESSION['total'] = $total;
+    }
+
 ?>
 
 
@@ -222,34 +284,29 @@ if ($isLoggedIn) {
                                 <th class="table-total text-capitalize">total</th>
                             </tr>
                         </thead>
-                       <tbody>
+                    
+                    <?php foreach($_SESSION['cart'] as $key => $value){?>
+                        <tbody>
                             <tr>
-                                <td class="table-remove"><button><i class="material-icons">delete</i></button></td>
-                                <td class="table-image"><a href="product-details.php"><img src="img/products/02.jpg" alt=""></a></td>
-                                <td class="table-p-name text-capitalize"><a href="product-details.php">aspetur autodit autfugit</a></td>
-                                <td class="table-p-price"><p>$100.00</p></td>
-                                <td class="table-p-qty"><input value="1" name="cart-qty" type="number"></td>
-                                <td class="table-total"><p>$100.00</p></td>
-                            </tr>
-                            <tr>
-                                <td class="table-remove"><button><i class="material-icons">delete</i></button></td>
-                                <td class="table-image"><a href="product-details.php"><img src="img/products/03.jpg" alt=""></a></td>
-                                <td class="table-p-name text-capitalize"><a href="product-details.php">magni dolores eosquies</a></td>
-                                <td class="table-p-price"><p>$100.00</p></td>
-                                <td class="table-p-qty"><input value="1" name="cart-qty" type="number"></td>
-                                <td class="table-total"><p>$100.00</p></td>
+                                <form method="POST" action="cart_page.php">
+                                <td class="table-remove">
+                                    <input type="hidden" name="product_id" value="<?php echo $value['product_id'];?>"/>
+                                    <button type="submit" name="remove_product" value="remove"><i class="material-icons">delete</i></button></td>
+                                </form>
+                                <td class="table-image"><a href="<?php echo $value['product_id'];?>"><img src="img/products/<?php echo $value['product_image'];?>" alt=""></a></td>
+                                <td class="table-p-name text-capitalize"><a href="product-details.php?product_id=<?php echo $value['product_id'];?>"><?php echo $value['product_name'];?></a></td>
+                                <td class="table-p-price"><p>$<?php echo $value['product_price'];?></p></td>
+                                <form method="POst" action="cart_page.php">
+                                    <td class="table-p-qty"><input value="<?php echo $value['product_quantity'];?>" name="cart-qty" type="number">
+                                    <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>" />
+                                    <button type="sumbit" value="edit" name="edit_quantity" class="btn-primary btn">Edit</button>
+                             </td>
+                                </form>
+                                <td class="table-total"><p>$<?php echo $value['product_quantity'] * $value['product_price'];?></p></td>
                             </tr>
                         </tbody>
+                        <?php } ?>
                     </table>
-                </div>
-                <div class="table-bottom-wrapper">
-                    <div class="table-coupon d-flex d-xs-block d-lg-flex d-sm-flex fix justify-content-start float-left">
-                        <input type="text" placeholder="Coupon code">
-                        <button type="submit" class="btn-primary btn">Apply coupon</button>
-                    </div>
-                    <div class="table-update d-flex d-xs-block d-lg-flex d-sm-flex justify-content-end">
-                        <button type="button" class="btn-primary btn">Update cart</button>
-                    </div>
                 </div>
 			</div>
 			<div class="table-total-wrapper d-flex justify-content-end pt-60 col-md-12 col-sm-12 col-lg-4 float-left  align-items-center">
@@ -257,19 +314,8 @@ if ($isLoggedIn) {
                         <h2 class="pb-20">Cart totals</h2>
                         <div class="table-total-amount">
                             <div class="single-total-content d-flex justify-content-between float-left w-100">
-                                <strong>Subtotal</strong>
-                                <span class="c-total-price">$160.00</span>
-                            </div>
-                            <div class="single-total-content d-flex justify-content-between float-left w-100">
-                                <strong>Shipping</strong>
-                                <span class="c-total-price"><span>Flat Rate:</span> $5.00</span>
-                            </div>
-                            <div class="single-total-content d-flex justify-content-end float-left w-100">
-                                <a href="#">Calculate shipping</a>
-                            </div>
-                            <div class="single-total-content tt-total d-flex justify-content-between float-left w-100">
                                 <strong>Total</strong>
-                                <span class="c-total-price">$165.00</span>
+                                <span class="c-total-price">$<?php echo $_SESSION['total'];?></span>
                             </div>
                             <a href="checkout_page.php" class="btn btn-primary float-left w-100 text-center">Proceed to checkout</a>
                         </div>
