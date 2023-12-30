@@ -1,500 +1,203 @@
+<?php
+    session_start(); // Start the session if not started already
+    
+    // Logout logic
+    if (isset($_GET['logout'])) {
+        unset($_SESSION['logged_in']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_name']);
+        session_destroy(); // Optional: Destroy the session data completely
+        header('Location: index.php');
+        exit;
+    }
+?>
+
 
 <!doctype html>
 <html lang="en">
-  <head>
-  	    <title>Fasion Template for Bootstrap</title>
 
+<head>
+    <title>ThriftIt</title>
+
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet"> 
-	
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
-	<!-- Bootstrap core CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/owl-carousel.css" rel="stylesheet">
-	 <link href="css/lightbox.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-  </head>
+    <link href="css/lightbox.css" rel="stylesheet">
 
-  <body>
-  	
-	<header class="header-area header-sticky text-center header-default">
-	<div class="header-main-sticky">
-	<div class="header-nav">
-	<div class="container">
-		<div class="nav-left float-left"><div class="ttheader-service">Wants to explore Upcoming Deals on Weekends?</div>
-		</div>
-		<div class="nav-right float-right d-flex">
-		<div class="ttheader-mail"><a href="mailto:demo.store@gmail.com">demo.store@gmail.com</a></div>
-		</div>
-	</div>
-	</div>
-	<div class="header-main-head">
-	
-    <div class="header-main">
-	<div class="container">
-            <div class="header-left float-left d-flex d-lg-flex d-md-block d-xs-block">
-				<div class="language-wrapper toggle">
-				<button type="button" class="btn text-capitalize dropdown-toggle"><img src="img/banner/en.png" alt="en"/><span>English</span></button>
-					<div id="language-dropdown" class="language">
-					<ul>
-								<li><img src="img/banner/en.png" alt="en"/><span>English</span></li>
-								<li><img src="img/banner/fr.png" alt="fr"/><span>French</span></li>
-					</ul>
-					</div>
-				</div>
-				<div class="currency-wrapper toggle">
-				<button type="button" class="btn text-capitalize dropdown-toggle"><span>€ Euro</span></button>
-					<div id="currency-dropdown" class="currency">
-					<ul>
-							<li><span>€ Euro</span></li>
-							<li><span>£ Pound Sterling</span></li>
-							<li><span>$ US Dollar</span></li>
-					</ul>
-					</div>
-				</div>
-				  <div class="contact">
-						<i class="material-icons">phone</i>
-						<span>1234567890</span>
-				  </div>
-			</div>
-		<div class="header-middle float-left">
-				<div class="logo">
-								<a href="index.php"><img src="img/logos/logo.png" alt="NatureCircle"></a>		</div>
-		</div> 
-		<div class="header-right d-flex d-xs-block d-sm-flex justify-content-end float-right">
-		<div class="search-wrapper"> 
-			<a>
-			<i class="material-icons search">search</i>
-			<i class="material-icons close">close</i>
-			</a>
-			<form autocomplete="off" action="/action_page.php" class="search-form">
-			  <div class="autocomplete" style="width:300px;">
-				<input id="myInput" type="text" name="myCountry" placeholder="Search here">
-				<button type="button"><i class="material-icons">search</i></button>
-			  </div>
-			</form>
-		</div>  
-		<div class="user-info">
-		<button type="button" class="btn">
-		<i class="material-icons">perm_identity</i>
-		</button>
-		<div id="user-dropdown" class="user-menu">
-		<ul>
-			<li><a href="my-account.php" class="text-capitalize">my account</a></li>
-			<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
-			<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
-		</ul>
-		</div>
-		</div>
-		<div class="cart-wrapper">
-			<button type="button" class="btn">
-				<i class="material-icons">shopping_cart</i>
-				<span class="ttcount">2</span>
-			</button>
-			<div id="cart-dropdown" class="cart-menu">
-                <ul class="w-100 float-left">
-                  <li>
-                    <table class="table table-striped">
-                      <tbody>
-                        <tr>
-                          <td class="text-center"><a href="#"><img src="img/products/01.jpg" alt="01" title="01"></a></td>
-                          <td class="text-left product-name"><a href="#">aliquam quaerat voluptatem</a> 						  	
-						  <div class="quantity float-left w-100">
-                             <span class="cart-qty">1 × </span>
-							<span class="text-left price"> $20.00</span>
-						    </div>
-                          </td>
-                          <td class="text-center close"><a class="close-cart"><i class="material-icons">close</i></a></td>
-                        </tr>
-                        
-                      </tbody>
-                    </table>
-                  </li>
-                  <li>
-                    <table class="table price mb-30">
-                      <tbody>
-                        <tr>
-                          <td class="text-left"><strong>Total</strong></td>
-                          <td class="text-right"><strong>$2,122.00</strong></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </li>
-                  <li class="buttons w-100 float-left">
-                    <form action="cart_page.php">
-                      <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
-                    </form>
-                    <form action="checkout_page.php">
-                      <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
-                    </form>
-                  </li>
-                </ul>
-          </div>
-		</div>
-		</div>
-	</div>
-	</div> 
-	<div class="menu">
-		<!-- Navbar -->
+    <!-- Custom styles for this template -->
+</head>
+
+<body id="about-us">
+
+    <header class="header-area header-sticky text-center header-default">
+        <div class="header-main-sticky">
+            <div class="header-main-head">
+
+                <div class="header-main">
+                    <div class="container">
+                        <div class="header-middle float-left">
+                            <div class="logo">
+                                <a href="index.php"><img src="img/logos/logo.png" alt="NatureCircle"></a>
+                            </div>
+                        </div>
+                        <div class="header-right d-flex d-xs-block d-sm-flex justify-content-end float-right">
+                            <div class="user-info">
+                            <?php
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+
+if ($isLoggedIn) {
+    // Display 'My Account' and 'Logout' if the user is logged in
+    echo '
+    <button type="button" class="btn">
+        <i class="material-icons">perm_identity</i>
+    </button>
+    <div id="user-dropdown" class="user-menu">
+        <ul>
+            <li><a href="my-account.php" class="text-capitalize">my account</a></li>
+            <li><a href="index.php?logout=1" class="text-capitalize">Logout</a></li>
+        </ul>
+    </div>';
+} else {
+    // Display Register and Login options if the user is not logged in
+    echo '
+    <button type="button" class="btn">
+        <i class="material-icons">perm_identity</i>
+    </button>
+    <div id="user-dropdown" class="user-menu">
+        <ul>
+            <li><a href="register.php" class="modal-view button">Register</a></li>
+            <li><a href="login.php" class="modal-view button">Login</a></li>
+        </ul>
+    </div>';
+}
+?>
+                            </div>
+                            <div class="cart-wrapper">
+                                <button type="button" class="btn">
+                                    <i class="material-icons">shopping_cart</i>
+                                    <span class="ttcount">2</span>
+                                </button>
+                                <div id="cart-dropdown" class="cart-menu">
+                                    <ul class="w-100 float-left">
+                                        <li>
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="#"><img src="img/products/01.jpg" alt="01" title="01"></a>
+                                                        </td>
+                                                        <td class="text-left product-name"><a href="#">aliquam quaerat voluptatem</a>
+                                                            <div class="quantity float-left w-100">
+                                                                <span class="cart-qty">1 × </span>
+                                                                <span class="text-left price"> $20.00</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center close"><a class="close-cart"><i class="material-icons">close</i></a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <table class="table price mb-30">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left"><strong>Total</strong></td>
+                                                        <td class="text-right"><strong>$2,122.00</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li class="buttons w-100 float-left">
+                                            <form action="cart_page.php">
+                                                <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
+                                            </form>
+                                            <form action="checkout_page.php">
+                                                <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu">
+                    <div class="container">
+                      		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light d-sm-none d-xs-none d-lg-block navbar-full">
 		
-		<!-- Navbar brand -->
-		<a class="navbar-brand text-uppercase d-none" href="#">Navbar</a>
-		
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
-		aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>		</button>
-		
-		<!-- Collapsible content -->
-		<div class="collapse navbar-collapse">
-		
-		<!-- Links -->
-		<ul class="navbar-nav m-auto justify-content-center">
-		<li class="nav-item dropdown active">
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">
-			Home
-		  <span class="sr-only">(current)</span>        </a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
-			<div class="sub-menu mb-xl-0 mb-4">
-			  <ul class="list-unstyled">
-				<li>
-				  <a class="menu-item pl-0" href="index.php">
-					Home 1                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="index2.php">
-				   Home 2                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="index3.php">
-					Home 3                 </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="index4.php">
-					Home 4                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="index5.php">
-					Home 5                  </a>                </li>
-			  </ul>
-			</div>
-		</div>
-		</li>
-		<li class="nav-item dropdown mega-dropdown">
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">Category</a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
-		  <div class="row">
-			<div class="col-md-12 col-xl-4 sub-menu mb-xl-0 mb-4">
-			  <h6 class="sub-title text-uppercase font-weight-bold white-text">Variation 1</h6>
-			  <!--Featured image-->
-			  <ul class="list-unstyled">
-				
-				 <li>
-				  <a class="menu-item pl-0" href="filter-toggle.php">
-					filter toggle                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="off-canvas-left.php">
-					off canvas left                </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="off-canvas-right.php">
-					off canvas right                </a>                </li>
-			  </ul>
-			</div>
-			<div class="col-md-6 col-xl-4 sub-menu mb-md-0 mb-4">
-			  <h6 class="sub-title text-uppercase font-weight-bold white-text">Variation 2</h6>
-				<ul class="list-unstyled">
-				<li>
-				  <a class="menu-item pl-0" href="category-5-col.php">
-					5 columns mode                 </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="category-6-col.php">
-				   6 columns mode                     </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="category-7-col.php">
-				   7 columns mode                     </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="category-8-col.php">
-				   8 columns mode                 </a>                </li>
-			  </ul>
-			</div>
-			<div class="col-md-6 col-xl-4 sub-menu mb-0">
-		
-					<ul class="list-unstyled">
-				<li>
-					<span class="menu-banner"><img src="img/banner/menu-banner.jpg" alt="menu-banner" /></span>                </li>
-			  </ul>
-			</div>
-		  </div>
-		</div>
-		</li>
-		<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">
-			Shop
-		  <span class="sr-only">(current)</span>        </a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
-			<div class="sub-menu mb-xl-0 mb-4">
-			  <ul class="list-unstyled">
-				<li>
-				  <a class="menu-item pl-0" href="product-grid.php">
-					product grid                </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="product-sticky-right.php">
-				   sticky right                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="product-extended-layout.php">
-					Extended layout                 </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="product-details.php">
-					Default layout                </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="product-compact.php">
-					compact layout           </a>                </li>
-			  </ul>
-			</div>
-		</div>
-		</li>
-		<li class="nav-item dropdown">   
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">Blog</a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
-			<div class="sub-menu">
-			  <h6 class="sub-title text-uppercase font-weight-bold white-text d-none">Featured</h6>
-			<ul class="list-unstyled">
-				  <li>
-				  <a class="menu-item pl-0" href="blog-2-column.php">
-					blog 2 column                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="blog-3-column.php">
-				   blog 3 column                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="blog-2-column-masonary.php">
-				   blog masonary                 </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="blog-list.php">
-					blog list                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="blog-details.php">
-				   blog details                  </a>                </li>
-			  </ul>
-			</div>
-		</div>
-		</li>
-		<li class="nav-item dropdown">   
-		<a class="nav-link dropdown-toggle text-uppercase" href="category.php">Pages</a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3">
-			<div class="sub-menu">
-			<ul class="list-unstyled">
-				 <li>
-				  <a class="menu-item pl-0" href="about-us.php">
-					About us                 </a>				 </li>
-					<li>
-				  <a class="menu-item pl-0" href="accordions.php">
-					Accordions                  </a>                </li>
-	              <li>
-				  <a class="menu-item pl-0" href="buttons.php">
-				   Buttons              </a>                </li>
-			  </ul>
-			</div>
-		</div>
-		</li>
-		<li class="nav-item dropdown">
-		<a class="nav-link text-uppercase" href="contact-us.php">contact us</a>      </li>
-		</ul>
-		<!-- Links -->
-		</div>
-		<!-- Collapsible content -->
-		</nav>
-		<!-- Navbar -->
-		<nav class="navbar navbar-expand-lg navbar-dark d-lg-none navbar-responsive">
-		
-		<!-- Navbar brand -->
-		<a class="navbar-brand text-uppercase d-none" href="#">Navbar</a>
-		
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
-		aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"><i class='material-icons'>sort</i></span>
-		</button>
-		
-		<!-- Collapsible content -->
-		<div class="collapse navbar-collapse" id="navbarSupportedContent2">
-		
-		<!-- Links -->
-		<ul class="navbar-nav m-auto justify-content-center">
-		
-		<!-- Features -->
-		<li class="nav-item dropdown active">
-		<a class="nav-link dropdown-toggle text-uppercase" data-toggle="collapse" data-target="#menu1"
-		aria-controls="menu1" aria-expanded="false" aria-label="Toggle navigation" href="#">
-			Home
-		  <span class="sr-only">(current)</span>        </a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
-			<div class="sub-menu mb-xl-0 mb-4">
-			  <ul class="list-unstyled">
-				<li>
-				  <a class="menu-item pl-0" href="index.php">
-					Home 1                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="index2.php">
-				   Home 2                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="index3.php">
-					Home 3                 </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="index4.php">
-					Home 4                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="index5.php">
-					Home 5                  </a>                </li>
-			  </ul>
-			</div>
-		</div>
-		</li>
-		<li class="nav-item dropdown mega-dropdown">
-		<a class="nav-link dropdown-toggle text-uppercase" data-toggle="collapse" data-target="#menu3"
-		aria-controls="menu3" aria-expanded="false" aria-label="Toggle navigation" href="#">Category</a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu3">
-		  <div class="row">
-			<div class="col-md-12 col-xl-4 sub-menu mb-xl-0 mb-4">
-			  <h6 class="sub-title text-uppercase font-weight-bold white-text">Variation 1</h6>
-			  <!--Featured image-->
-			  <ul class="list-unstyled">
-				 <li>
-				  <a class="menu-item pl-0" href="filter-toggle.php">
-					filter toggle                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="off-canvas-left.php">
-					off canvas left                </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="off-canvas-right.php">
-					off canvas right                </a>                </li>
-			  </ul>
-			</div>
-			<div class="col-md-6 col-xl-4 sub-menu mb-md-0 mb-4">
-			  <h6 class="sub-title text-uppercase font-weight-bold white-text">Variation 2</h6>
-				<ul class="list-unstyled">
-				<li>
-				  <a class="menu-item pl-0" href="category-5-col.php">
-					grid 5 column                 </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="category-6-col.php">
-				   grid 6 column                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="category-7-col.php">
-					grid 7 column                   </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="category-8-col.php">
-					grid 8 column                </a>                </li>
-			  </ul>
-			</div>
-			<div class="col-md-6 col-xl-4 sub-menu mb-0">
-		
-					<ul class="list-unstyled">
-				<li>
-					<span class="menu-banner"><img src="img/banner/menu-banner.jpg" alt="menu-banner" /></span>                </li>
-			  </ul>
-			</div>
-		  </div>
-		</div>
-		</li>
-		
-		<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle text-uppercase" data-toggle="collapse" data-target="#menu2"
-		aria-controls="menu2" aria-expanded="false" aria-label="Toggle navigation" href="#">
-			Shop
-		  <span class="sr-only">(current)</span>        </a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu2">
-			<div class="sub-menu mb-xl-0 mb-4">
-			  <h6 class="sub-title text-uppercase font-weight-bold white-text">Featured</h6>
-			  <ul class="list-unstyled">
-				<li>
-				  <a class="menu-item pl-0" href="product-grid.php">
-					product grid                </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="product-sticky-right.php">
-				   sticky right                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="product-extended-layout.php">
-					Extended layout                 </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="product-details.php">
-					Default layout                </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="product-compact.php">
-					compact layout           </a>                </li>
-			  </ul>
-			</div>
-		</div>
-		</li>
-		<!-- Technology -->
-		
-		
-		
-		<li class="nav-item dropdown">   
-		<a class="nav-link dropdown-toggle text-uppercase"  data-toggle="collapse" data-target="#menu4"
-		aria-controls="menu4" aria-expanded="false" aria-label="Toggle navigation" href="#">Blog</a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu4">
-			<div class="sub-menu">
-			  <h6 class="sub-title text-uppercase font-weight-bold white-text d-none">Featured</h6>
-			<ul class="list-unstyled">
-				  <li>
-				  <a class="menu-item pl-0" href="blog-2-column.php">
-					blog 2 column                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="blog-3-column.php">
-				   blog 3 column                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="blog-2-column-masonary.php">
-				   blog masonary                 </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="blog-list.php">
-					blog list                  </a>                </li>
-				<li>
-				  <a class="menu-item pl-0" href="blog-details.php">
-				   blog details                  </a>                </li>
-			  </ul>
-			</div>
-		</div>
-		</li>
-		
-		<li class="nav-item dropdown">
-		<a class="nav-link text-uppercase" href="contact-us.php">contact us</a>      </li>
-		
-		<li class="nav-item dropdown">   
-		<a class="nav-link dropdown-toggle text-uppercase"  data-toggle="collapse" data-target="#menu5"
-		aria-controls="menu5" aria-expanded="false" aria-label="Toggle navigation" href="#">Pages</a>
-		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu5">
-			<div class="sub-menu">
-			  <h6 class="sub-title text-uppercase font-weight-bold white-text d-none">Featured</h6>
-			<ul class="list-unstyled">
-				  <li>
-				  <a class="menu-item pl-0" href="about-us.php">
-					About us                 </a>				 </li>
-					<li>
-				  <a class="menu-item pl-0" href="accordions.php">
-					Accordions                  </a>                </li>
-	              <li>
-				  <a class="menu-item pl-0" href="buttons.php">
-				   Buttons              </a>                </li>
-			  </ul>
-			</div>
-		</div>
-		</li>
-		</ul>
-		<!-- Links -->
-		</div>
-		<!-- Collapsible content -->
-		
-		</nav>
-	</div>
-	</div>
-	</div>
-	</header>
+            <!-- Navbar brand -->
+            <a class="navbar-brand text-uppercase d-none" href="#">Navbar</a>
+            
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+            aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse">
+            
+            <!-- Links -->
+            <ul class="navbar-nav m-auto justify-content-center">
+            <li class="nav-item dropdown active">
+            <a class="nav-link text-uppercase" href="index.php">
+                Home
+              <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+            <a class="nav-link text-uppercase" href="shop-main.php">Shop</a>
+            <li class="nav-item dropdown active">
+            <a class="nav-link text-uppercase dropdown-toggle" href="shop-main.php">
+                Outfit Finder
+              <span class="sr-only">(current)</span></a>
+              <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
+                  <div class="sub-menu mb-xl-0 mb-4">
+                      <ul class="list-unstyled">
+                          <li>
+                              <a class="menu-item pl-0" href="valises.php">
+                            Trip Planner</a> </li>
+                          <li>
+                              <a class="menu-item pl-0" href="advices.php">
+                            Style Tips
+                            </a>
+                        </li>
+                        <li>
+                            <a class="menu-item pl-0" href="suggest.php">
+                            DailyOutfitSuggestions
+                          </a>
+                      </li>
+                      </ul>
+                  </div>
+              </div>
+            </li>
+            <li class="nav-item">   
+            <a class="nav-link text-uppercase" href="about-us.php">About us </a>
+            </li>
+            <!-- Links -->
+            </div>
+            <!-- Collapsible content -->
+            
+            </nav>
+    </header>
 		<nav aria-label="breadcrumb" class="w-100 float-left">
   <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/parallax.jpg" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
     <li class="breadcrumb-item active"><a href="#">Home</a></li>

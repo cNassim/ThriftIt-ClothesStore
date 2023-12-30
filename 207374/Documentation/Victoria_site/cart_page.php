@@ -1,161 +1,203 @@
+<?php
+    session_start(); // Start the session if not started already
+    
+    // Logout logic
+    if (isset($_GET['logout'])) {
+        unset($_SESSION['logged_in']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_name']);
+        session_destroy(); // Optional: Destroy the session data completely
+        header('Location: index.php');
+        exit;
+    }
+?>
+
 
 <!doctype html>
 <html lang="en">
-  <head>
-  	<title>Fashion Template for Bootstrap</title>
 
+<head>
+    <title>ThriftIt</title>
+
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet"> 
-	
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
-	<!-- Bootstrap core CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/owl-carousel.css" rel="stylesheet">
-	 <link href="css/lightbox.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-  </head>
+    <link href="css/lightbox.css" rel="stylesheet">
 
-  <body>
-  	
-	<header class="header-area header-sticky text-center header-default">
-		<div class="header-main-sticky">
-		</div>
-		<div class="header-main-head">
+    <!-- Custom styles for this template -->
+</head>
+
+<body id="about-us">
+
+    <header class="header-area header-sticky text-center header-default">
+        <div class="header-main-sticky">
+            <div class="header-main-head">
+
+                <div class="header-main">
+                    <div class="container">
+                        <div class="header-middle float-left">
+                            <div class="logo">
+                                <a href="index.php"><img src="img/logos/logo.png" alt="NatureCircle"></a>
+                            </div>
+                        </div>
+                        <div class="header-right d-flex d-xs-block d-sm-flex justify-content-end float-right">
+                            <div class="user-info">
+                            <?php
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+
+if ($isLoggedIn) {
+    // Display 'My Account' and 'Logout' if the user is logged in
+    echo '
+    <button type="button" class="btn">
+        <i class="material-icons">perm_identity</i>
+    </button>
+    <div id="user-dropdown" class="user-menu">
+        <ul>
+            <li><a href="my-account.php" class="text-capitalize">my account</a></li>
+            <li><a href="index.php?logout=1" class="text-capitalize">Logout</a></li>
+        </ul>
+    </div>';
+} else {
+    // Display Register and Login options if the user is not logged in
+    echo '
+    <button type="button" class="btn">
+        <i class="material-icons">perm_identity</i>
+    </button>
+    <div id="user-dropdown" class="user-menu">
+        <ul>
+            <li><a href="register.php" class="modal-view button">Register</a></li>
+            <li><a href="login.php" class="modal-view button">Login</a></li>
+        </ul>
+    </div>';
+}
+?>
+                            </div>
+                            <div class="cart-wrapper">
+                                <button type="button" class="btn">
+                                    <i class="material-icons">shopping_cart</i>
+                                    <span class="ttcount">2</span>
+                                </button>
+                                <div id="cart-dropdown" class="cart-menu">
+                                    <ul class="w-100 float-left">
+                                        <li>
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <a href="#"><img src="img/products/01.jpg" alt="01" title="01"></a>
+                                                        </td>
+                                                        <td class="text-left product-name"><a href="#">aliquam quaerat voluptatem</a>
+                                                            <div class="quantity float-left w-100">
+                                                                <span class="cart-qty">1 × </span>
+                                                                <span class="text-left price"> $20.00</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center close"><a class="close-cart"><i class="material-icons">close</i></a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <table class="table price mb-30">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left"><strong>Total</strong></td>
+                                                        <td class="text-right"><strong>$2,122.00</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li class="buttons w-100 float-left">
+                                            <form action="cart_page.php">
+                                                <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
+                                            </form>
+                                            <form action="checkout_page.php">
+                                                <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu">
+                    <div class="container">
+                      		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light d-sm-none d-xs-none d-lg-block navbar-full">
 		
-		<div class="header-main">
-		<div class="container">
-			<div class="header-middle float-lg-left float-md-left float-sm-left float-xs-none">
-					<div class="logo">
-									<a href="index.php"><img src="img/logos/logo.png" alt="logo" width="200" height="50" ></a>		</div>
-			</div> 
-			<div class="header-right d-flex d-xs-flex d-sm-flex justify-content-end float-right">
-			<div class="user-info">
-			<button type="button" class="btn">
-			<i class="material-icons">perm_identity</i>		</button>
-			<div id="user-dropdown" class="user-menu">
-			<ul>
-				<li><a href="my-account.php" class="text-capitalize">my account</a></li>
-				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
-				<li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
-			</ul>
-			</div>
-			</div>
-			<div class="cart-wrapper">
-				<button type="button" class="btn">
-					<i class="material-icons">shopping_cart</i>
-					<span class="ttcount">2</span>			</button>
-				<div id="cart-dropdown" class="cart-menu">
-					<ul class="w-100 float-left">
-					  <li>
-						<table class="table table-striped">
-						  <tbody>
-							<tr>
-							  <td class="text-center"><a href="#"><img src="img/products/01.jpg" alt="01" title="01" height="104" width="80"></a></td>
-							  <td class="text-left product-name"><a href="#">aliquam quaerat voluptatem</a>
-							  <div class="quantity float-left w-100">
-								 <span class="cart-qty">1 × </span>
-								<span class="text-left price"> $20.00</span>						    </div>                          </td>
-							  <td class="text-center close"><a class="close-cart"><i class="material-icons">close</i></a></td>
-							</tr>
-						  </tbody>
-						</table>
-					  </li>
-					  <li>
-						<table class="table price mb-30">
-						  <tbody>
-							<tr>
-							  <td class="text-left"><strong>Total</strong></td>
-							  <td class="text-right"><strong>$2,122.00</strong></td>
-							</tr>
-						  </tbody>
-						</table>
-					  </li>
-					  <li class="buttons w-100 float-left">
-						<form action="cart_page.php">
-						  <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
-						</form>
-						<form action="checkout_page.php">
-						  <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
-						</form>
-					  </li>
-					</ul>
-			  </div>
-			</div>
-			</div>
-		</div>
-		</div>
-		<div class="menu">
-		<div class="container">
-			<!-- Navbar -->
-			<nav class="navbar navbar-expand-lg navbar-light d-sm-none d-xs-none d-lg-block navbar-full">
-			
-				<!-- Navbar brand -->
-				<a class="navbar-brand text-uppercase d-none" href="#">Navbar</a>
-				
-				<!-- Collapse button -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
-				aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<!-- Collapsible content -->
-				<div class="collapse navbar-collapse">
-				
-				<!-- Links -->
-				<ul class="navbar-nav m-auto justify-content-center">
-				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase" href="index.php">
-					Home
-				  <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item dropdown mega-dropdown">
-				<a class="nav-link text-uppercase" href="shop-main.php">Shop</a>
-				<li class="nav-item dropdown active">
-				<a class="nav-link text-uppercase dropdown-toggle" href="shop-main.php">
-					Outfit Finder
-				  <span class="sr-only">(current)</span></a>
-				  <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
-					  <div class="sub-menu mb-xl-0 mb-4">
-						  <ul class="list-unstyled">
-							  <li>
-								  <a class="menu-item pl-0" href="valises.php">
-								Trip Planner</a> </li>
-							  <li>
-								  <a class="menu-item pl-0" href="advices.php">
-								Style Tips 
-								</a>
-							</li>
-							<li>
-								<a class="menu-item pl-0" href="suggest.php">
-								DailyOutfitSuggestions
-							  </a>
-						  </li>
-						  </ul>
-					  </div>
-				  </div>
-				</li>
-				<li class="nav-item">   
-				<a class="nav-link text-uppercase" href="about-us.php">About us </a>
-				</li>
-				<!-- Links -->
-				</div>
-				<!-- Collapsible content -->
-				
-				</nav>
-		</div>
-		</div>
-		</div>
-		</div>
-		</header>
+            <!-- Navbar brand -->
+            <a class="navbar-brand text-uppercase d-none" href="#">Navbar</a>
+            
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+            aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse">
+            
+            <!-- Links -->
+            <ul class="navbar-nav m-auto justify-content-center">
+            <li class="nav-item dropdown active">
+            <a class="nav-link text-uppercase" href="index.php">
+                Home
+              <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+            <a class="nav-link text-uppercase" href="shop-main.php">Shop</a>
+            <li class="nav-item dropdown active">
+            <a class="nav-link text-uppercase dropdown-toggle" href="shop-main.php">
+                Outfit Finder
+              <span class="sr-only">(current)</span></a>
+              <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" id="menu1">
+                  <div class="sub-menu mb-xl-0 mb-4">
+                      <ul class="list-unstyled">
+                          <li>
+                              <a class="menu-item pl-0" href="valises.php">
+                            Trip Planner</a> </li>
+                          <li>
+                              <a class="menu-item pl-0" href="advices.php">
+                            Style Tips
+                            </a>
+                        </li>
+                        <li>
+                            <a class="menu-item pl-0" href="suggest.php">
+                            DailyOutfitSuggestions
+                          </a>
+                      </li>
+                      </ul>
+                  </div>
+              </div>
+            </li>
+            <li class="nav-item">   
+            <a class="nav-link text-uppercase" href="about-us.php">About us </a>
+            </li>
+            <!-- Links -->
+            </div>
+            <!-- Collapsible content -->
+            
+            </nav>
+    </header>
 	<nav aria-label="breadcrumb" class="w-100 float-left">
   <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/parallax.jpg" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
     <li class="breadcrumb-item"><a href="#">Home</a></li>

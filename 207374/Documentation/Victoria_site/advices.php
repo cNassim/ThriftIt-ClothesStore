@@ -1,9 +1,25 @@
+<?php
+    session_start(); // Start the session if not started already
+    
+    // Logout logic
+    if (isset($_GET['logout'])) {
+        unset($_SESSION['logged_in']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_name']);
+        session_destroy(); // Optional: Destroy the session data completely
+        header('Location: index.php');
+        exit;
+    }
+?>
+
+
 <!doctype html>
 <html lang="en">
 
 <head>
     <title>ThriftIt</title>
 
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -40,16 +56,37 @@
                         </div>
                         <div class="header-right d-flex d-xs-block d-sm-flex justify-content-end float-right">
                             <div class="user-info">
-                                <button type="button" class="btn">
-                                    <i class="material-icons">perm_identity</i>
-                                </button>
-                                <div id="user-dropdown" class="user-menu">
-                                    <ul>
-                                        <li><a href="my-account.php" class="text-capitalize">my account</a></li>
-                                        <li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalRegisterForm">Register</a></li>
-                                        <li><a href="#" class="modal-view button" data-toggle="modal" data-target="#modalLoginForm">login</a></li>
-                                    </ul>
-                                </div>
+                            <?php
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+
+if ($isLoggedIn) {
+    // Display 'My Account' and 'Logout' if the user is logged in
+    echo '
+    <button type="button" class="btn">
+        <i class="material-icons">perm_identity</i>
+    </button>
+    <div id="user-dropdown" class="user-menu">
+        <ul>
+            <li><a href="my-account.php" class="text-capitalize">my account</a></li>
+            <li><a href="index.php?logout=1" class="text-capitalize">Logout</a></li>
+        </ul>
+    </div>';
+} else {
+    // Display Register and Login options if the user is not logged in
+    echo '
+    <button type="button" class="btn">
+        <i class="material-icons">perm_identity</i>
+    </button>
+    <div id="user-dropdown" class="user-menu">
+        <ul>
+            <li><a href="register.php" class="modal-view button">Register</a></li>
+            <li><a href="login.php" class="modal-view button">Login</a></li>
+        </ul>
+    </div>';
+}
+?>
                             </div>
                             <div class="cart-wrapper">
                                 <button type="button" class="btn">
@@ -158,6 +195,7 @@
             <!-- Links -->
             </div>
             <!-- Collapsible content -->
+            
             </nav>
     </header>
     <nav aria-label="breadcrumb" class="w-100 float-left mb-150 mb-sm-30">
