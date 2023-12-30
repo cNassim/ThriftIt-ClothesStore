@@ -219,17 +219,6 @@ if(isset($_GET['product_id'])){
 												<div class="regular-price">$<?php echo $row['product_price']; ?></div>
 											</div>
 											<div class="product-variants float-left w-100">
-						<div class="col-md-3 col-sm-6 col-xs-12 size-options d-flex align-items-center">
-											<h5>Size:</h5>
-
-								<select class="form-control" name="select">
-											<option value="" selected="">Size</option>
-											<option value="black">Medium</option>
-											<option value="white">Large</option>
-											<option value="gold">Small</option>
-											<option value="rose gold">Extra large</option>
-								</select>
-						</div>
 						<div class="color-option d-flex align-items-center">
                                         <h5>color : <?php echo $row['product_color']; ?></h5>
                                     </div>

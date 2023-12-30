@@ -268,7 +268,7 @@ $nbr = $stmt1->get_result();
 				<div class="product-layouts col-lg-3 col-md-3 col-sm-6 col-xs-6">
 					<div class="product-thumb">
 						<div class="image zoom">
-							<a href="product-details.php">
+							<a href="<?php echo "product-details.php?product_id=".$row['product_id'];?>">
 							<img src="img/products/<?php echo $row['product_image'];?>"/>
 							<img src="img/products/<?php echo $row['product_image2'];?>" class="second_image img-responsive"/></a>
 						</div>
@@ -287,12 +287,6 @@ $nbr = $stmt1->get_result();
 							</div>
 							<div class="price">
 								<div class="regular-price">$<?php echo $row['product_price']; ?>
-								</div>
-							</div>
-							<div class="button-wrapper">
-								<div class="button-group text-center">
-									<button type="button" class="btn btn-primary btn-cart" data-target="#cart-pop" data-toggle="modal"><i class="material-icons">shopping_cart</i><span>Add to cart</span></button>
-									<a href="wishlist.php?article_id=1" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
 								</div>
 							</div>
 						</div>
