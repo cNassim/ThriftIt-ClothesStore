@@ -1,7 +1,8 @@
 <?php
     session_start(); // Start the session if not started already
-    
+
     if(isset($_POST['add_to_cart'])){
+        $_SESSION['test']=true;
         if(isset($_session['cart'])){
             $product_array_ids= array_column($_SESSION['cart'],"product_id");
             if(!in_array($_POST['product_id'],$product_array_ids)){
@@ -48,8 +49,6 @@
         $product_array['product_quantity'] = $product_quantity;
         $_SESSION['cart'][$product_id] = $product_array;
         calculateTotalCart();
-    }else{
-        header('location: login.php');
     }
     // Logout logic
     if (isset($_GET['logout'])) {
@@ -277,7 +276,7 @@ if ($isLoggedIn) {
                             </tr>
                         </thead>
                     
-                    <?php foreach($_SESSION['cart'] as $key => $value){?>
+                    <?php if(isset($_SESSION['test'])){ foreach($_SESSION['cart'] as $key => $value){?>
                         <tbody>
                             <tr>
                                 <form method="POST" action="cart_page.php">
@@ -297,7 +296,7 @@ if ($isLoggedIn) {
                                 <td class="table-total"><p>$<?php echo $value['product_quantity'] * $value['product_price'];?></p></td>
                             </tr>
                         </tbody>
-                        <?php } ?>
+                        <?php } } ?>
                     </table>
                 </div>
 			</div>
@@ -307,7 +306,11 @@ if ($isLoggedIn) {
                         <div class="table-total-amount">
                             <div class="single-total-content d-flex justify-content-between float-left w-100">
                                 <strong>Total</strong>
+                                <?php if ($_SESSION['test']){ ?>
                                 <span class="c-total-price">$<?php echo $_SESSION['total'];?></span>
+                                <?php } else {?>
+                                <span class="c-total-price">$0.00</span>
+                                <?php } ?>
                             </div>
                             <a href="checkout_page.php" class="btn btn-primary float-left w-100 text-center">Proceed to checkout</a>
                         </div>
