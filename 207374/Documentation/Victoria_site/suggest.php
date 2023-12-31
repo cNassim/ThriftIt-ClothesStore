@@ -1,6 +1,7 @@
 <?php
     session_start(); // Start the session if not started already
-    
+    include 'php/config.php';
+require 'server/cox.php';
     // Logout logic
     if (isset($_GET['logout'])) {
         unset($_SESSION['logged_in']);
@@ -10,6 +11,36 @@
         header('Location: index.php');
         exit;
     }
+
+    $conn = cnx_pdo();
+$errorMsg = '';
+$products = array(); // Initialisez un tableau pour stocker les produits
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    if (isset($_GET['style'])) {
+        $choosestyle = $_GET['style'];
+
+        switch ($choosestyle) {
+            case 'Classy':
+                $stmtClassy = $conn->prepare("SELECT * FROM products WHERE product_category IN ('Formal Wear', 'Coats')");
+                $stmtClassy->execute();
+                $products = $stmtClassy->fetchAll(PDO::FETCH_ASSOC);
+                break;
+            case 'StreetWear':
+                $stmtStreetWear = $conn->prepare("SELECT * FROM products WHERE product_category IN ('Hoodie', 'Jackets')");
+                $stmtStreetWear->execute();
+                $products = $stmtStreetWear->fetchAll(PDO::FETCH_ASSOC);
+                break;
+            case 'Casual':
+                $stmtCasual = $conn->prepare("SELECT * FROM products WHERE product_category IN ('Set', 'T-shirt', 'Pants')");
+                $stmtCasual->execute();
+                $products = $stmtCasual->fetchAll(PDO::FETCH_ASSOC);
+                break;
+            default:
+                break;
+        }
+    }
+}
 ?>
 
 
@@ -191,36 +222,84 @@ if ($isLoggedIn) {
             
             </nav>
     </header>
-    
+
+
+
+
     <main class="main-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center">
-                    <strong><h1>Choose a Style :</h1></strong>
-                    <h1 class="display-4"></h1>
-                    <select id="styleChoice" class="form-control">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <strong><h1>Choisissez un style :</h1></strong>
+                <h1 class="display-4"></h1>
+
+                <form method="get" action="">
+                    <label for="style">Style :</label>
+                    <select name="style" id="style" class="form-control">
+                        <!-- Ajoutez les options de style ici -->
                         <option value="Classy">Classy</option>
-                        <option value="streetwear">Street Wear</option>
-                        <option value="Sporty">Sporty</option>
+                        <option value="StreetWear">StreetWear</option>
                         <option value="Casual">Casual</option>
-                        <!-- Ajoutez d'autres choix selon vos besoins -->
+                        <!-- Ajoutez d'autres options selon vos besoins -->
                     </select>
-                    <button onclick="afficherArticles()" class="btn btn-primary mt-3">Submit</button>
-                    <div id="suggestionTenue" class="text-center"></div>
-                </div>
-            </div>
-            <div id="ttspecial" class="ttspecial my-40 bottom-to-top hb-animate-element">
-                <div class="container">
-                    <div class="row">
-                        <div class="row d-flex flex-wrap" id="articlesContainer">
-                            <!-- Les articles seront ajoutés ici par JavaScript -->
+
+                    <input type="submit" name="submit" class="btn btn-primary mt-3" value="Filtrer">
+                </form>
+
+                <div class="row d-flex flex-wrap">
+                    <?php
+                    foreach ($products as $product) {
+                        ?>
+                        <div class="product-layouts col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                            <div class="product-thumb">
+                                <div class="image zoom">
+                                    <a href="<?php echo "product-details.php?product_id=" . $product['product_id']; ?>">
+                                        <img src="img/products/<?php echo $product['product_image']; ?>"/>
+                                    </a>
+                                    <style>
+    .image.zoom img {
+        width: 100%; /* Ajustez la largeur comme vous le souhaitez, par exemple, 100% */
+        height: auto; /* Cela garantit que la hauteur est ajustée proportionnellement à la largeur */
+        max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur parent */
+    }
+</style>
+                                </div>
+                                <div class="thumb-description">
+                                    <div class="caption">
+                                        <h4 class="product-title text-capitalize"><a
+                                                    href="<?php echo "product-details.php?product_id=" . $product['product_id']; ?>"><?php echo $product['product_name']; ?></a>
+                                        </h4>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="product-ratings d-inline-block align-middle">
+                                            <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                            <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                            <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                            <span class="fa fa-stack"><i class="material-icons off">star</i></span>
+                                            <span class="fa fa-stack"><i class="material-icons off">star</i></span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="regular-price">$<?php echo $product['product_price']; ?></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <?php
+                    }
+
+                    // Si aucun produit n'est trouvé, vous pouvez afficher un message
+                    if (empty($products)) {
+                        echo '<p>Aucun produit trouvé.</p>';
+                    }
+                    ?>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
     
+</main>
+
     
     
 <br><br><br><br><br><br><br><br>
