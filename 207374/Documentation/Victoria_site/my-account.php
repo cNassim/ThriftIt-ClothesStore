@@ -12,41 +12,54 @@ if (isset($_GET['logout'])) {
     header('Location: index.php');
     exit;
 }
+
 $conn = cnx_pdo();
 $errorMsg = '';
+$successMsg = '';
 
-$reqUser = $conn->prepare("SELECT * FROM users WHERE user_email =:user_email");
-        $reqUser->bindValue(':user_email',$_SESSION['user_email']);
-        $reqUser->execute();
-        $user = $reqUser->fetch();
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){ 
-    if (!empty(['new_name'])){
+$reqUser = $conn->prepare("SELECT * FROM users WHERE user_email = :user_email");
+$reqUser->bindValue(':user_email', $_SESSION['user_email']);
+$reqUser->execute();
+$user = $reqUser->fetch();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (!empty($_POST['new_name'])) {
         $updatename = $_POST['new_name'];
-        $req_name = $conn->prepare("UPDATE users  SET user_name = :name WHERE user_email =:user_email");
-        $req_name->bindValue(':name', $updatename);
-        $req_name->bindValue(':user_email', $_SESSION['user_email']);
-        $req_name->execute();
+        updateUserName($conn, $updatename, $_SESSION['user_email']);
+        $_SESSION['successMsg'] = 'Username updated successfully.';
     }
-    if (!empty($_POST['old_password']) && !empty($_POST['new_password'] )){       
+
+    if (!empty($_POST['old_password']) && !empty($_POST['new_password'])) {
         $oldpass = md5($_POST['old_password']);
         $updatepass = md5($_POST['new_password']);
-if($oldpass === $user['user_password']){
-        $req_prep = $conn->prepare("UPDATE users  SET user_password = :pass WHERE user_email =:user_email");
-        $req_prep->bindValue(':user_email', $_SESSION['user_email']);
-        $req_prep->bindValue(':pass', $updatepass);
-        $req_prep->execute();
-}
-else{
-    $errorMsg = 'Old password is incorrect. Password not updated.';
-}
-}
-if(isset($req_name) && empty($req_prep)){$errorMsg = 'Old password is incorrect. Password not updated.';
-}
-else {
+
+        if ($oldpass === $user['user_password']) {
+            updateUserPassword($conn, $updatepass, $_SESSION['user_email']);
+            $_SESSION['successMsg'] = 'Password updated successfully.';
+        } else {
+            $_SESSION['errorMsg'] = 'Old password is incorrect. Password not updated.';
+        }
+    }
+
     header("Location: my-account.php");
     exit();
 }
+
+function updateUserName($conn, $newName, $userEmail) {
+    $reqName = $conn->prepare("UPDATE users SET user_name = :name WHERE user_email = :user_email");
+    $reqName->bindValue(':name', $newName);
+    $reqName->bindValue(':user_email', $userEmail);
+    $reqName->execute();
 }
+
+function updateUserPassword($conn, $newPassword, $userEmail) {
+    $reqPass = $conn->prepare("UPDATE users SET user_password = :pass WHERE user_email = :user_email");
+    $reqPass->bindValue(':user_email', $userEmail);
+    $reqPass->bindValue(':pass', $newPassword);
+    $reqPass->execute();
+}
+
+
 
 ?>
 
@@ -266,8 +279,17 @@ if ($isLoggedIn) {
         <!-- Right Section - Form for Modifying Information -->
         <div class="right-section">
     <h4>Edit Account Information</h4>
-<span class="text-danger">
-<?= $errorMsg ?></span>
+    <?php
+        if (isset($_SESSION['successMsg'])) {
+            echo '<div style="color: green;">' . $_SESSION['successMsg'] . '</div>';
+            unset($_SESSION['successMsg']);
+        }
+
+        if (isset($_SESSION['errorMsg'])) {
+            echo '<div style="color: red;">' . $_SESSION['errorMsg'] . '</div>';
+            unset($_SESSION['errorMsg']);
+        }
+        ?>
     <form action="#" method="post" class="myaccount-form">
             <!-- Update Name -->
             <div class="form-group">
@@ -488,3 +510,7 @@ s0.parentNode.insertBefore(s1,s0);
 		
 		</body>
 </html>
+
+<?php
+session_write_close();
+?>
