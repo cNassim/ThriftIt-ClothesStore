@@ -34,8 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $updatepass = md5($_POST['new_password']);
 
         if ($oldpass === $user['user_password']) {
+            if (strlen($_POST['new_password']) > 6) {
             updateUserPassword($conn, $updatepass, $_SESSION['user_email']);
             $_SESSION['successMsg'] = 'Password updated successfully.';
+            } else{
+                $_SESSION['errorMsg'] = "The new password must be at least 6 characters long.";
+            }
         } else {
             $_SESSION['errorMsg'] = 'Old password is incorrect. Password not updated.';
         }
