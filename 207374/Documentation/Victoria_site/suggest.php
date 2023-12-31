@@ -256,13 +256,6 @@ if ($isLoggedIn) {
                                     <a href="<?php echo "product-details.php?product_id=" . $product['product_id']; ?>">
                                         <img src="img/products/<?php echo $product['product_image']; ?>"/>
                                     </a>
-                                    <style>
-    .image.zoom img {
-        width: 100%; /* Ajustez la largeur comme vous le souhaitez, par exemple, 100% */
-        height: auto; /* Cela garantit que la hauteur est ajustée proportionnellement à la largeur */
-        max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur parent */
-    }
-</style>
                                 </div>
                                 <div class="thumb-description">
                                     <div class="caption">
