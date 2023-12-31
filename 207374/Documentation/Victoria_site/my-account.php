@@ -1,17 +1,54 @@
 <?php
-    session_start(); // Start the session if not started already
-    
-    // Logout logic
-    if (isset($_GET['logout'])) {
-        unset($_SESSION['logged_in']);
-        unset($_SESSION['user_email']);
-        unset($_SESSION['user_name']);
-        session_destroy(); // Optional: Destroy the session data completely
-        header('Location: index.php');
-        exit;
-    }
-?>
+session_start();
 
+// Include the configuration file
+include 'php/config.php';
+require 'server/cox.php';
+if (isset($_GET['logout'])) {
+    unset($_SESSION['logged_in']);
+    unset($_SESSION['user_email']);
+    unset($_SESSION['user_name']);
+    session_destroy();
+    header('Location: index.php');
+    exit;
+}
+$conn = cnx_pdo();
+$errorMsg = '';
+
+$reqUser = $conn->prepare("SELECT * FROM users WHERE user_email =:user_email");
+        $reqUser->bindValue(':user_email',$_SESSION['user_email']);
+        $reqUser->execute();
+        $user = $reqUser->fetch();
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){ 
+    if (!empty(['new_name'])){
+        $updatename = $_POST['new_name'];
+        $req_name = $conn->prepare("UPDATE users  SET user_name = :name WHERE user_email =:user_email");
+        $req_name->bindValue(':name', $updatename);
+        $req_name->bindValue(':user_email', $_SESSION['user_email']);
+        $req_name->execute();
+    }
+    if (!empty($_POST['old_password']) && !empty($_POST['new_password'] )){       
+        $oldpass = md5($_POST['old_password']);
+        $updatepass = md5($_POST['new_password']);
+if($oldpass === $user['user_password']){
+        $req_prep = $conn->prepare("UPDATE users  SET user_password = :pass WHERE user_email =:user_email");
+        $req_prep->bindValue(':user_email', $_SESSION['user_email']);
+        $req_prep->bindValue(':pass', $updatepass);
+        $req_prep->execute();
+}
+else{
+    $errorMsg = 'Old password is incorrect. Password not updated.';
+}
+}
+if(isset($req_name) && empty($req_prep)){$errorMsg = 'Old password is incorrect. Password not updated.';
+}
+else {
+    header("Location: my-account.php");
+    exit();
+}
+}
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -204,169 +241,126 @@ if ($isLoggedIn) {
             <li class="breadcrumb-item active" aria-current="page">my-account</li>
         </ol>
     </nav>
-    <div class="main-content w-100 float-left blog-list">
-        <div class="container">
-            <div class="row">
-                
-                <div class="products-grid col-xl-9 col-lg-8 order-lg-2">
-                    <div class="row">
-                        <div class="col-lg-12 order-lg-last account-content">
-                            <h4>Edit Account Information</h4>
-                            <form action="#" class="myacoount-form">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group required-field">
-                                                    <label for="acc-name">First Name <span class="required">*</span></label>
-                                                    <input type="text" class="form-control" id="acc-name" name="acc-name" required="">
-                                                </div>
-                                                <!-- End .form-group -->
-                                            </div>
-                                            <!-- End .col-md-4 -->
 
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="acc-mname">Middle Name <span class="required">*</span></label>
-                                                    <input type="text" class="form-control" id="acc-mname" name="acc-mname">
-                                                </div>
-                                                <!-- End .form-group -->
-                                            </div>
-                                            <!-- End .col-md-4 -->
 
-                                            <div class="col-md-4">
-                                                <div class="form-group required-field">
-                                                    <label for="acc-lastname">Last Name <span class="required">*</span></label>
-                                                    <input type="text" class="form-control" id="acc-lastname" name="acc-lastname" required="">
-                                                </div>
-                                                <!-- End .form-group -->
-                                            </div>
-                                            <!-- End .col-md-4 -->
-                                        </div>
-                                        <!-- End .row -->
-                                    </div>
-                                    <!-- End .col-sm-11 -->
-                                </div>
-                                <!-- End .row -->
 
-                                <div class="form-group required-field">
-                                    <label for="acc-email">Email</label>
-                                    <input type="email" class="form-control" id="acc-email" name="acc-email" required="">
-                                </div>
-                                <!-- End .form-group -->
 
-                                <div class="form-group required-field">
-                                    <label for="account-password">Password</label>
-                                    <input type="password" class="form-control" id="account-password" name="account-password" required="">
-                                </div>
-                                <!-- End .form-group -->
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="change-password-checkbox" value="1">
-                                    <label class="custom-control-label" for="change-password-checkbox">Change Password</label>
-                                </div>
-                                <!-- End .custom-checkbox -->
+    
 
-                                <div id="account-change-password" class="">
-                                    <h4>Change Password</h4>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group required-field">
-                                                <label for="account-pass2">Password</label>
-                                                <input type="password" class="form-control" id="account-pass2" name="account-pass2">
-                                            </div>
-                                            <!-- End .form-group -->
-                                        </div>
-                                        <!-- End .col-md-6 -->
 
-                                        <div class="col-md-6">
-                                            <div class="form-group required-field">
-                                                <label for="account-pass3">Confirm Password</label>
-                                                <input type="password" class="form-control" id="account-pass3" name="account-pass3">
-                                            </div>
-                                            <!-- End .form-group -->
-                                        </div>
-                                        <!-- End .col-md-6 -->
-                                    </div>
-                                    <!-- End .row -->
-                                </div>
-                                <!-- End #account-chage-pass -->
-
-                                <div class="required text-right">* Required Field</div>
-                                <div class="form-footer d-flex justify-content-between align-items-center">
-                                    <a href="#"><i class="material-icons">navigate_before</i>Back</a>
-
-                                    <div class="form-footer-right">
-                                        <button type="submit" class="btn btn-primary btn-primary">Save</button>
-                                    </div>
-                                </div>
-                                <!-- End .form-footer -->
-                            </form>
-                        </div>
-                    </div>
+    <div class="main-content">
+    <div class="container">
+        <div class="edit">
+        <!-- Left Section - Display User Information -->
+        <div class="left-section">
+            
+                <h4>User Information</h4>
+                <div class="user-info">
+                    <p>Name: <?= $user['user_name']; ?></p>
+                    <p>Email: <?= $user['user_email']; ?></p>
+                    <!-- You can display other user details here -->
                 </div>
-				<div class="sidebar col-xl-3 col-lg-3 order-lg-1">
-					<div class="sidebar-product left-sidebar w-100 float-left">
-					<div class="title">
-					<a data-toggle="collapse" href="#sidebar-product" aria-expanded="false" aria-controls="sidebar-product" class="d-lg-none block-toggler">sale products</a>
-					</div>
-					<div id="sidebar-product" class="collapse w-100 float-left">
-					<div class="sidebar-block sale products">
-					<h3 class="widget-title">sale products</h3>
-							<div class="product-layouts">
-			<div class="product-thumb">
-				<div class="image col-sm-4 float-left">
-					<a href="#">
-						<img src="img/products/01.jpg" alt="01"/>										</a>									</div>
-				<div class="thumb-description col-sm-8 text-left float-left">
-					<div class="caption">
-						<h4 class="product-title text-capitalize"><a href="product-details.php">aliquam quaerat voluptatem</a></h4>
-					</div>
-					<div class="price">
-						<div class="regular-price">$100.00</div>
-						<div class="old-price">$150.00</div>
-					</div>
-				</div>
-			</div>
-		</div>
-							<div class="product-layouts">
-								<div class="product-thumb">
-									<div class="image col-sm-4 float-left">
-										<a href="#">
-											<img src="img/products/02.jpg" alt="01"/>										</a>									</div>
-									<div class="thumb-description col-sm-8 text-left float-left">
-										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.php">aspetur autodit autfugit</a></h4>
-										</div>
-										<div class="price">
-											<div class="regular-price">$100.00</div>
-											<div class="old-price">$150.00</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="product-layouts">
-								<div class="product-thumb">
-									<div class="image col-sm-4 float-left">
-										<a href="#">
-											<img src="img/products/03.jpg" alt="03"/>										</a>									</div>
-									<div class="thumb-description col-sm-8 text-left float-left">
-										<div class="caption">
-											<h4 class="product-title text-capitalize"><a href="product-details.php">magni dolores eosquies</a></h4>
-										</div>
-										<div class="price">
-											<div class="regular-price">$100.00</div>
-											<div class="old-price">$150.00</div>
-										</div>
-									</div>
-								</div>
-							</div>
-					</div>
-					</div>
-					</div>
-				</div>
-            </div>
+            
         </div>
+
+        <!-- Right Section - Form for Modifying Information -->
+        <div class="right-section">
+    <h4>Edit Account Information</h4>
+<span class="text-danger">
+<?= $errorMsg ?></span>
+    <form action="#" method="post" class="myaccount-form">
+            <!-- Update Name -->
+            <div class="form-group">
+                <label for="new_name">New Name</label>
+                <input type="text" class="form-control" id="new_name" name="new_name" value="<?php echo $user['user_name']; ?>" required="">
+            </div>
+
+            <!-- Change Password -->
+            <div class="form-group">
+                <label for="old_password">Old Password</label>
+                <input type="password" class="form-control" id="old_password" name="old_password" placeholder="Enter old password">
+            </div>
+
+            <div class="form-group">
+                <label for="new_password">New Password</label>
+                <input type="password" class="form-control" id="new_password" name="new_password" placeholder="Enter new password">
+            </div>
+
+            <!-- Other form fields go here -->
+
+        <!-- Your existing form fields go here -->
+
+        <div class="form-footer">
+            <button type="submit" class="btn btn-primary" name="update_user_info">Save</button>
+        </div>
+        <!-- End .form-footer -->
+    </form>
+        </div>
+    <style>
+        .main-content {
+            margin-top: 20px;
+        }
+
+        .edit {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-section {
+            flex: 0.3;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-section {
+            flex: 0.65;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-info {
+            margin-bottom: 20px;
+        }
+
+        .user-info p {
+            margin: 0;
+        }
+
+        .myaccount-form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
     </div>
+</div>
+
+
+<style>
+    /* Add space between the </div> and <footer> */
+    .page-footer {
+        margin-top: 30px; /* Adjust the value to your desired space */
+    }
+</style>
 
     <!-- Footer -->
 	<footer class="page-footer font-small footer-default">
@@ -458,241 +452,8 @@ if ($isLoggedIn) {
 	</footer>
     <!-- Footer -->
 
-    <!-- Register modal -->
-    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-medium text-left">Sign up</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body mx-3">
-                    <div class="md-form mb-4">
-                        <input type="text" id="RegisterForm-name" class="form-control validate" placeholder="Your name">
-                    </div>
-                    <div class="md-form mb-4">
-                        <input type="email" id="RegisterForm-email" class="form-control validate" placeholder="Your email">
-                    </div>
-                    <div class="md-form mb-4">
-                        <input type="password" id="RegisterForm-pass" class="form-control validate" placeholder="Your password">
-                    </div>
-                    <div class="checkbox-link d-flex justify-content-between">
-                        <div class="left-col">
-                            <input id="remember-me" type="checkbox">
-                            <label for="remember_me">Remember Me</label>
-                        </div>
-                        <div class="right-col"><a href="#">Forget Password?</a></div>
-                    </div>
-                </div>
+   
 
-                <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-primary">Sign up</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Login modal -->
-    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-medium text-left">Sign in</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body mx-3">
-                    <div class="md-form mb-4">
-                        <input type="text" id="LoginForm-name" class="form-control validate" placeholder="Your name">
-                    </div>
-                    <div class="md-form mb-4">
-                        <input type="password" id="LoginForm-pass" class="form-control validate" placeholder="Your password">
-                    </div>
-                    <div class="checkbox-link d-flex justify-content-between">
-                        <div class="left-col">
-                            <input type="checkbox" id="remember_me">
-                            <label for="remember_me">Remember Me</label>
-                        </div>
-                        <div class="right-col"><a href="#">Forget Password?</a></div>
-                    </div>
-                </div>
-
-                <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-primary">Sign in</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- product_view modal -->
-    <div class="modal fade product_view" id="product_view" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			 <h4 class="modal-title w-100w-100w-100 font-weight-bold d-none">Quick view</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	  <span aria-hidden="true">×</span>
-	</button>
-		</div>
-		<div class="modal-body">
-			<div class="row">
-				<div class="col-md-6 left-columm">
-						<div class="product-large-image tab-content">
-						<div class="tab-pane active" id="product-1" role="tabpanel" aria-labelledby="product-tab-1">
-							<div class="single-img img-full">
-								<a href="img/products/01.jpg"><img src="img/products/01.jpg" class="img-fluid" alt=""></a>
-							</div>
-						</div>
-						<div class="tab-pane" id="product-2" role="tabpanel" aria-labelledby="product-tab-2">
-							<div class="single-img">
-								<a href="img/products/02.jpg"><img src="img/products/02.jpg" class="img-fluid" alt=""></a>
-							</div>
-						</div>
-						<div class="tab-pane" id="product-3" role="tabpanel" aria-labelledby="product-tab-3">
-							<div class="single-img">
-								<a href="img/products/03.jpg"><img src="img/products/03.jpg" class="img-fluid" alt=""></a>
-							</div>
-						</div>
-						<div class="tab-pane" id="product-4" role="tabpanel" aria-labelledby="product-tab-4">
-							<div class="single-img">
-								<a href="img/products/04.jpg"><img src="img/products/04.jpg" class="img-fluid" alt=""></a>
-							</div>
-						</div>
-						<div class="tab-pane" id="product-5" role="tabpanel" aria-labelledby="product-tab-5">
-							<div class="single-img">
-								<a href="img/products/05.jpg"><img src="img/products/05.jpg" class="img-fluid" alt=""></a>
-							</div>
-						</div>
-				</div>
-				<div class="small-image-list float-left w-100"> 
-                                <div class="nav-add small-image-slider-single-product-tabstyle-3 owl-carousel" role="tablist">
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-1" href="#product-1" class="img active"><img src="img/products/01.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-2" href="#product-2" class="img"><img src="img/products/02.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-3" href="#product-3" class="img"><img src="img/products/03.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-4" href="#product-4" class="img"><img src="img/products/04.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                    <div class="single-small-image img-full">
-                                        <a data-toggle="tab" id="product-tab-5" href="#product-5" class="img"><img src="img/products/05.jpg" class="img-fluid" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-				</div>
-				<div class="col-md-6 product_content">
-					<h4 class="product-title text-capitalize">aliquam quaerat voluptatem</h4>
-					<div class="rating">
-					<div class="product-ratings d-inline-block align-middle">
-																				<span class="fa fa-stack"><i class="material-icons">star</i></span>
-									   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-									   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-									   <span class="fa fa-stack"><i class="material-icons off">star</i></span>
-									   <span class="fa fa-stack"><i class="material-icons off">star</i></span>			</div>							</div>
-					<span class="description float-left w-100">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
-					<h3 class="price float-left w-100"><span class="regular-price align-middle">$75.00</span><span class="old-price align-middle">$60.00</span></h3>
-					
-					<div class="product-variants float-left w-100">
-						<div class="col-md-4 col-sm-6 col-xs-12 size-options d-flex align-items-center">
-											<h5>Size:</h5>
-
-								<select class="form-control" name="select">
-											<option value="" selected="">Size</option>
-											<option value="black">Medium</option>
-											<option value="white">Large</option>
-											<option value="gold">Small</option>
-											<option value="rose gold">Extra large</option>
-								</select>
-						</div>
-						<div class="color-option d-flex align-items-center">
-                                        <h5>color :</h5>
-                                        <ul class="color-categories">
-                                            <li class="active">
-                                                <a class="tt-pink" href="#" title="Pink"></a>
-                                            </li>
-                                            <li>
-                                                <a class="tt-blue" href="#" title="Blue"></a>
-                                            </li>
-                                            <li>
-                                                <a class="tt-yellow" href="#" title="Yellow"></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-					</div>
-					<div class="btn-cart d-flex align-items-center float-left w-100">
-						<h5>qty:</h5>
-						<input value="1" type="number">
-						<button type="button" class="btn btn-primary"><i class="material-icons">shopping_cart</i> Add To Cart</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-
-    <!-- cart-pop modal -->
-    <div class="modal fade" id="cart-pop" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header alert-success">
-			 <h4 class="modal-title w-100w-100w-100">Product successfully added to your shopping cart</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	  <span aria-hidden="true">×</span>
-	</button>
-		</div>
-		<div class="modal-body">
-			<div class="row">
-			<div class="col-md-6 divide-right">
-			<div class="row">
-				<div class="col-md-5 col-xs-4 product-img float-left">
-					<img src="img/products/01.jpg" class="img-responsive" alt="01">
-				</div>
-				<div class="col-md-7 col-xs-8 product-desc float-left">
-					<h4 class="product-title text-capitalize">aliquam quaerat voluptatem</h4>
-					<div class="rating">
-					<div class="product-ratings">
-					<span class="fa fa-stack"><i class="material-icons">star</i></span>
-				   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-				   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-				   <span class="fa fa-stack"><i class="material-icons off">star</i></span>
-				   <span class="fa fa-stack"><i class="material-icons off">star</i></span></div></div>
-					<h3 class="price float-left w-100"><span class="regular-price align-middle">$75.00</span><span class="old-price align-middle">$60.00</span></h3>
-				</div>
-			</div>
-			</div>
-				<div class="col-md-6 divide-left">
-					<p class="cart-products-count">There are 2 items in your cart.</p>
-					<p class="total-products float-left w-100">
-						<strong>Total products:</strong> $150.00
-					</p>
-					<p class="shipping float-left w-100">
-						<strong>Total shipping:</strong> free
-					</p>
-					<p class="total-price float-left w-100">
-						<strong>Total:</strong> $150.00(tax incl.)
-					</p>
-					<div class="cart-content-btn float-left w-100">
-					<form action="#">
-                      <input class="btn pull-right mt_10 btn-primary" value="Continue shopping" type="submit">
-                    </form>
-					<form action="checkout_page.php">
-                      <input class="btn pull-right mt_10 btn-primary" value="Proceed to checkout" type="submit">
-                    </form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

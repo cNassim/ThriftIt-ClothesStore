@@ -6,7 +6,7 @@ $conn ="mysql:dbname=".DBNAME.";host=".DBHOST;
 //------connexion--
 try{$db = new PDO($conn,DBUSER,DBPASS);
 // ---echange de données en utf8 --- $db->exec('SET NAMES utf8');
-echo "connexion établie";
+//echo "connexion établie";
 return $db;
 } catch(PDOException $e) {
     die($e->getMessage());

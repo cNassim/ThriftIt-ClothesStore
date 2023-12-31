@@ -89,55 +89,48 @@ if ($isLoggedIn) {
 ?>
                             </div>
                             <div class="cart-wrapper">
-                                <button type="button" class="btn">
-                                    <i class="material-icons">shopping_cart</i>
-                                    <span class="ttcount">2</span>
-                                </button>
-                                <div id="cart-dropdown" class="cart-menu">
-                                    <ul class="w-100 float-left">
-                                        <li>
-                                            <table class="table table-striped">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            <a href="#"><img src="img/products/01.jpg" alt="01" title="01"></a>
-                                                        </td>
-                                                        <td class="text-left product-name"><a href="#">aliquam quaerat voluptatem</a>
-                                                            <div class="quantity float-left w-100">
-                                                                <span class="cart-qty">1 × </span>
-                                                                <span class="text-left price"> $20.00</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center close"><a class="close-cart"><i class="material-icons">close</i></a></td>
-                                                    </tr>
+                            <div class="cart-wrapper">
+			
+			
+			<?php
 
-                                                </tbody>
-                                            </table>
-                                        </li>
-                                        <li>
-                                            <table class="table price mb-30">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="text-left"><strong>Total</strong></td>
-                                                        <td class="text-right"><strong>$2,122.00</strong></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </li>
-                                        <li class="buttons w-100 float-left">
-                                            <form action="cart_page.php">
-                                                <input class="btn pull-left mt_10 btn-primary btn-rounded w-100" value="View cart" type="submit">
-                                            </form>
-                                            <form action="checkout_page.php">
-                                                <input class="btn pull-right mt_10 btn-primary btn-rounded w-100" value="Checkout" type="submit">
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
+
+if ($isLoggedIn) {
+	// Display 'My Account' and 'Logout' if the user is logged in
+	echo '
+	<button type="button" class="btn">
+				<i class="material-icons">shopping_cart</i>
+				</button>
+				<div id="cart-dropdown" class="user-menu">
+		<ul>
+			<li><a href="cart_page.php" class="modal-view button">View Cart</a></li>
+			<li><a href="checkout_page.php" class="modal-view button">Checkout</a></li>
+			<li><a href="wishlist.php" class="modal-view button">Wishlist</a></li>
+		</ul>
+	</div>';
+} else {
+	// Display Register and Login options if the user is not logged in
+	echo '
+	<button type="button" class="btn">
+				<i class="material-icons">shopping_cart</i>
+				</button>
+				<div id="cart-dropdown" class="cart-menu">
+		<ul>
+			<li><a href="register.php" class="modal-view button">Register</a></li>
+			<li><a href="login.php" class="modal-view button">Login</a></li>
+		</ul>
+	</div>';
+}
+?>
+          </div>
+
+		</div>
+		</div>
+	</div>
+	</div>
+
                 
                 <div class="menu">
                     <div class="container">
@@ -627,72 +620,6 @@ if ($isLoggedIn) {
   <!-- Footer -->
   
 
-  <!-- Register modal -->
-<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-  <div class="modal-header text-center">
-	<h4 class="modal-title w-100 font-weight-medium text-left">Sign up</h4>
-	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	  <span aria-hidden="true">&times;</span>
-	</button>
-  </div>
-  <div class="modal-body mx-3">
-	<div class="md-form mb-4">
-	  <input type="text" id="RegisterForm-name" class="form-control validate" placeholder="Your name">
-	</div>
-	<div class="md-form mb-4">
-	  <input type="email" id="RegisterForm-email" class="form-control validate" placeholder="Your email">
-	</div>
-	<div class="md-form mb-4">
-	  <input type="password" id="RegisterForm-pass" class="form-control validate" placeholder="Your password">
-	</div>
-	<div class="checkbox-link d-flex justify-content-between">
-	<div class="left-col">
-		<input id="remember-me" type="checkbox"><label for="remember_me">Remember Me</label>
-	</div>
-	<div class="right-col"><a href="#">Forget Password?</a></div>
-</div>
-  </div>
-  
-  <div class="modal-footer d-flex justify-content-center">
-	<button class="btn btn-primary">Sign up</button>
-  </div>
-</div>
-</div>
-</div>
-
-<!-- Login modal -->
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-  <div class="modal-header text-center">
-	<h4 class="modal-title w-100 font-weight-medium text-left">Sign in</h4>
-	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	  <span aria-hidden="true">&times;</span>
-	</button>
-  </div>
-  <div class="modal-body mx-3">
-	<div class="md-form mb-4">
-	  <input type="text" id="LoginForm-name" class="form-control validate" placeholder="Your name">
-	</div>
-	<div class="md-form mb-4">
-	  <input type="password" id="LoginForm-pass" class="form-control validate" placeholder="Your password">
-	</div>
-	<div class="checkbox-link d-flex justify-content-between">
-	<div class="left-col">
-		<input type="checkbox" id="remember_me"><label for="remember_me">Remember Me</label>
-	</div>
-	<div class="right-col"><a href="#">Forget Password?</a></div>
-</div>
-  </div>
-  
-  <div class="modal-footer d-flex justify-content-center">
-	<button class="btn btn-primary">Sign in</button>
-  </div>
-</div>
-</div>
-</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
