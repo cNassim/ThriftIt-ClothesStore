@@ -56,6 +56,7 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/owl-carousel.css" rel="stylesheet">
     <link href="css/lightbox.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style-register.css">
 
     <!-- Custom styles for this template -->
 </head>
@@ -251,7 +252,7 @@ if ($isLoggedIn) {
 <div class="row">
   <div class="col-md-12 mb-3">
 	<label for="Name">Full Name <span class="required">*</span></label>
-	<input type="text" class="form-control" id="Name" placeholder="Jhon Clinton" value="" required="">
+	<input type="text" class="form-control" id="Name" placeholder="Jhon Clinton" value="" required>
 	<div class="invalid-feedback">
 	  Valid full name is required.
 	</div>
@@ -260,7 +261,7 @@ if ($isLoggedIn) {
 
 <div class="mb-3">
   <label for="email">Email <span class="required">*</span></label>
-  <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+  <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
   <div class="invalid-feedback">
 	Please enter a valid email address for shipping updates.
   </div>
@@ -268,7 +269,7 @@ if ($isLoggedIn) {
 
 <div class="mb-3">
   <label for="address">Address<span class="required">*</span> </label>
-  <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+  <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
   <div class="invalid-feedback">
 	Please enter your shipping address.
   </div>
@@ -355,7 +356,7 @@ if ($isLoggedIn) {
 							<span class="data"><a href="tel:(99)55669999">+(212) 788776633</a></span> </span>
 						</li>
 						<li class="links">
-							<span class="email"> 
+							<span class="email">
 					  <span class="icon"><i class="material-icons">email</i></span>
 							<span class="data"><a href="mailto:demo.store@gmail.com">support@thriftit.com</a></span> </span>
 						</li>

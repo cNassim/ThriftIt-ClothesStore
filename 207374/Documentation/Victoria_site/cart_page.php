@@ -306,7 +306,7 @@ if ($isLoggedIn) {
                         <div class="table-total-amount">
                             <div class="single-total-content d-flex justify-content-between float-left w-100">
                                 <strong>Total</strong>
-                                <?php if ($_SESSION['test']){ ?>
+                                <?php if (isset($_SESSION['test'])){ ?>
                                 <span class="c-total-price">$<?php echo $_SESSION['total'];?></span>
                                 <?php } else {?>
                                 <span class="c-total-price">$0.00</span>
