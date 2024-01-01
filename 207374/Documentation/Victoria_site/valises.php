@@ -1,16 +1,94 @@
 <?php
-    session_start(); // Start the session if not started already
-    
-    // Logout logic
-    if (isset($_GET['logout'])) {
-        unset($_SESSION['logged_in']);
-        unset($_SESSION['user_email']);
-        unset($_SESSION['user_name']);
-        session_destroy(); // Optional: Destroy the session data completely
-        header('Location: index.php');
-        exit;
+session_start(); // Start the session if not started already
+include 'php/config.php';
+require 'server/cox.php';
+
+// Logout logic
+if (isset($_GET['logout'])) {
+    unset($_SESSION['logged_in']);
+    unset($_SESSION['user_email']);
+    unset($_SESSION['user_name']);
+    session_destroy(); // Optional: Destroy the session data completely
+    header('Location: index.php');
+    exit;
+}
+
+$products = array(); // Initialisez $products en tant que tableau vide pour éviter les erreurs
+$message = "";
+$message1 = "";
+if (isset($_POST["duree"]) && isset($_POST["generate"])) {
+    $duree = $_POST['duree'];
+    $meteo = $_POST['meteo'];
+
+    switch ($duree) {
+        case 1:
+            if ($meteo == 'Sunny') {
+                $message = "For your 1-day trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (17, 16, 21);");
+            } else {
+                $message = "For your 1-day trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (1, 19);");
+            }
+            break;
+
+        case 2:
+            if ($meteo == 'Sunny') {
+                $message = "For your 2-days trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (22, 24, 29, 28, 10);");
+                $message1 = "These items can be mixed and matched to create different outfits for your trip!";
+            } else {
+                $message = "For your 2-days trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (10, 12, 4,9, 15, 26  );");
+                $message1 = "These items can be mixed and matched to create different outfits for your trip!";
+            }
+            break;
+            
+        case 3:
+            if ($meteo == 'Sunny') {
+                $message = "For your 3-days trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (23, 13, 27, 15, 16, 17);");
+                $message1 = "These items can be mixed and matched to create different outfits for your trip!";
+            } else {
+                $message = "For your 3-days trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (7, 30, 9, 5, 22, 20, 1, 6, 5);");
+                $message1 = "These items can be mixed and matched to create different outfits for your trip!";
+            }
+            break;
+        case 4:
+            if ($meteo == 'Sunny') {
+                $message = "For your 4-days trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (8, 30, 22, 29, 16, 17);");
+                $message1 = "These items can be mixed and matched to create different outfits for your trip!";
+            } else {
+                $message = "For your 4-days trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (2, 22, 24, 9, 10, 4, 30, 1, 19);");
+                $message1 = "These items can be mixed and matched to create different outfits for your trip!";
+            }
+            break;
+      case 5:
+            if ($meteo == 'Sunny') {
+                $message = "For your 5-days trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (22, 24, 29, 28, 10, 23, 13, 27, 15, 16, 17);");
+                $message1 = "These items can be mixed and matched to create different outfits for your trip!";
+            } else {
+                $message = "For your 5-days trip and sunny weather, you get a unique outfit composed of a :";
+                $stmt = $conn->prepare("SELECT * FROM products where product_id IN (7, 30, 9, 5, 22, 20, 1, 19);");
+                $message1 = "These items can be mixed and matched to create different outfits for your trip!";
+            }
+            break;
     }
+
+    if ($stmt) {
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $products = $result->fetch_all(MYSQLI_ASSOC);
+    } else {
+        echo "Error in statement: " . $conn->error;
+    }
+}
+
 ?>
+
 
 
 <!doctype html>
@@ -190,10 +268,9 @@ if ($isLoggedIn) {
             
             </nav>
     </header>
-    <div class="container text-center" >
+    <div class="container text-center">
         <h1><strong>Travel Planner</strong></h1>
-        <!-- ... (your existing code) ... -->
-        <form>
+        <form method="POST">
             <label for="destination">Destination:</label>
             <select name="destination" required>
                 <option value="Morocco">Morocco</option>
@@ -201,19 +278,68 @@ if ($isLoggedIn) {
                 <option value="Australia">Australia</option>
             </select>
 
-            <label for="duration">Duration of the trip (days):</label>
-            <input type="number" name="duration" required min="1" max="5">
+            <label for="duree">Duration of the trip (days):</label>
+            <input type="number" name="duree" required min="1" max="5">
 
-            <label for="weather">Expected Weather:</label>
-            <select name="weather" required>
+            <label for="meteo">Expected Weather:</label>
+            <select name="meteo" required>
                 <option value="Sunny">Sunny</option>
                 <option value="Rainy">Rainy</option>
                 <option value="Snowy">Snowy</option>
             </select>
 
-            <input type="submit" value="Generate Outfits">
+            <input type="submit" name="generate" value="Generate Outfits">
         </form>
-        <!-- ... (your existing code) ... -->
+        <br><br><br>
+        <div class="text-center">
+    <strong><?php echo $message; ?></strong>
+</div>
+<br><br>
+        <div class="row d-flex flex-wrap">
+            <?php
+            foreach ($products as $product) {
+                ?>
+                <div class="product-layouts col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                    <div class="product-thumb">
+                        <div class="image zoom">
+                            <a href="<?php echo "product-details.php?product_id=" . $product['product_id']; ?>">
+                                <img src="img/products/<?php echo $product['product_image']; ?>"/>
+                            </a>
+                        </div>
+                        <div class="thumb-description">
+                            <div class="caption">
+                                <h4 class="product-title text-capitalize"><a
+                                            href="<?php echo "product-details.php?product_id=" . $product['product_id']; ?>"><?php echo $product['product_name']; ?></a>
+                                </h4>
+                            </div>
+                            <div class="rating">
+                                <div class="product-ratings d-inline-block align-middle">
+                                    <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                    <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                    <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                    <span class="fa fa-stack"><i class="material-icons off">star</i></span>
+                                    <span class="fa fa-stack"><i class="material-icons off">star</i></span>
+                                </div>
+                            </div>
+                            <div class="price">
+                                <div class="regular-price">$<?php echo $product['product_price']; ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+
+            // Si aucun produit n'est trouvé, vous pouvez afficher un message
+            if (empty($products)) {
+                echo '<p>No chosen style.</p>';
+            }
+            ?>
+        </div>
+        <br><br><br><br>
+        <div style="color: green;" class="text-center">
+    <h6><strong><span color='Black'><?php echo $message1 ; ?></span></strong></h6>
+</div>
     </div>
     <style>
 
@@ -377,7 +503,6 @@ if ($isLoggedIn) {
 		<script src="js/jquery.lazy.min.js"></script>
 </body>
 </html>
-
 
 
 

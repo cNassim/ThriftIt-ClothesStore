@@ -312,7 +312,9 @@ if ($isLoggedIn) {
                                 <span class="c-total-price">$0.00</span>
                                 <?php } ?>
                             </div>
-                            <a href="checkout_page.php" class="btn btn-primary float-left w-100 text-center">Proceed to checkout</a>
+                            <form action="checkout_page.php" method="post">
+                                <input type="submit" value="Proceed to checkout" name="checkout" class="btn btn-primary float-left w-100 text-center"/>
+                            </form>
                         </div>
                     </div>
                 </div>
