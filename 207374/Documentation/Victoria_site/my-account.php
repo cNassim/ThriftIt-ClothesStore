@@ -270,12 +270,26 @@ if ($isLoggedIn) {
         <div class="edit">
         <!-- Left Section - Display User Information -->
         <div class="left-section">
-            
+        <div class="text-center">
                 <h4>User Information</h4>
                 <div class="user-info">
                     <p>Name: <?= $user['user_name']; ?></p>
                     <p>Email: <?= $user['user_email']; ?></p>
-                    <!-- You can display other user details here -->
+<br><br>        
+                    <strong><p><a href="#orders" id="orders-btn"> Your Orders</a></p></strong>
+                    <div class="table-responsive">
+                    <table class="table product-table text-center">
+                        <thead>
+                            <tr> 
+                                <th class="table-id text-uppercase">Id Order</th>
+                                <th class="table-product text-uppercase">Products</th>
+                                <th class="table-statut text-uppercase">Statut</th>
+                            </tr>
+                        </thead>
+                        
+                    </table>
+                </div>
+                    </div>
                 </div>
             
         </div>
@@ -380,6 +394,15 @@ if ($isLoggedIn) {
     </div>
 </div>
 
+<section id="orders" class="orders container my-5 py-3">
+        <div class="container mt-2">
+        <div class="tt-title d-inline-block float-none w-100 text-center">Your orders :</div>
+            <hr class="mx-auto">
+           
+                </div>
+            </div>
+        </div>
+</section>
 
 <style>
     /* Add space between the </div> and <footer> */
