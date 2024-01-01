@@ -267,6 +267,14 @@ if ($isLoggedIn) {
 </div>
 
 <div class="mb-3">
+  <label for="phone">phone <span class="required">*</span></label>
+  <input type="number" class="form-control" id="email" placeholder="0123456789" required>
+  <div class="invalid-feedback">
+	Please enter a valid Phone number for shipping updates.
+  </div>
+</div>
+
+<div class="mb-3">
   <label for="address">Address<span class="required">*</span> </label>
   <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
   <div class="invalid-feedback">
