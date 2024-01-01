@@ -1,5 +1,11 @@
 <?php
 session_start();
+$_SESSION['ch']=false;
+include('php/config.php');
+$stmt = $conn->prepare("SELECT order_id,order_status,order_date FROM orders where user_id= ? ");
+$stmt->bind_param("i", $_SESSION['user_id']);
+$stmt->execute();
+$orders = $stmt->get_result();
 
 // Include the configuration file
 include 'php/config.php';
@@ -280,13 +286,21 @@ if ($isLoggedIn) {
                     <div class="table-responsive">
                     <table class="table product-table text-center">
                         <thead>
-                            <tr> 
-                                <th class="table-id text-uppercase">Id Order</th>
-                                <th class="table-product text-uppercase">Products</th>
+                            <tr>
+                                <th class="table-id text-uppercase">Order ref</th>
                                 <th class="table-statut text-uppercase">Statut</th>
+                                <th class="table-date text-uppercase">Date</th>
                             </tr>
                         </thead>
-                        
+                        <tbody>
+                        <?php while ($row = $orders->fetch_assoc()){ ?>
+                            <tr>
+                                <td class="table-id text-uppercase"><?php echo $row['order_id']; ?></td>
+                                <td class="table-statut text-uppercase"><?php echo $row['order_status']; ?></td>
+                                <td class="table-date text-uppercase"><?php echo $row['order_date']; ?></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
                     </table>
                 </div>
                     </div>
@@ -393,16 +407,6 @@ if ($isLoggedIn) {
     </style>
     </div>
 </div>
-
-<section id="orders" class="orders container my-5 py-3">
-        <div class="container mt-2">
-        <div class="tt-title d-inline-block float-none w-100 text-center">Your orders :</div>
-            <hr class="mx-auto">
-           
-                </div>
-            </div>
-        </div>
-</section>
 
 <style>
     /* Add space between the </div> and <footer> */

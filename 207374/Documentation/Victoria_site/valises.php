@@ -2,7 +2,7 @@
 session_start(); // Start the session if not started already
 include 'php/config.php';
 require 'server/cox.php';
-
+$_SESSION['ch']=false;
 // Logout logic
 if (isset($_GET['logout'])) {
     unset($_SESSION['logged_in']);
