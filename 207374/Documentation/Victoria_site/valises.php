@@ -332,7 +332,7 @@ if ($isLoggedIn) {
 
             // Si aucun produit n'est trouvé, vous pouvez afficher un message
             if (empty($products)) {
-                echo '<p>No chosen style.</p>';
+                echo '<p>No chosen duration.</p>';
             }
             ?>
         </div>
