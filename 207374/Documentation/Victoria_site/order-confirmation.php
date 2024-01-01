@@ -89,17 +89,6 @@ if ($isLoggedIn) {
 ?>
                             </div>
                             <div class="cart-wrapper">
-                            <div class="cart-wrapper">
-			
-			
-			<?php
-
-// Check if the user is logged in
-$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'];
-
-if ($isLoggedIn) {
-	// Display 'My Account' and 'Logout' if the user is logged in
-	echo '
 	<button type="button" class="btn">
 				<i class="material-icons">shopping_cart</i>
 				</button>
@@ -109,28 +98,14 @@ if ($isLoggedIn) {
 			<li><a href="checkout_page.php" class="modal-view button">Checkout</a></li>
 			<li><a href="wishlist.php" class="modal-view button">Wishlist</a></li>
 		</ul>
-	</div>';
-} else {
-	// Display Register and Login options if the user is not logged in
-	echo '
-	<button type="button" class="btn">
-				<i class="material-icons">shopping_cart</i>
-				</button>
-				<div id="cart-dropdown" class="cart-menu">
-		<ul>
-			<li><a href="register.php" class="modal-view button">Register</a></li>
-			<li><a href="login.php" class="modal-view button">Login</a></li>
-		</ul>
-	</div>';
-}
-?>
+	</div>
+
           </div>
 
 		</div>
 		</div>
 	</div>
 	</div>
-
                 <div class="menu">
                     <div class="container">
                       		<!-- Navbar -->
