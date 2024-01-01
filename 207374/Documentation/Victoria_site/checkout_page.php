@@ -56,7 +56,6 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/owl-carousel.css" rel="stylesheet">
     <link href="css/lightbox.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style-register.css">
 
     <!-- Custom styles for this template -->
 </head>
