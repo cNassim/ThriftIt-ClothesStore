@@ -1,5 +1,6 @@
 <?php
 include("php/config.php");
+$_SESSION['ch']=false;
 
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];

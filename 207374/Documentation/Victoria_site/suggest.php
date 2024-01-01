@@ -1,6 +1,7 @@
 <?php
     session_start(); // Start the session if not started already
     include 'php/config.php';
+    $_SESSION['ch']=false;
 require 'server/cox.php';
     // Logout logic
     if (isset($_GET['logout'])) {

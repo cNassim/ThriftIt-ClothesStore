@@ -1,6 +1,6 @@
 <?php
     session_start(); // Start the session if not started already
-
+    $_SESSION['ch']=false;
     if(isset($_POST['add_to_cart'])){
         $_SESSION['test']=true;
         if(isset($_session['cart'])){

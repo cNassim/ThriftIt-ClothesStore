@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['ch']=false;
 include("php/config.php");
 if(isset($_POST['login_btn'])){
 $email = $_POST['email'];
