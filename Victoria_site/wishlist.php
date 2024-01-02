@@ -1,6 +1,7 @@
 <?php
     session_start(); // Start the session if not started already
     $_SESSION['ch']=false;
+    if(isset( $_SESSION['logged_in'] )){
     include ('php/config.php');
     if(isset($_POST['add_to_wishlist'])){
         $product_id = $_POST['product_id'];
@@ -55,6 +56,9 @@
         header('Location: index.php');
         exit;
     }
+}else{
+    header('location:login.php');
+}
 ?>
 <!doctype html>
 <html lang="en">
