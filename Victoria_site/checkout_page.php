@@ -226,7 +226,7 @@ if ($isLoggedIn) {
   <div class="row">
     <div class="col-md-12 mb-3">
       <label for="Name">Full Name <span class="required">*</span></label>
-      <input type="text" class="form-control" name="name" id="Name" placeholder="John Clinton" value="" required>
+      <input type="text" class="form-control" name="name" id="Name" placeholder="Your Name" value="" required>
       <div class="invalid-feedback">
         Valid full name is required.
       </div>
@@ -235,7 +235,7 @@ if ($isLoggedIn) {
 
 <div class="mb-3">
   <label for="email">Email <span class="required">*</span></label>
-  <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" required>
+  <input type="email" class="form-control" name="email" id="email" placeholder="adresse@example.com" required>
   <div class="invalid-feedback">
 	Please enter a valid email address for shipping updates.
   </div>
@@ -251,7 +251,7 @@ if ($isLoggedIn) {
 
 <div class="mb-3">
   <label for="address">Address<span class="required">*</span> </label>
-  <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required>
+  <input type="text" class="form-control" name="address" id="address" placeholder="1234 ABCDEF" required>
   <div class="invalid-feedback">
 	Please enter your shipping address.
   </div>
@@ -259,7 +259,7 @@ if ($isLoggedIn) {
 
 <div class="mb-3">
   <label for="City">City<span class="required">*</span> </label>
-  <input type="text" class="form-control" name="city" id="city" placeholder="New york" required="">
+  <input type="text" class="form-control" name="city" id="city" placeholder="Name of your city" required="">
   <div class="invalid-feedback">
 	Please enter your shipping city.
   </div>

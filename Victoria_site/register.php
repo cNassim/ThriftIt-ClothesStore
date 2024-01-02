@@ -58,21 +58,21 @@ if (isset($_POST['submit'])) {
             <form action="" method="post">
                 <div class="field input">
                     <label for="username">Your Name</label>
-                    <input type="text" name="username" id="username" autocomplete="off" required>
+                    <input type="text" name="username" id="username" autocomplete="off"placeholder="Your Name" required>
                 </div>
 
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="adresse@example.com" required>
                 </div>
 
                 <div class="field input">
                     <label for="age">Pasword</label>
-                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <input type="password" name="password" id="password" autocomplete="off" placeholder="*********" required>
                 </div>
                 <div class="field input">
                     <label for="password">Confirm Password</label>
-                    <input type="password" name="Confirm_password" id="Confirm_password" autocomplete="off" required>
+                    <input type="password" name="Confirm_password" id="Confirm_password" autocomplete="off" placeholder="*********" required>
                 </div>
 
                 <div class="field">

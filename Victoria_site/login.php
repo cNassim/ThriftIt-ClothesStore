@@ -43,12 +43,12 @@ if ($stmt->execute()){
             <form action="login.php" method="post">
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="adresse@example.com" required>
                 </div>
 
                 <div class="field input">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <input type="password" name="password" id="password" autocomplete="off" placeholder="*********" required>
                 </div>
 
                 <div class="field">
