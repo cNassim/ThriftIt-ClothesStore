@@ -181,16 +181,7 @@
 	  	<div class="container">
 		<div class="ttloading-bg"></div>
 	  	<div class="slider slider-for owl-carousel">
-			<div>
-				<a href="#">
-					<img src="img/banner/slider.png" alt="" height="800" width="1600"/>
-				</a>
-				<div class="slider-content-wrap center effect_top">
-				  <div class="slider-title mb-20 text-capitalize float-left w-100">Trending Now</div>
-				  <div class="slider-subtitle mb-50 text-capitalize float-left w-100">fashion style</div>
-				  <div class="slider-button text-uppercase float-left w-100"><a href="shop.php">Shop Now</a></div>
-				</div>
-			</div>
+			
 			<div>
 				<a href="#">
 					<img src="img/banner/homep.png" alt="" height="800" width="1600"/>
@@ -198,7 +189,7 @@
 				<div class="slider-content-wrap center effect_bottom">
 				  <div class="slider-title mb-20 text-capitalize float-left w-100">Your style</div>
 				  <div class="slider-subtitle mb-50 text-capitalize float-left w-100 .text-dark">fashion trend</div>
-				  <div class="slider-button text-uppercase float-left w-100"><a href="shop.php">Shop Now</a></div>
+				  <div class="slider-button text-uppercase float-left w-100"><a href="shop-main.php">Shop Now</a></div>
 				</div>
 			</div>
 	  </div>
@@ -233,7 +224,7 @@
 					<p>Every purchase at ThriftIt contributes to reducing textile waste and promoting a more sustainable fashion industry. Join us on this journey towards a greener and trendier tomorrow.</p>
 					<p>Ready to make a difference? Start shopping now!</p>
 					</div>
-					<div class="slider-button text-uppercase float-left w-100"><a href="shop.php"><h3><b>Shop Now</b></h3></a></div>
+					<div class="slider-button text-uppercase float-left w-100"><a href="shop-main.php"><h3><b>Shop Now</b></h3></a></div>
 				</section>
 				<style>
 				section {
@@ -289,7 +280,7 @@
           <div class="ttbanner-desc text-center">
             <span class="title text-uppercase">It's time!</span> 
             <span class="subtitle text-uppercase py-20">What are you waiting for?</span> 
-            <span class="shop-now text-capitalize"><a href="shop.php" class="btn-primary">shop now</a></span>          </div>
+            <span class="shop-now text-capitalize"><a href="shop-main.php" class="btn-primary">shop now</a></span>          </div>
         </div>
       </div>
       <div class="ttbanner2 ttbanner col-sm-6">
@@ -400,63 +391,7 @@
 				<a href="#" id="goToTop" title="Back to top" class="btn-primary"><i class="material-icons arrow-up">keyboard_arrow_up</i></a>
 		
 			</footer>
-  
-<!-- cart-pop modal -->
-<div class="modal fade" id="cart-pop" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header alert-success">
-				 <h4 class="modal-title w-100w-100w-100">Product successfully added to your shopping cart</h4>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		  <span aria-hidden="true">×</span>
-		</button>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-				<div class="col-md-6 divide-right">
-				<div class="row">
-					<div class="col-md-5 col-sm-4 col-xs-12 product-img float-left">
-						<img src="img/products/01.jpg" class="img-responsive" alt="01">
-					</div>
-					<div class="col-md-7 col-sm-8 col-xs-12 product-desc float-left">
-						<h4 class="product-title text-capitalize">Burgundy Small Dress</h4>
-						<div class="rating">
-						<div class="product-ratings d-inline-block align-middle">
-						<span class="fa fa-stack"><i class="material-icons">star</i></span>
-					   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-					   <span class="fa fa-stack"><i class="material-icons">star</i></span>
-					   <span class="fa fa-stack"><i class="material-icons off">star</i></span>
-					   <span class="fa fa-stack"><i class="material-icons off">star</i></span></div></div>
-						<h3 class="price float-left w-100"><span class="regular-price align-middle">$75.00</span><span class="old-price align-middle">$60.00</span></h3>
-					</div>
-				</div>
-				</div>
-					<div class="col-md-6 divide-left">
-						<p class="cart-products-count">There are 2 items in your cart.</p>
-						<p class="total-products float-left w-100">
-							<strong>Total products:</strong> $150.00
-						</p>
-						<p class="shipping float-left w-100">
-							<strong>Total shipping:</strong> free
-						</p>
-						<p class="total-price float-left w-100">
-							<strong>Total:</strong> $150.00(tax incl.)
-						</p>
-						<div class="cart-content-btn float-left w-100">
-						<form action="#">
-						  <input class="btn pull-right mt_10 btn-primary" value="Continue shopping" type="submit">
-						</form>
-						<form action="checkout_page.php">
-						  <input class="btn pull-right mt_10 btn-secondary" value="Proceed to checkout" type="submit">
-						</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
- 
+
 
 
     <!-- Bootstrap core JavaScript

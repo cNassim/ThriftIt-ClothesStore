@@ -221,7 +221,7 @@ $nbr = $stmt1->get_result();
 		</div>
 		</header>
 	<nav aria-label="breadcrumb" class="w-100 float-left">
-  <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/parallax.jpg" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
+  <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/another.png" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
     <li class="breadcrumb-item"><a href="#">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">shop</li>
   </ol>
@@ -232,7 +232,7 @@ $nbr = $stmt1->get_result();
 				<div class="content-wrapper col-xl-9 col-lg-9 order-lg-2">
 				<div class="block-category mb-30 w-100 float-left">
 					<div class="category-cover">
-						<img src="img/banner/category-banner.png" alt="category-banner"/>
+						<img src="img/banner/shop-main.jpeg" alt="category-banner"/>
 					</div>
 					<div class="title-category text-capitalize">women</div>
 					<div class="category-description">Dive into a world of timeless elegance and sustainable fashion. Here, every piece tells a story—curated with care and handpicked for its unique style and quality. From chic dresses to vintage accessories, our collection celebrates individuality and conscious fashion choices. Rediscover the joy of fashion exploration with our ever-evolving selection, where each find is a treasure waiting to be cherished. Embrace the allure of eco-conscious shopping while embracing your distinct style at our Women's Thriftit Haven.</div>

@@ -177,7 +177,7 @@ if ($isLoggedIn) {
             <div class="container">
                 <div class="row align-items-center about-main">
                     <div class="col-12 col-lg-5 text-center col-left">
-                        <img src="img/banner/f1.png" alt="" class="border-radius-6 w-100" data-no-retina="">
+                        <img src="img/banner/f11.jpg" alt="" class="border-radius-6 w-100" data-no-retina="">
                     </div>
                     <div class="col-12 col-lg-7 col-right">
                         <span class="d-inline-block title mb-10">Don’t worry, you’re in safe hands.</span>
@@ -209,7 +209,7 @@ if ($isLoggedIn) {
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 text-center col-left p-0">
-                    <img src="img/banner/okk.jpg" alt="" class="border-radius-6 w-100" data-no-retina="">
+                    <img src="img/banner/f12.jpg" alt="" class="border-radius-6 w-100" data-no-retina="">
                 </div>
             </div>
         </div>
@@ -224,7 +224,7 @@ if ($isLoggedIn) {
                     <div class="team-block col-sm-6 col-md-3 col-lg-3 float-left mb-sm-30">
                         <div class="team-block-inner position-relative">
                             <div class="team-image text-center">
-                                <img src="img/banner/zineb.jpg" alt="team-02" />
+                                <img src="img/banner/g1.png" alt="team-02" />
                                 <div class="overlay"></div>
                             </div>
                                         <div class="team-content text-center float-center w-100">
@@ -237,7 +237,7 @@ if ($isLoggedIn) {
                                 <div class="team-block col-sm-6 col-md-3 col-lg-3 float-center mb-sm-30">
                                     <div class="team-block-inner position-relative">
                                         <div class="team-image text-center">
-                                            <img src="img/banner/nassim.png" alt="team-04" />
+                                            <img src="img/banner/a1.jpg" alt="team-04" />
                                             <div class="overlay"></div>
                                         </div>
                                         <div class="team-content text-center float-left w-100">

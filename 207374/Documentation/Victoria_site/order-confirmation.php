@@ -189,7 +189,7 @@ if ($isLoggedIn) {
             </nav>
     </header>
 		<nav aria-label="breadcrumb" class="w-100 float-left">
-  <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/parallax.jpg" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
+  <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/advice.jpeg" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
     <li class="breadcrumb-item active"><a href="#">Home</a></li>
 	    <li class="breadcrumb-item active" aria-current="page">order-confirmation</li>
 
@@ -255,114 +255,100 @@ if ($isLoggedIn) {
 </div>
 </div>
 </div>
-    <!-- Footer -->
-	<div class="block-newsletter"> 
-				<div class="parallax" data-source-url="img/banner/parallax.jpg" style="background-image:url(img/banner/parallax.jpg); background-position:50% 65.8718%;">
-				<div class="container">
-					<div class="tt-newsletter col-sm-7">
-							<h2 class="text-uppercase">Subscribe to our Newsletter</h2>
-					</div>
-					<div class="block-content col-sm-5">
-					<form method="post" action="contact-us.php">
-						<div class="input-group">
-							<input type="email" name="email" value="" placeholder="Email address.." required="" class="form-control">
-							<span class="input-group-btn">
-			 <button class="btn btn-theme text-uppercase btn-primary" type="submit">Subscribe</button>
-			 </span>
-						</div>
-					</form>
-		</div>
-				</div>
-				</div>
-			</div>
+  
+
+
+
+
+<!-- Footer -->
 <footer class="page-footer font-small footer-default">
-    <div class="container text-center text-md-left">
-      <div class="row">
-        <div class="col-md-2 footer-cms footer-column">
-			<div class="ttcmsfooter">
-              <div class="footer-logo"><img src="img/logos/footer-logo.png" alt="footer-logo"></div>
-              <div class="footer-desc">At vero eos et accusamus et iusto odio dignissimos ducimus, duis faucibus enim vitae</div>
-			  </div>
-		</div>
-        <div class="col-md-2 footer-column">
-		<div class="title">
-          <a href="#company" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">company</a>		  </div>
-          <ul id="company" class="list-unstyled collapse">
-            <li>
-              <a href="#">search</a>            </li>
-            <li>
-              <a href="#">New Products</a>            </li>
-            <li>
-              <a href="category.php">Best Collection</a>            </li>
-            <li>
-              <a href="wishlist.php">wishlist</a>            </li>
-          </ul>
-        </div>
-        <div class="col-md-2 footer-column">
-			<div class="title">
-          <a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">products</a>		  </div>
-          <ul id="products" class="list-unstyled collapse">
-            <li>
-              <a href="blog-details.php">blog</a>            </li>
-            <li>
-              <a href="about-us.php">about us</a>            </li>
-            <li>
-              <a href="contact-us.php">contact us</a>            </li>
-            <li>
-              <a href="my-account.php">my account</a>            </li>
-          </ul>
-
-        </div>
-		<div class="col-md-2 footer-column">
-					<div class="title">
-          <a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">your account</a>		  </div>
-  <ul id="account" class="list-unstyled collapse">
-	<li>
-	  <a href="blog-details.php">personal info</a>            </li>
-	<li>
-	  <a href="#">orders</a>            </li>
-	<li>
-	  <a href="contact-us.php">addresses</a>            </li>
-	<li>
-	  <a href="my-account.php">my wishlists</a>            </li>
-  </ul>
-
-</div>
-        <div class="col-md-2 footer-column">
-		<div class="title">
-          <a href="#information" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">store information</a>		  </div>
-          <ul id="information" class="list-unstyled collapse">
-            <li class="contact-detail links">
-              <span class="address">
-			  		<span class="icon"><i class="material-icons">location_on</i></span>
-					<span class="data"> 4030, Central Bazzar, opp. Varachha Police Station, Varachha Main Road, Surat, Gujarat 395006, India</span>			  </span>            </li>
-            <li class="links">
-               <span class="contact">
-			  		<span class="icon"><i class="material-icons">phone</i></span>
-					<span class="data"><a href="tel:(99)55669999">+ (99) 55-669-999</a></span>			  </span>            </li>
-            <li class="links">
-               <span class="email">
-			  		<span class="icon"><i class="material-icons">email</i></span>
-					<span class="data"><a href="mailto:demo.store@gmail.com">demo.store@gmail.com</a></span>  </span>          </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Copyright -->
-	<div class="footer-bottom-wrap">
-		<div class="container">
-		<div class="row">
-		<div class="footer-copyright text-center py-3">
-			© 2023 - Copyright Claimed -ThriftiT™
-		</div>
-		</div>
-    </div>
-	</div>
-         <a href="#" id="goToTop" title="Back to top" class="btn-primary"><i class="material-icons arrow-up">keyboard_arrow_up</i></a> 
-
-
-  </footer>
-  <!-- Footer -->
+				<div class="container text-center text-md-left">
+					<div class="row">
+						<div class="col-md-2 footer-cms footer-column">
+							<div class="ttcmsfooter">
+								<div class="footer-logo"><img src="img/logos/footer-logo.png" alt="footer-logo"></div>
+								<div class="footer-desc">"Stylish Choices, Sustainable Impact – ThriftIt"</div>
+							</div>
+						</div>
+						<div class="col-md-2 footer-column">
+							<div class="title">
+								<a href="#company" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">QUICK LINKS</a> </div>
+							<ul id="company" class="list-unstyled collapse">
+								<li>
+									<a href="index.php">Home</a> </li>
+								<li>
+									<a href="about-us.php">About Us</a> </li>
+								<li>
+									<a href="shop-main.php">Offers</a> </li>
+								<li>
+									<a href="about-us.php">Contact Us</a> </li>
+							</ul>
+						</div>
+						<div class="col-md-2 footer-column">
+							<div class="title">
+								<a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">ABOUT</a> </div>
+							<ul id="products" class="list-unstyled collapse">
+								<li>
+									<a href="about-us.php">Who are we?</a> </li>
+								<li>
+									<a href="about-us.php">Our story</a> </li>
+								<li>
+									<a href="about-us.php">Our mission</a> </li>
+							</ul>
+		
+						</div>
+						<div class="col-md-2 footer-column">
+							<div class="title">
+								<a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
+							<ul id="account" class="list-unstyled collapse">
+								<li>
+									<a href="my-account.php">personal info</a> </li>
+								<li>
+									<a href="cart_page.php">Orders</a> </li>
+								<li>
+									<a href="wishlist.php">my wishlists</a> </li>
+								<li>
+									<a href="my-account.php">Sign In / Sign Up</a> </li>
+							</ul>
+		
+						</div>
+						<div class="col-md-2 footer-column">
+							<div class="title">
+								<a href="#information" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">store information</a> </div>
+							<ul id="information" class="list-unstyled collapse">
+								<li class="contact-detail links">
+									<span class="address">
+							  <span class="icon"><i class="material-icons">insta</i></span>
+									<span class="data">ThriftiT_Shop</span> </span>
+								</li>
+								<li class="links">
+									<span class="contact">
+							  <span class="icon"><i class="material-icons">phone</i></span>
+									<span class="data"><a href="tel:(99)55669999">+(212) 788776633</a></span> </span>
+								</li>
+								<li class="links">
+									<span class="email"> 
+							  <span class="icon"><i class="material-icons">email</i></span>
+									<span class="data"><a href="mailto:demo.store@gmail.com">support@thriftit.com</a></span> </span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Copyright -->
+				<div class="footer-bottom-wrap">
+					<div class="container">
+						<div class="row">
+							<div class="footer-copyright text-center py-3">
+								© 2023 - Copyright Claimed -ThriftiT™
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="#" id="goToTop" title="Back to top" class="btn-primary"><i class="material-icons arrow-up">keyboard_arrow_up</i></a>
+		
+			</footer>
+  
   
 
 

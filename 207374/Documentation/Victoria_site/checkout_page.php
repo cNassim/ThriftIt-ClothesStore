@@ -187,7 +187,7 @@ if ($isLoggedIn) {
             </nav>
     </header>
 		<nav aria-label="breadcrumb" class="w-100 float-left">
-  <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/parallax.jpg" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
+  <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/tryinggg.png" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
     <li class="breadcrumb-item active"><a href="#">Home</a></li>
 	    <li class="breadcrumb-item active" aria-current="page">checkout</li>
 

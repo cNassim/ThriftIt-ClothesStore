@@ -167,8 +167,8 @@
 	</div>
 	</header>
 	<nav aria-label="breadcrumb" class="w-100 float-left">
-  <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/parallax.jpg" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <ol class="breadcrumb parallax justify-content-center" data-source-url="img/banner/line2.jpg" style="background-image: url(&quot;img/banner/parallax.jpg&quot;); background-position: 50% 0.809717%;">
+    <li class="breadcrumb-item"><a href="#">Home / My wishlist</a></li>
   </ol>
 </nav>
     
