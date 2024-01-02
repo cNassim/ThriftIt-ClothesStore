@@ -4,37 +4,46 @@
     include ('php/config.php');
     if(isset($_POST['add_to_wishlist'])){
         $product_id = $_POST['product_id'];
+        $user_id=$_SESSION['user_id'];
         $stmt3 = $conn -> prepare("SELECT product_id FROM wishlist WHERE user_id = ? AND product_id = ?");
         $stmt3->bind_param("ii",$user_id,$product_id);
         $stmt3->execute();
         $pid = $stmt3->get_result();
         $productid = $pid -> fetch_assoc();
-        if($product_id == $productid['product_id']){
+        if(isset($productid)){
 
-            
-
-
-        }
+            $stmt4 = $conn -> prepare("UPDATE wishlist
+                                        SET product_quantity = product_quantity + 1
+                                        WHERE product_id = ? AND user_id = ?;
+                                    ");
+            $stmt4 -> bind_param('ii', $product_id, $user_id);
+            $stmt4 -> execute();
+        }else{
+            $product_id = $_POST['product_id'];
+            $stmt5 = $conn -> prepare("SELECT product_image FROM products where product_id = ?");
+            $stmt5 -> bind_param('i', $product_id);
+            $stmt5 -> execute();
+            $p = $stmt5->get_result();
+            $pimg = $p->fetch_assoc();
 
         $product_name = $_POST['product_name'];
-        $product_image = $_POST['product_image'];
+        $product_image = $pimg['product_image'];
         $product_price = $_POST['product_price'];
         $product_quantity = $_POST['product_quantity'];
         $user_id=$_SESSION['user_id'];
         $stmt2 = $conn->prepare("INSERT INTO wishlist(user_id,product_id,product_name,product_image,product_price,product_quantity)
                                     VALUES(?,?,?,?,?,?)");
-        $stmt2->bind_param("iisidi",$user_id ,$product_id ,$product_name ,$product_image ,$product_price ,$product_quantity);
+        $stmt2->bind_param("iissdi",$user_id ,$product_id ,$product_name ,$product_image ,$product_price ,$product_quantity);
         $stmt2->execute();
-        $stmt = $conn -> prepare("SELECT * FROM wishlist WHERE user_id = ?");
-        $stmt->bind_param("i",$user_id);
-        $stmt->execute();
-        $products = $stmt->get_result();
-        
+        }
     }else if(isset($_POST['remove_product'])){
-
+        $product_id=$_POST['product_id'];
+        $stmt6 = $conn -> prepare ("DELETE FROM wishlist where product_id=? and user_id = ?;");
+        $stmt6-> bind_param('ii',$product_id,$_SESSION['user_id']);
+        $stmt6->execute();
     }
     $stmt = $conn -> prepare("SELECT * FROM wishlist WHERE user_id = ?");
-    $stmt->bind_param("i",$user_id);
+    $stmt->bind_param("i",$_SESSION['user_id']);
     $stmt->execute();
     $products = $stmt->get_result();
     // Logout logic
@@ -225,9 +234,11 @@
                         <tbody>
                             <?php while ($row = $products->fetch_assoc()) {?>
                             <tr>
+                            <form method="POST" action="wishlist.php">
                                 <td class="table-remove">
                                         <input type="hidden" name="product_id" value="<?php echo $row['product_id'];?>"/>
                                         <button type="submit" name="remove_product" value="remove"><i class="material-icons">delete</i></button></td>
+                            </form>
                                 <td class="table-image"><a href="product-details.php?product_id=<?php echo $row['product_id'];?>"><img src="img/products/<?php echo $row['product_image'];?>" alt=""></a></td>
                                 <td class="table-p-name text-capitalize"><a href="product-details.php?product_id=<?php echo $row['product_id'];?>"><?php echo $row['product_name']; ?></a></td>
                                 <td class="table-p-price"><p><?php echo $row['product_price']; ?></p></td>
