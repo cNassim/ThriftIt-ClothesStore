@@ -221,7 +221,7 @@ if ($isLoggedIn) {
                                         <h5>color : <?php echo $row['product_color']; ?></h5>
                                     </div>
 					</div>
-											<div class="btn-cart d-flex align-items-center float-left w-100"> 
+											<div class="btn-cart d-flex align-items-center float-left w-100">
 												<form method="POST" action="cart_page.php">
 												<input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>" />
 												<input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>"/>

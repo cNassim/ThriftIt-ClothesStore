@@ -243,7 +243,14 @@
                                 <td class="table-p-name text-capitalize"><a href="product-details.php?product_id=<?php echo $row['product_id'];?>"><?php echo $row['product_name']; ?></a></td>
                                 <td class="table-p-price"><p><?php echo $row['product_price']; ?></p></td>
                                 <td class="table-p-qty"><?php echo $row['product_quantity']; ?></td>
-                                <td class="table-addtocart"><a href="cart_page.php" class="btn-primary btn">Add to cart</a></td>
+                            <form method="post" action="cart_page.php">
+                                <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>" />
+								<input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>"/>
+								<input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>"/>
+								<input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>"/>
+                                <input type="hidden" name="product_quantity" value="<?php echo $row['product_quantity']; ?>"/>
+                                <td class="table-addtocart"><<button type="submit" name="add_to_cart2" class="btn btn-primary"> Add To Cart</button></td>
+                            </form>
                             </tr>
                             <?php } ?>
                         </tbody>

@@ -1,5 +1,6 @@
 <?php
     session_start(); // Start the session if not started already
+    include ('php/config.php');
     $_SESSION['ch']=false;
     if(isset($_POST['add_to_cart'])){
         $_SESSION['test']=true;
@@ -36,6 +37,49 @@
             );
             $_SESSION['cart'][$product_id] = $product_array;
 
+        }
+        calculateTotalCart();
+    }else if(isset($_POST['add_to_cart2'])){
+        $_SESSION['test']=true;
+        if(isset($_session['cart'])){
+            $product_array_ids= array_column($_SESSION['cart'],"product_id");
+            if(!in_array($_POST['product_id'],$product_array_ids)){
+
+
+                    $product_array = array(
+                                    'product_id' =>$_POST['product_id'],
+                                    'product_name'=>$_POST['product_name'],
+                                    'product_price' =>$_POST['product_price'],
+                                    'product_image' =>$$_POST['product_image'],
+                                    'product_quantity' =>$_POST['product_quantity']
+                    );
+                    $_SESSION['cart'][$product_id] = $product_array;
+                    $product_id=$_POST['product_id'];
+                    $stmt6 = $conn -> prepare ("DELETE FROM wishlist where product_id=? and user_id = ?;");
+                    $stmt6-> bind_param('ii',$_POST['product_id'],$_SESSION['user_id']);
+                    $stmt6->execute();
+            }else{
+                echo '<script>alert("Product was already to cart")</script>';
+            }
+        }else{
+            $product_id = $_POST['product_id'];
+            $product_name= $_POST['product_name'];
+            $product_price = $_POST['product_price'];
+            $product_image = $_POST['product_image'];
+            $product_quantity = $_POST['product_quantity'];
+
+            $product_array = array(
+                            'product_id' =>$product_id,
+                            'product_name'=>$product_name,
+                            'product_price' =>$product_price,
+                            'product_image' =>$product_image,
+                            'product_quantity' =>$product_quantity
+            );
+            $_SESSION['cart'][$product_id] = $product_array;
+            $product_id=$_POST['product_id'];
+            $stmt6 = $conn -> prepare ("DELETE FROM wishlist where product_id=? and user_id = ?;");
+            $stmt6-> bind_param('ii',$_POST['product_id'],$_SESSION['user_id']);
+            $stmt6->execute();
         }
         calculateTotalCart();
     }else if(isset($_POST['remove_product'])){
