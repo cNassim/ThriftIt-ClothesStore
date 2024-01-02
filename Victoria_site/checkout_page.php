@@ -192,7 +192,7 @@ if ($isLoggedIn) {
 
   </ol>
 </nav>
-<form class="needs-validation" action="php/place_order.php" method="POST" novalidate="">
+<form class="needs-validation" action="php/place_order.php" method="POST" >
 <div class="checkout-inner float-left w-100">   
 	<div class="container">
  		<div class="row">
@@ -222,16 +222,16 @@ if ($isLoggedIn) {
 			</div>
 <div class="cart-block-right col-md-8 order-md-1">
 <h4 class="mb-3">Billing address</h4>
-<form class="needs-validation" novalidate="">
-<div class="row">
-  <div class="col-md-12 mb-3">
-	<label for="Name">Full Name <span class="required">*</span></label>
-	<input type="text" class="form-control" name="name" id="Name" placeholder="Jhon Clinton" value="" required>
-	<div class="invalid-feedback">
-	  Valid full name is required.
-	</div>
+<form class="needs-validation">
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <label for="Name">Full Name <span class="required">*</span></label>
+      <input type="text" class="form-control" name="name" id="Name" placeholder="John Clinton" value="" required>
+      <div class="invalid-feedback">
+        Valid full name is required.
+      </div>
+    </div>
   </div>
-</div>
 
 <div class="mb-3">
   <label for="email">Email <span class="required">*</span></label>
