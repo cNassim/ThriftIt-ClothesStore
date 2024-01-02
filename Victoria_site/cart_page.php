@@ -2,6 +2,16 @@
     session_start(); // Start the session if not started already
     include ('php/config.php');
     $_SESSION['ch']=false;
+    function calculateTotalCart(){
+        $total = 0;
+        foreach ($_SESSION['cart'] as $key => $value) {
+            $product = $_SESSION['cart'][$key];
+            $price = $product['product_price'];
+            $quantity = $product['product_quantity'];
+            $total = $total + $price * $quantity;
+        }
+        $_SESSION['total'] = $total;
+    }
     if (isset($_SESSION['logged_in'])){
     if(isset($_POST['add_to_cart'])){
         $_SESSION['test']=true;
@@ -103,17 +113,6 @@
         session_destroy(); // Optional: Destroy the session data completely
         header('Location: index.php');
         exit;
-    }
-
-    function calculateTotalCart(){
-        $total = 0;
-        foreach ($_SESSION['cart'] as $key => $value) {
-            $product = $_SESSION['cart'][$key];
-            $price = $product['product_price'];
-            $quantity = $product['product_quantity'];
-            $total = $total + $price * $quantity;
-        }
-        $_SESSION['total'] = $total;
     }
 }else{
     header('location:login.php');

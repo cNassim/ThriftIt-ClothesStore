@@ -226,7 +226,7 @@ if ($isLoggedIn) {
   <div class="row">
     <div class="col-md-12 mb-3">
       <label for="Name">Full Name <span class="required">*</span></label>
-      <input type="text" class="form-control" name="name" id="Name" placeholder="Your Name" value="" required>
+      <input type="text" class="form-control" name="name" id="Name" placeholder="Your Name" value="<?php echo $_SESSION['user_name']; ?>" required>
       <div class="invalid-feedback">
         Valid full name is required.
       </div>
@@ -235,7 +235,7 @@ if ($isLoggedIn) {
 
 <div class="mb-3">
   <label for="email">Email <span class="required">*</span></label>
-  <input type="email" class="form-control" name="email" id="email" placeholder="adresse@example.com" required>
+  <input type="email" class="form-control" name="email" id="email" placeholder="adresse@example.com" value="<?php echo $_SESSION['user_email'];?>" required>
   <div class="invalid-feedback">
 	Please enter a valid email address for shipping updates.
   </div>
