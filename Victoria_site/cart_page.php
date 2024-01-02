@@ -2,6 +2,7 @@
     session_start(); // Start the session if not started already
     include ('php/config.php');
     $_SESSION['ch']=false;
+    if (isset($_SESSION['logged_in'])){
     if(isset($_POST['add_to_cart'])){
         $_SESSION['test']=true;
         if(isset($_session['cart'])){
@@ -114,7 +115,9 @@
         }
         $_SESSION['total'] = $total;
     }
-
+}else{
+    header('location:login.php');
+}
 ?>
 
 
