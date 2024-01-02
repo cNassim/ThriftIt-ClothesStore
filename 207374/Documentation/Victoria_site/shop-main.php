@@ -145,7 +145,6 @@ $nbr = $stmt1->get_result();
 				<div id="cart-dropdown" class="user-menu">
 		<ul>
 			<li><a href="cart_page.php" class="modal-view button">View Cart</a></li>
-			<li><a href="checkout_page.php" class="modal-view button">Checkout</a></li>
 			<li><a href="wishlist.php" class="modal-view button">Wishlist</a></li>
 		</ul>
 	</div>
