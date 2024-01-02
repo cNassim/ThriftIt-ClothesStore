@@ -271,8 +271,12 @@ if ($isLoggedIn) {
 </div>
 </div>
 </form>
-    <!-- Footer -->
-	<footer class="page-footer font-small footer-default">
+    
+
+
+
+ <!-- Footer -->
+ <footer class="page-footer font-small footer-default">
 		<div class="container text-center text-md-left">
 			<div class="row">
 				<div class="col-md-2 footer-cms footer-column">
@@ -290,7 +294,7 @@ if ($isLoggedIn) {
 						<li>
 							<a href="about-us.php">About Us</a> </li>
 						<li>
-							<a href="shop.php">Offers</a> </li>
+							<a href="shop-main.php">Offers</a> </li>
 						<li>
 							<a href="about-us.php">Contact Us</a> </li>
 					</ul>
@@ -313,7 +317,7 @@ if ($isLoggedIn) {
 						<a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
 					<ul id="account" class="list-unstyled collapse">
 						<li>
-							<a href="blog-details.php">personal info</a> </li>
+							<a href="my-account.php">personal info</a> </li>
 						<li>
 							<a href="cart_page.php">Orders</a> </li>
 						<li>
@@ -338,7 +342,7 @@ if ($isLoggedIn) {
 							<span class="data"><a href="tel:(99)55669999">+(212) 788776633</a></span> </span>
 						</li>
 						<li class="links">
-							<span class="email">
+							<span class="email"> 
 					  <span class="icon"><i class="material-icons">email</i></span>
 							<span class="data"><a href="mailto:demo.store@gmail.com">support@thriftit.com</a></span> </span>
 						</li>

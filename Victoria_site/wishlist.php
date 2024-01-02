@@ -265,95 +265,95 @@
             
         </div>
 
- <!-- Footer -->
- <footer class="page-footer font-small footer-default">
-        <div class="container text-center text-md-left">
-            <div class="row">
-                <div class="col-md-2 footer-cms footer-column">
-                    <div class="ttcmsfooter">
-                        <div class="footer-logo"><img src="img/logos/footer-logo.png" alt="footer-logo"></div>
-                        <div class="footer-desc">"Stylish Choices, Sustainable Impact – ThriftIt"</div>
-                    </div>
-                </div>
-                <div class="col-md-2 footer-column">
-                    <div class="title">
-                        <a href="#company" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">QUICK LINKS</a> </div>
-                    <ul id="company" class="list-unstyled collapse">
-                        <li>
-                            <a href="index.php">Home</a> </li>
-                        <li>
-                            <a href="about-us.php">About Us</a> </li>
-                        <li>
-                            <a href="shop.php">Offers</a> </li>
-                        <li>
-                            <a href="about-us.php">Contact Us</a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-2 footer-column">
-                    <div class="title">
-                        <a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">ABOUT</a> </div>
-                    <ul id="products" class="list-unstyled collapse">
-                        <li>
-                            <a href="about-us.php">Who are we?</a> </li>
-                        <li>
-                            <a href="about-us.php">Our story</a> </li>
-                        <li>
-                            <a href="about-us.php">Our mission</a> </li>
-                    </ul>
+  <!-- Footer -->
+  <footer class="page-footer font-small footer-default">
+		<div class="container text-center text-md-left">
+			<div class="row">
+				<div class="col-md-2 footer-cms footer-column">
+					<div class="ttcmsfooter">
+						<div class="footer-logo"><img src="img/logos/footer-logo.png" alt="footer-logo"></div>
+						<div class="footer-desc">"Stylish Choices, Sustainable Impact – ThriftIt"</div>
+					</div>
+				</div>
+				<div class="col-md-2 footer-column">
+					<div class="title">
+						<a href="#company" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">QUICK LINKS</a> </div>
+					<ul id="company" class="list-unstyled collapse">
+						<li>
+							<a href="index.php">Home</a> </li>
+						<li>
+							<a href="about-us.php">About Us</a> </li>
+						<li>
+							<a href="shop-main.php">Offers</a> </li>
+						<li>
+							<a href="about-us.php">Contact Us</a> </li>
+					</ul>
+				</div>
+				<div class="col-md-2 footer-column">
+					<div class="title">
+						<a href="#products" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">ABOUT</a> </div>
+					<ul id="products" class="list-unstyled collapse">
+						<li>
+							<a href="about-us.php">Who are we?</a> </li>
+						<li>
+							<a href="about-us.php">Our story</a> </li>
+						<li>
+							<a href="about-us.php">Our mission</a> </li>
+					</ul>
 
-                </div>
-                <div class="col-md-2 footer-column">
-                    <div class="title">
-                        <a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
-                    <ul id="account" class="list-unstyled collapse">
-                        <li>
-                            <a href="blog-details.php">personal info</a> </li>
-                        <li>
-                            <a href="cart_page.php">Orders</a> </li>
-                        <li>
-                            <a href="wishlist.php">my wishlists</a> </li>
-                        <li>
-                            <a href="my-account.php">Sign In / Sign Up</a> </li>
-                    </ul>
+				</div>
+				<div class="col-md-2 footer-column">
+					<div class="title">
+						<a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
+					<ul id="account" class="list-unstyled collapse">
+						<li>
+							<a href="my-account.php">personal info</a> </li>
+						<li>
+							<a href="cart_page.php">Orders</a> </li>
+						<li>
+							<a href="wishlist.php">my wishlists</a> </li>
+						<li>
+							<a href="my-account.php">Sign In / Sign Up</a> </li>
+					</ul>
 
-                </div>
-                <div class="col-md-2 footer-column">
-                    <div class="title">
-                        <a href="#information" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">store information</a> </div>
-                    <ul id="information" class="list-unstyled collapse">
-                        <li class="contact-detail links">
-                            <span class="address">
-			  		<span class="icon"><i class="material-icons">insta</i></span>
-                            <span class="data">ThriftiT_Shop</span> </span>
-                        </li>
-                        <li class="links">
-                            <span class="contact">
-			  		<span class="icon"><i class="material-icons">phone</i></span>
-                            <span class="data"><a href="tel:(99)55669999">+(212) 788776633</a></span> </span>
-                        </li>
-                        <li class="links">
-                            <span class="email"> 
-			  		<span class="icon"><i class="material-icons">email</i></span>
-                            <span class="data"><a href="mailto:demo.store@gmail.com">support@thriftit.com</a></span> </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Copyright -->
-        <div class="footer-bottom-wrap">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-copyright text-center py-3">
-                        © 2023 - Copyright Claimed -ThriftiT™
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="#" id="goToTop" title="Back to top" class="btn-primary"><i class="material-icons arrow-up">keyboard_arrow_up</i></a>
+				</div>
+				<div class="col-md-2 footer-column">
+					<div class="title">
+						<a href="#information" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">store information</a> </div>
+					<ul id="information" class="list-unstyled collapse">
+						<li class="contact-detail links">
+							<span class="address">
+					  <span class="icon"><i class="material-icons">insta</i></span>
+							<span class="data">ThriftiT_Shop</span> </span>
+						</li>
+						<li class="links">
+							<span class="contact">
+					  <span class="icon"><i class="material-icons">phone</i></span>
+							<span class="data"><a href="tel:(99)55669999">+(212) 788776633</a></span> </span>
+						</li>
+						<li class="links">
+							<span class="email"> 
+					  <span class="icon"><i class="material-icons">email</i></span>
+							<span class="data"><a href="mailto:demo.store@gmail.com">support@thriftit.com</a></span> </span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Copyright -->
+		<div class="footer-bottom-wrap">
+			<div class="container">
+				<div class="row">
+					<div class="footer-copyright text-center py-3">
+						© 2023 - Copyright Claimed -ThriftiT™
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="#" id="goToTop" title="Back to top" class="btn-primary"><i class="material-icons arrow-up">keyboard_arrow_up</i></a>
 
-    </footer>
-    <!-- Footer -->
+	</footer>
+  <!-- Footer -->
   
 
 

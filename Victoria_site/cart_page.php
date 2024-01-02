@@ -363,7 +363,7 @@ if ($isLoggedIn) {
 						<li>
 							<a href="about-us.php">About Us</a> </li>
 						<li>
-							<a href="shop.php">Offers</a> </li>
+							<a href="shop-main.php">Offers</a> </li>
 						<li>
 							<a href="about-us.php">Contact Us</a> </li>
 					</ul>
@@ -386,7 +386,7 @@ if ($isLoggedIn) {
 						<a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
 					<ul id="account" class="list-unstyled collapse">
 						<li>
-							<a href="blog-details.php">personal info</a> </li>
+							<a href="my-account.php">personal info</a> </li>
 						<li>
 							<a href="cart_page.php">Orders</a> </li>
 						<li>

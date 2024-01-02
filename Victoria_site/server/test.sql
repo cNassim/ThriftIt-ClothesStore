@@ -44,3 +44,12 @@ CREATE TABLE IF NOT EXISTS `users` (
         PRIMARY KEY (`user_id`),
         UNIQUE KEY `UX_Constraint` (`user_email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE wishlist (
+    user_id INT(11), 
+    product_id INT(11), 
+    product_name VARCHAR(255),
+    product_image VARCHAR(255),
+    product_price DECIMAL(6,2),
+    product_quantity INT(11)
+);

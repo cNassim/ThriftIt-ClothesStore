@@ -368,8 +368,10 @@ $nbr = $stmt1->get_result();
 </div>
 </div>
 </div>
-    <!-- Footer -->
-	<footer class="page-footer font-small footer-default">
+    
+
+ <!-- Footer -->
+ <footer class="page-footer font-small footer-default">
 		<div class="container text-center text-md-left">
 			<div class="row">
 				<div class="col-md-2 footer-cms footer-column">
@@ -387,7 +389,7 @@ $nbr = $stmt1->get_result();
 						<li>
 							<a href="about-us.php">About Us</a> </li>
 						<li>
-							<a href="shop.php">Offers</a> </li>
+							<a href="shop-main.php">Offers</a> </li>
 						<li>
 							<a href="about-us.php">Contact Us</a> </li>
 					</ul>
@@ -410,7 +412,7 @@ $nbr = $stmt1->get_result();
 						<a href="#account" class="font-weight-normal text-capitalize mb-10" data-toggle="collapse" aria-expanded="false">HELP CENTER</a> </div>
 					<ul id="account" class="list-unstyled collapse">
 						<li>
-							<a href="blog-details.php">personal info</a> </li>
+							<a href="my-account.php">personal info</a> </li>
 						<li>
 							<a href="cart_page.php">Orders</a> </li>
 						<li>
@@ -456,7 +458,9 @@ $nbr = $stmt1->get_result();
 		<a href="#" id="goToTop" title="Back to top" class="btn-primary"><i class="material-icons arrow-up">keyboard_arrow_up</i></a>
 
 	</footer>
-<!-- Footer -->
+  <!-- Footer -->
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
