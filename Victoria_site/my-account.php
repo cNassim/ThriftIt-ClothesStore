@@ -2,6 +2,7 @@
 session_start();
 $_SESSION['ch']=false;
 include('php/config.php');
+if(isset( $_SESSION['logged_in'] )){
 $stmt = $conn->prepare("SELECT order_id,order_status,order_date FROM orders where user_id= ? ");
 $stmt->bind_param("i", $_SESSION['user_id']);
 $stmt->execute();
@@ -69,7 +70,9 @@ function updateUserPassword($conn, $newPassword, $userEmail) {
     $reqPass->execute();
 }
 
-
+}else{
+    header('location:login.php');
+}
 
 ?>
 
