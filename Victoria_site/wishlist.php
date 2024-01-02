@@ -4,12 +4,18 @@
     include ('php/config.php');
     if(isset($_POST['add_to_wishlist'])){
         $product_id = $_POST['product_id'];
-        $stmt3 = $conn -> prepare("SELECT * FROM wishlist WHERE user_id = ?");
-        $stmt3->bind_param("i",$user_id);
+        $stmt3 = $conn -> prepare("SELECT product_id FROM wishlist WHERE user_id = ? AND product_id = ?");
+        $stmt3->bind_param("ii",$user_id,$product_id);
         $stmt3->execute();
-        $product_id = $stmt3->get_result();
+        $pid = $stmt3->get_result();
+        $productid = $pid -> fetch_assoc();
+        if($product_id == $productid['product_id']){
 
-        
+            
+
+
+        }
+
         $product_name = $_POST['product_name'];
         $product_image = $_POST['product_image'];
         $product_price = $_POST['product_price'];
@@ -17,7 +23,7 @@
         $user_id=$_SESSION['user_id'];
         $stmt2 = $conn->prepare("INSERT INTO wishlist(user_id,product_id,product_name,product_image,product_price,product_quantity)
                                     VALUES(?,?,?,?,?,?)");
-        $stmt2->bind_param("iisiii",$user_id ,$product_id ,$product_name ,$product_image ,$product_price ,$product_quantity);
+        $stmt2->bind_param("iisidi",$user_id ,$product_id ,$product_name ,$product_image ,$product_price ,$product_quantity);
         $stmt2->execute();
         $stmt = $conn -> prepare("SELECT * FROM wishlist WHERE user_id = ?");
         $stmt->bind_param("i",$user_id);
