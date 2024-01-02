@@ -11,6 +11,7 @@ $orders = $stmt->get_result();
 // Include the configuration file
 include 'php/config.php';
 require 'server/cox.php';
+
 if (isset($_GET['logout'])) {
     unset($_SESSION['logged_in']);
     unset($_SESSION['user_email']);
@@ -29,6 +30,24 @@ $reqUser->bindValue(':user_email', $_SESSION['user_email']);
 $reqUser->execute();
 $user = $reqUser->fetch();
 
+
+function updateUserName($conn, $newName, $userEmail) {
+    $reqName = $conn->prepare("UPDATE users SET user_name = :name WHERE user_email = :user_email");
+    $reqName->bindValue(':name', $newName);
+    $reqName->bindValue(':user_email', $userEmail);
+    $reqName->execute();
+}
+
+function updateUserPassword($conn, $newPassword, $userEmail) {
+    $reqPass = $conn->prepare("UPDATE users SET user_password = :pass WHERE user_email = :user_email");
+    $reqPass->bindValue(':user_email', $userEmail);
+    $reqPass->bindValue(':pass', $newPassword);
+    $reqPass->execute();
+}
+
+}else{
+    header('location:login.php');
+}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($_POST['new_name'])) {
         $updatename = $_POST['new_name'];
@@ -56,23 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }
 
-function updateUserName($conn, $newName, $userEmail) {
-    $reqName = $conn->prepare("UPDATE users SET user_name = :name WHERE user_email = :user_email");
-    $reqName->bindValue(':name', $newName);
-    $reqName->bindValue(':user_email', $userEmail);
-    $reqName->execute();
-}
 
-function updateUserPassword($conn, $newPassword, $userEmail) {
-    $reqPass = $conn->prepare("UPDATE users SET user_password = :pass WHERE user_email = :user_email");
-    $reqPass->bindValue(':user_email', $userEmail);
-    $reqPass->bindValue(':pass', $newPassword);
-    $reqPass->execute();
-}
-
-}else{
-    header('location:login.php');
-}
 
 ?>
 

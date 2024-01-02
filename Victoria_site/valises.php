@@ -260,7 +260,6 @@ if ($isLoggedIn) {
             <select name="meteo" required>
                 <option value="Sunny">Sunny</option>
                 <option value="Rainy">Rainy</option>
-                <option value="Snowy">Snowy</option>
             </select>
 
             <input type="submit" name="generate" value="Generate Outfits">
