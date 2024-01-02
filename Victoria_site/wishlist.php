@@ -1,6 +1,36 @@
 <?php
     session_start(); // Start the session if not started already
     $_SESSION['ch']=false;
+    include ('php/config.php');
+    if(isset($_POST['add_to_wishlist'])){
+        $product_id = $_POST['product_id'];
+        $stmt3 = $conn -> prepare("SELECT * FROM wishlist WHERE user_id = ?");
+        $stmt3->bind_param("i",$user_id);
+        $stmt3->execute();
+        $product_id = $stmt3->get_result();
+
+        
+        $product_name = $_POST['product_name'];
+        $product_image = $_POST['product_image'];
+        $product_price = $_POST['product_price'];
+        $product_quantity = $_POST['product_quantity'];
+        $user_id=$_SESSION['user_id'];
+        $stmt2 = $conn->prepare("INSERT INTO wishlist(user_id,product_id,product_name,product_image,product_price,product_quantity)
+                                    VALUES(?,?,?,?,?,?)");
+        $stmt2->bind_param("iisiii",$user_id ,$product_id ,$product_name ,$product_image ,$product_price ,$product_quantity);
+        $stmt2->execute();
+        $stmt = $conn -> prepare("SELECT * FROM wishlist WHERE user_id = ?");
+        $stmt->bind_param("i",$user_id);
+        $stmt->execute();
+        $products = $stmt->get_result();
+        
+    }else if(isset($_POST['remove_product'])){
+
+    }
+    $stmt = $conn -> prepare("SELECT * FROM wishlist WHERE user_id = ?");
+    $stmt->bind_param("i",$user_id);
+    $stmt->execute();
+    $products = $stmt->get_result();
     // Logout logic
     if (isset($_GET['logout'])) {
         unset($_SESSION['logged_in']);
@@ -182,27 +212,23 @@
                                 <th class="table-image text-uppercase">image</th>
                                 <th class="table-p-name text-uppercase">product</th>
                                 <th class="table-p-price text-uppercase">price</th>
-                                <th class="table-color text-uppercase">Color</th>
+                                <th class="table-color text-uppercase">quantity</th>
                                 <th class="table-total text-uppercase">add to cart</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php while ($row = $products->fetch_assoc()) {?>
                             <tr>
-                                <td class="table-remove"><button><i class="material-icons">delete</i></button></td>
-                                <td class="table-image"><a href="product-details.php"><img src="img/products/02.jpg" alt=""></a></td>
-                                <td class="table-p-name text-capitalize"><a href="product-details.php">aspetur autodit autfugit</a></td>
-                                <td class="table-p-price"><p>$100.00</p></td>
-                                <td class="table-p-qty">in stock</td>
+                                <td class="table-remove">
+                                        <input type="hidden" name="product_id" value="<?php echo $row['product_id'];?>"/>
+                                        <button type="submit" name="remove_product" value="remove"><i class="material-icons">delete</i></button></td>
+                                <td class="table-image"><a href="product-details.php?product_id=<?php echo $row['product_id'];?>"><img src="img/products/<?php echo $row['product_image'];?>" alt=""></a></td>
+                                <td class="table-p-name text-capitalize"><a href="product-details.php?product_id=<?php echo $row['product_id'];?>"><?php echo $row['product_name']; ?></a></td>
+                                <td class="table-p-price"><p><?php echo $row['product_price']; ?></p></td>
+                                <td class="table-p-qty"><?php echo $row['product_quantity']; ?></td>
                                 <td class="table-addtocart"><a href="cart_page.php" class="btn-primary btn">Add to cart</a></td>
                             </tr>
-                            <tr>
-                                <td class="table-remove"><button><i class="material-icons">delete</i></button></td>
-                                <td class="table-image"><a href="product-details.php"><img src="img/products/03.jpg" alt=""></a></td>
-                                <td class="table-p-name text-capitalize"><a href="product-details.php">magni dolores eosquies</a></td>
-                                <td class="table-p-price"><p>$100.00</p></td>
-                                <td class="table-p-qty">in stock</td>
-                                <td class="table-addtocart"><a href="cart_page.php" class="btn-primary btn">Add to cart</a></td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

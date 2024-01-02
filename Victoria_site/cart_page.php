@@ -259,7 +259,7 @@ if ($isLoggedIn) {
                                     <input type="hidden" name="product_id" value="<?php echo $value['product_id'];?>"/>
                                     <button type="submit" name="remove_product" value="remove"><i class="material-icons">delete</i></button></td>
                                 </form>
-                                <td class="table-image"><a href="<?php echo $value['product_id'];?>"><img src="img/products/<?php echo $value['product_image'];?>" alt=""></a></td>
+                                <td class="table-image"><a href="product-details.php?product_id=<?php echo $value['product_id'];?>"><img src="img/products/<?php echo $value['product_image'];?>" alt=""></a></td>
                                 <td class="table-p-name text-capitalize"><a href="product-details.php?product_id=<?php echo $value['product_id'];?>"><?php echo $value['product_name'];?></a></td>
                                 <td class="table-p-price"><p>$<?php echo $value['product_price'];?></p></td>
                                 <form method="POst" action="cart_page.php">

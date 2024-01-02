@@ -222,23 +222,30 @@ if ($isLoggedIn) {
                                     </div>
 					</div>
 											<div class="btn-cart d-flex align-items-center float-left w-100"> 
-											<form method="POST" action="cart_page.php">
-											<input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>" />
-											<input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>"/>
-											<input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>"/>
-											<input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>"/>
-											<h5>qty:</h5>
-						<input value="1" name="product_quantity" type="number">
-						<button type="submit" name="add_to_cart" class="btn btn-primary btn-cart m-0"> Add To Cart</button>
-					</form>
-				</div>
-					<div class="tt-links d-flex align-items-center float-left w-100 mb-15">
-					<a href="wishlist.php" class="link btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
-					</div>
-					
-					</div>
+												<form method="POST" action="cart_page.php">
+												<input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>" />
+												<input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>"/>
+												<input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>"/>
+												<input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>"/>
+												<h5>qty:</h5>
+												<input value="1" name="product_quantity" type="number">
+												<button type="submit" name="add_to_cart" class="btn btn-primary btn-cart"> Add To Cart</button>
+											</form>
+											<form method="POST" action="wishlist.php">
+												<input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>" />
+												<input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>"/>
+												<input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>"/>
+												<input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>"/>
+												<input value="1" name="product_quantity" type="hidden">
+												<button type="submit" name="add_to_wishlist" value="wishlist" class="btn btn-primary btn-cart m-0">
+													<i class="material-icons">favorite</i>
+												</button>
+											</form>
 
+										
 				</div>
+			</div>
+		</div>
 			</div>
 		</div>
 	</div>
