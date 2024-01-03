@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet">
 
@@ -487,11 +487,6 @@ if ($isLoggedIn) {
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/imagesloaded.pkgd.min.js"></script>
     <script src="js/jquery.zoom.min.js"></script>
-    <!--Start of Tawk.to Script-->
-<!--Start of Tawk.to Script-->
-
-<!--End of Tawk.to Script-->
-
 </body>
 
 

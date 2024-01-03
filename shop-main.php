@@ -71,7 +71,7 @@ $nbr = $stmt1->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -284,7 +284,7 @@ $nbr = $stmt1->get_result();
 						<h3 class="widget-title"><a data-toggle="collapse" href="#categoriesMenu" role="button" aria-expanded="true" aria-controls="categoriesMenu">Categories</a></h3>
 						<div id="categoriesMenu" class="expand-lg collapse show">
 							<div class="nav nav-pills flex-column mt-4">
-								<a href="<?php echo "shop-main.php"; $_SESSION['product_category']=NULL;?>" class="nav-link d-flex justify-content-between mb-2 "><span>All</span><span class="sidebar-badge">34</span></a>
+								<a href="<?php echo "shop-main.php"; $_SESSION['product_category']=NULL;?>" class="nav-link d-flex justify-content-between mb-2 "><span>All</span><span class="sidebar-badge">32</span></a>
 								<?php while ($row1 = $nbr->fetch_assoc()){ ?>
 								<a href="<?php echo "shop-main.php?product_category=".$row1['product_category'];?>" class="nav-link d-flex justify-content-between mb-2 "><span><?php echo $row1['product_category']; ?></span><span class="sidebar-badge"><?php echo $row1['count_per_category']; ?></span></a>
 								<?php }?>
